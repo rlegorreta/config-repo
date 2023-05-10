@@ -47,3 +47,4 @@ microservice:
   udf:
     run:
       uri: http://host.docker.internal:7076/api/v1/udf
+

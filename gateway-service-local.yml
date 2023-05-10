@@ -9,3 +9,6 @@ eureka:
     serviceUrl:
       defaultZone: http://eureka:8070/eureka/
 
+# Testing what environment we are using
+gateway:
+  greeting: "Welcome to gateway microservice from the config server, 'local configuration'."

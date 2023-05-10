@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Add all files" />
+    <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Add all files">
+      <change afterPath="$PROJECT_DIR$/test-service-local.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-service-localNoDocker.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audit-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/audit-service-localNoDocker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service-local.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service-localNoDocker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bup-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bup-service-local.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bup-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bup-service-localNoDocker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cache-service-local.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cache-service-localNoDocker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartera-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cartera-service-local.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartera-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cartera-service-localNoDocker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expediente-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/expediente-service-local.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expediente-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/expediente-service-localNoDocker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service-local.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service-localNoDocker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iam-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/iam-service-local.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iam-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/iam-service-localNoDocker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mail-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mail-service-local.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mail-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mail-service-localNoDocker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service-local.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service-localNoDocker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/param-ingestor-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/param-ingestor-service-local.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/param-ingestor-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/param-ingestor-service-localNoDocker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/param-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/param-service-local.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/param-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/param-service-localNoDocker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preference-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/preference-service-local.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preference-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/preference-service-localNoDocker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/udf-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/udf-service-local.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/udf-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/udf-service-localNoDocker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/udf-ui-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/udf-ui-local.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1683671986078</updated>
       <workItem from="1683671987859" duration="6290000" />
-      <workItem from="1683735548703" duration="1473000" />
+      <workItem from="1683735548703" duration="3942000" />
     </task>
     <task id="LOCAL-00001" summary="Add all files">
       <created>1683741148812</created>
@@ -46,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683741148812</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add all files">
+      <created>1683741314348</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1683741314348</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

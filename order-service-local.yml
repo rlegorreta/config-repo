@@ -39,3 +39,6 @@ management:
         
 database: neo4j
 
+# Testing what environment we are using
+order:
+  greeting: "Welcome to order microservice from the config server, 'local configuration'."

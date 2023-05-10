@@ -33,3 +33,7 @@ management:
   zipkin:
     tracing:
       endpoint: http://localhost:9411/api/v2/spans
+
+# Testing what environment we are using
+param:
+  greeting: "Welcome to param microservice from the config server, 'localNoDocker configuration'."

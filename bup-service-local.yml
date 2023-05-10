@@ -42,3 +42,6 @@ management:
         
 database: neo4j
 
+# Testing what environment we are using
+bup:
+  greeting: "Welcome to bup microservice from the config server, 'local configuration'."

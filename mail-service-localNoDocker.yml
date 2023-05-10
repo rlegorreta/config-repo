@@ -61,3 +61,7 @@ alfresco:
         "{cipher}AQBZ55KUu9hEA044dO3lp1vrkMiF3fQq/PxT0E5G8ouNIMr6gisUMnsB09YKSlZ7SjU44tQcauYCHn6cnG2fqN6+FZaJtFPmamDhKDkCatoEjeLQpGttqYI/vWuWfahEnuNIf36FTGE9knjSHIiSZJBBuwxJZ9hac9h9NxnJK4vytgxXrjT+9Qtsbx/rk0V4LPO8o5yz4ITUvcqejhrEAZJ8CcJdsB1Pi0bm1nXKntZOHeGGkwod9O6Fg0/hJMD+5MuO6OX2Mb7M69Hi7lixntgEhiOd0P4B0l9OcYeIDCb2wyYzn5O2SeCtNRy5K13CwqJH89JsYKhv2ogJJWO7byTgpf7OQHG8Rrd1AMYaZvois62yn6O4vKSLmZnhT6w1wg4="
   password:         "{cipher}AQBZ55KUu9hEA044dO3lp1vrkMiF3fQq/PxT0E5G8ouNIMr6gisUMnsB09YKSlZ7SjU44tQcauYCHn6cnG2fqN6+FZaJtFPmamDhKDkCatoEjeLQpGttqYI/vWuWfahEnuNIf36FTGE9knjSHIiSZJBBuwxJZ9hac9h9NxnJK4vytgxXrjT+9Qtsbx/rk0V4LPO8o5yz4ITUvcqejhrEAZJ8CcJdsB1Pi0bm1nXKntZOHeGGkwod9O6Fg0/hJMD+5MuO6OX2Mb7M69Hi7lixntgEhiOd0P4B0l9OcYeIDCb2wyYzn5O2SeCtNRy5K13CwqJH89JsYKhv2ogJJWO7byTgpf7OQHG8Rrd1AMYaZvois62yn6O4vKSLmZnhT6w1wg4="
   company: ACME     # This is the parent folder for all files
+
+# Testing what environment we are using
+mail:
+  greeting: "Welcome to mail microservice from the config server, 'localNoDocker configuration'."

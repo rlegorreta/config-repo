@@ -31,3 +31,7 @@ management:
   zipkin:
     tracing:
       endpoint: http://tempo:9411/api/v2/spans
+
+# Testing what environment we are using
+iam:
+  greeting: "Welcome to iam microservice from the config server, 'local configuration'."

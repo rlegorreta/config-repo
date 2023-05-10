@@ -34,3 +34,7 @@ management:
   zipkin:
     tracing:
       endpoint: http://tempo:9411/api/v2/spans
+
+# Testing what environment we are using
+preference:
+  greeting: "Welcome to preference microservice from the config server, 'local configuration'."

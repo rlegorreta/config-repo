@@ -41,3 +41,7 @@ management:
   zipkin:
     tracing:
       endpoint: http://localhost:9411/api/v2/spans
+
+# Testing what environment we are using
+audit:
+  greeting: "Welcome to audit microservice from the config server, 'localNoDocker configuration'."

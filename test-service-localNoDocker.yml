@@ -1,0 +1,3 @@
+# Testing what environment we are using
+test:
+  greeting: "Welcome to test microservice from the config server, 'localNoDocker configuration'."

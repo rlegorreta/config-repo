@@ -36,3 +36,7 @@ microservice:
 redis:
   server: localhost
   port: 6379
+
+# Testing what environment we are using
+cache:
+  greeting: "Welcome to cache microservice from the config server, 'localNoDocker configuration'."

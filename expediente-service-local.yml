@@ -50,3 +50,7 @@ alfresco:
   username: admin
   password: admin
   company: ACME     # This is the parent folder for all files
+
+# Testing what environment we are using
+expediente:
+  greeting: "Welcome to expediente microservice from the config server, 'local configuration'."

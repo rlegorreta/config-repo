@@ -24,3 +24,6 @@ spring:
   zipkin:
     baseUrl:  http://zipkin:9411/
 
+# Testing what environment we are using
+paramIngestor:
+  greeting: "Welcome to paramIngestor microservice from the config server, 'local configuration'."
