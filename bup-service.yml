@@ -1,0 +1,27 @@
+# Last update May 2023 (rlh)
+
+eureka:
+  instance:
+    preferIpAddress: true
+    instanceId: ${spring.application.name}:${random.int}
+    hostname: bup-service
+  client:
+    enabled: false              # Not used, just for Docker desktop with service discovery and load balanced
+    registerWithEureka: true
+    fetchRegistry: false        # this must be false because it is a service
+
+spring:
+  neo4j:
+    repositories:
+      type: imperative
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+
+bup:
+  greeting: "Welcome to bup microservice from the config server, 'default configuration'."
+  # This is the permit where all auditory events are notified
+  notifica:
+    facultad: NOTIFICA_BUP
+

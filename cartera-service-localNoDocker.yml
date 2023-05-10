@@ -1,0 +1,41 @@
+# Docker desktop localNoDocker configuration
+# Last update February 2023 (rlh)
+server:
+  port: 8500
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true         # this must be true because it is a service
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          spring:
+            issuer-uri: http://localhost:9000
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9000
+  # SQL Server encrypted data
+  datasource:
+    url: jdbc:sqlserver://localhost:1415;databaseName=master
+    # see: jdbc:sqlserver://host:port;databaseName=dbName;encrypt=true;trustServerCertificate=true
+    # https://stackoverflow.com/questions/72698722/spring-boot-starter-parent-2-7-0-version-destroys-connection-to-sql-server-datab
+    # if we want the latest mssqlserver-driver
+    username:
+      "{cipher}AQBe1tko88MT941xsMB4wYsPHfBM1jJVIcd3Xmwa7YeD+QCGlgemFDhDCZbVGQIlPhDcCQTtMLrAARP91UxVDBVsYQO8TWbwaIcQLYoTY5TEMU5nlKkRYP+S/3uO7NCYU50nWzOQVsf4wgg4FuTuwN2VzHUejLMehLvt1cHgAheAYniyd9tZENVg4e2JlOEmKkj4EZVhkuRRo/6iJ/P3rUEDJE4RDJXe8esIy3BJEXN0kmBCoMFTImRIe1Bvn40IjrTowfP2iUpmi6fxTjSD4Lw+pbbl+ef/ntepo70LVG2+ny4sVp5LvFOOkBZUGg0rIbRo3vuBmIX5JjNi400f3LFMefhcWySQfcjdwoskmaUDS2NIQW4N4L/cAVvXIFARIA8="
+    password:
+      "{cipher}AQABEU4eTWnHXWsHPOR5KMuDqFAP0AlctM1ni5eF20hMnwkXIMrzIETyqyYoyUU+3qJCBDwsgfkXbOlEkEH0hhVTrh/717vMiK08wfv3idutYmWOAoa6a2e4tl9vIjH+rz28wpIpQtXNyeO4q2B9bEmrTl/6LU4YNgmfpfZGOLDQGbvvSg0UAuLH80i+vvX3D/I6FzSRMAHZ5kkitRyNheYli+7OhgDKCXcsbCFTtkhrA+8D7zec5lK8OPcD2/cKUzjttsiJcghSBMG8u5tHY1KaqMPseuFkmtOYR0nrq6K0Jdb7Lcm/5yGzBmE2ol5GpK9G1Jffr20M7uqo8vI0DhAbBl4hGLnjmOd9pQUwH9TfRD59kToIbNAaJharyjq7V+Q="
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0 # only for testing purpose, switch back to 0.1 for production code
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+

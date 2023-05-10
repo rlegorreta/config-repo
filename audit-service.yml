@@ -1,0 +1,23 @@
+# Last update May 2023 (rlh)
+
+eureka:
+  instance:
+    preferIpAddress: true
+    instanceId: ${spring.application.name}:${random.int}
+    hostname: audit-service
+  client:
+    enabled: false              # Not used, just for Docker desktop with service discovery and load balanced
+    registerWithEureka: true
+    fetchRegistry: false        # this must be false because it is a service
+    healthcheck:
+      enabled: true             # this must be true because it is a service
+
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+
+# Testing what environment we are using
+audit:
+  greeting: "Welcome to audit microservice from the config server, 'default configuration'."

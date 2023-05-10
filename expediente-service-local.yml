@@ -1,0 +1,52 @@
+# Docker desktop local configuration
+# Last update February 2023 (rlh)
+server:
+  port: 8521
+
+eureka:
+  client:
+    healthcheck:
+      enabled: false
+      # ^ this is false for expediente because zeebe is not running yet when Eureka makes the health check TODO this must be true, we need to check zeebe to run first. For now it does not work with load balanced
+    serviceUrl:
+      defaultZone: http://eureka:8070/eureka/
+
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: http://kafka:9092
+  security:
+    oauth2:
+      client:
+        provider:
+          spring:
+            issuer-uri: http://auth:9000
+      resourceserver:
+        jwt:
+          issuer-uri: http://auth:9000
+          
+management:
+  tracing:
+    sampling:
+      probability: 1.0 # only for testing purpose, switch back to 0.1 for production code
+  zipkin:
+    tracing:
+      endpoint: http://tempo:9411/api/v2/spans
+
+
+# BPM Camunda gateway
+zeebe:
+  client:
+    broker:
+      gateway-address: host.docker.internal:26500
+    security:
+      plaintext: true
+
+# Alfresco server
+alfresco:
+  url: http://host.docker.internal:8080/alfresco/api/-default-/cmis/versions/1.1/atom
+  username: admin
+  password: admin
+  company: ACME     # This is the parent folder for all files

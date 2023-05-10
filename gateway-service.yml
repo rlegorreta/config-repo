@@ -1,0 +1,97 @@
+# Last update May 2023 (rlh)
+
+eureka:
+  instance:
+    preferIpAddress: true
+    instanceId: ${spring.application.name}:${random.int}
+    hostname: gateway-service
+  client:
+    enabled: false              # Not used, just for Docker desktop with service discovery and load balanced
+    registerWithEureka: true
+    fetchRegistry: true         # this must be true otherwise sends a 500 service unavailable
+    
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+    gateway:
+      # This is for automatic mapping of routes using eureka
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+      # This is if we want manually mapping routing using service discovery
+      # Erase al postfix for '-service' microservices
+      routes:
+      - id: iam-service
+        uri: lb://iam
+        predicates:
+        - Path=/iam-service/**
+        filters:
+        - RewritePath=/iam-service/(?<path>.*), /$\{path}
+      - id: udf-service
+        uri: lb://udf
+        predicates:
+        - Path=/udf-service/**
+        filters:
+        - RewritePath=/udf-service/(?<path>.*), /$\{path}
+      - id: preference-service
+        uri: lb://preference
+        predicates:
+          - Path=/preference-service/**
+        filters:
+          - RewritePath=/preference-service/(?<path>.*), /$\{path}
+      - id: audit-service
+        uri: lb://audit
+        predicates:
+          - Path=/audit-service/**
+        filters:
+          - RewritePath=/audit-service/(?<path>.*), /$\{path}
+      - id: cache-service
+        uri: lb://cache
+        predicates:
+          - Path=/cache-service/**
+        filters:
+          - RewritePath=/cache-service/(?<path>.*), /$\{path}
+      - id: bup-service
+        uri: lb://bup
+        predicates:
+          - Path=/bup-service/**
+        filters:
+          - RewritePath=/bup-service/(?<path>.*), /$\{path}
+      - id: cartera-service
+        uri: lb://cartera
+        predicates:
+          - Path=/cartera-service/**
+        filters:
+          - RewritePath=/cartera-service/(?<path>.*), /$\{path}
+      - id: expediente-service
+        uri: lb://expediente
+        predicates:
+          - Path=/expediente-service/**
+        filters:
+          - RewritePath=/expediente-service/(?<path>.*), /$\{path}
+      - id: mail-service
+        uri: lb://mail
+        predicates:
+          - Path=/mail-service/**
+        filters:
+          - RewritePath=/mail-service/(?<path>.*), /$\{path}
+      - id: order-service
+        uri: lb://order
+        predicates:
+          - Path=/order-service/**
+        filters:
+          - RewritePath=/order-service/(?<path>.*), /$\{path}
+      - id: param-service
+        uri: lb://param
+        predicates:
+          - Path=/param-service/**
+        filters:
+          - RewritePath=/param-service/(?<path>.*), /$\{path}
+
+# Testing what environment we are using
+gateway:
+  greeting: "Welcome to gateway microservice from the config server, 'default configuration'."
+

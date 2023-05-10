@@ -1,0 +1,47 @@
+# Configuration for running the CarteraUI inside a Docker desktop local.
+# Last update February 2023 (rlh)
+server:
+  port: 8510
+  
+eureka:
+  client:
+    healthcheck:
+      enabled: false # this must be false because is a UI
+    serviceUrl:
+      defaultZone: http://eureka:8070/eureka/
+
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0 # only for testing purpose, switch back to 0.1 for production code
+  zipkin:
+    tracing:
+      endpoint: http://tempo:9411/api/v2/spans
+
+security:
+  iam:
+    provider-uri: http://gateway:8072/iam                     # use the gateway
+
+#Back-end microservices
+microservice:
+  cartera:
+    provider-uri: http://gateway:8072/cartera-service         # use the gateway with default microservice name
+    # provider-uri: http://cartera:8500                       # do not use gateway
+  preference:
+    provider-uri: http://gateway:8072/preference-service       # use the gateway
+    # provider-uri: http://preference:8181                     # do not use gateway
+  udf:
+    provider-uri: http://gateway:8072/udf-service              # use the gateway
+    # provider-uri: http://udf:8200                            # do not use gateway
+    run:
+      uri: http://host.docker.internal:7076/api/v1
+  cache:
+    provider-uri: http://gateway:8072/cache-service            # use the gateway
+    # provider-uri: http://cache:8351                          # do not use gateway
+  audit:
+    provider-uri: http://gateway:8072/audit -service           # use the gateway
+    #provider-uri: http://auditserverrepo:8300                 # do not use gateway
+    subscription:
+      host: audit                                              # note: we do not use gateway
+      port: 8301

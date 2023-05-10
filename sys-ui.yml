@@ -1,0 +1,21 @@
+# Last update February 2023 (rlh)
+eureka:
+  instance:
+    preferIpAddress: true
+    instanceId: ${spring.application.name}:${random.int}
+    hostname: sysui
+  client:
+    registerWithEureka: true
+    fetchRegistry: true       # this must be true because is UI
+
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

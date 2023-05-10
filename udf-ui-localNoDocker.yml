@@ -1,0 +1,49 @@
+# Configuration for running the UDFUI ouside a Docker.
+# Last update February 2023 (rlh)
+server:
+  port: 8210
+  
+eureka:
+  client:
+    healthcheck:
+      enabled: false # this must be false because is a UI
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+
+# SQl Server encrypted data
+spring:
+  ## UDFDB SQL Server database
+  datasource:
+    url: jdbc:sqlserver://localhost:1475;databaseName=master
+    username:
+      "{cipher}AQCYBXesnmzvHDB80bIsWE0tJKftRRf8sNiIuYucr39nIgxVzHlYfDnNKodQ3sgocN5qZBYxPht+26zWptm9YP1dI7p32p+SW42Z745/tPE0pjvsxcRjWTO7yJ3Lrwglc/M1ogjfu6OdB9Dn2WMM3nqWRYcx/n/B1P1G+ju38+Od8mk7j6AZUpjX9bWORqm6az3zlIL0vQGEVIA+3q1I2pw+RSNcO/g6NCJQkbo5PXHN86vF4NEIwXyCtN7fxlNylT14RvAeUZmvKPk0E37RUj3mKSyFfYfGmxieX9Q+mmt3RJYbnpAgqoIsVbezKqKbGsezG7FQAM5cEOdduRUpxe62iu+kq+HAZ+uoZ/sJiBK7e1FCtn34tAN3nHmFrqJanv8="
+    password:
+      "{cipher}AQAMvlTfnESmEyPGTVZxJJoDOTjsTiXKJT/U0RNUxPBWwgSLmCJNTpCB/KgJL4H2zNtfDLmIpwWiRmIF9oDMG/Yp7PRTIMGqEgUBFqAxqYtiQjFAgpJs6azB2AfhrYyvBLjF2iAo2sUDbOe7RELJLJfd7AXBzqDb7VFHz8QUY4xGi9bxkc408GFkMiG4Brkak2VQbya4jmoIWaBd3qqsMcU1YVvaJqURt4+u7WPQCuaV7yAJkVEljserkmMf64nMw4lzjYvRGfKgc3bfqd4ycwnlb6XWVMkMJ4hQ1NDJmagyagUR1wh+ir7J5vLB/KXfNltKp5qY5bxXU/UdfAfVFtpU7PwcgK4jPbOMvAnjoKp0RfpERuRnVYu0oEXW+tIMhv8="
+
+management:
+  tracing:
+    sampling:
+      probability: 0.1 # only for production, switch back to 1.0 for development
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+
+security:
+  iam:
+    # provider-uri: http://localhost:8180           # no gateway
+    provider-uri: http://localhost:8072/iam         # use the gateway
+
+#Back-end microservices
+microservice:
+  cache:
+    provider-uri: http://localhost:8072/cache    # use the gateway
+    #provider-uri: http://localhost:8351        # do not use gateway
+  audit:
+    provider-uri: http://localhost:8072/audit    # use the gateway
+    # provider-uri: http://localhost:8300        # do not use gateway
+    subscription:
+      host: localhost                            # note: we do not use gateway
+      port: 8301
+  udf:
+    run:
+      uri: http://localhost:7076/api/v1/udf

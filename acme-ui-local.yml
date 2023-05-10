@@ -1,0 +1,76 @@
+# Configuration for running the SYSUI inside a Docker desktop local.
+# Last update February 2023 (rlh)
+server:
+  port: 8530
+  
+eureka:
+  client:
+    healthcheck:
+      enabled: false # this must be false because is a UI
+    serviceUrl:
+      defaultZone: http://eureka:8070/eureka/
+
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: http://kafka:9092
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0 # only for testing purpose, switch back to 0.1 for production code
+  zipkin:
+    tracing:
+      endpoint: http://tempo:9411/api/v2/spans
+
+security:
+  iam:
+    provider-uri: http://gateway:8072/iam       # use the gateway
+    # provider-uri: http://localhost:8180       # do not use gateway
+
+#Back-end microservices
+microservice:
+  bup:
+    provider-uri: http://gateway:8072/bup-service         # use the gateway
+    #provider-uri: http://bup:8520                        # do not use gateway
+  cache:
+    provider-uri: http://gateway:8072/cache-service       # use the gateway
+    # provider-uri: http://cache:8351                     # do not use gateway
+  expediente:
+    provider-uri: http://gateway:8072/expediente-service  # use the gateway
+    # provider-uri: http://expediente:8521                # do not use gateway
+  order:
+    provider-uri: http://gateway:8072/order-service       # use the gateway
+    #provider-uri: http://localhost:8522                  # do not use gateway
+  audit:
+    provider-uri: http://gateway:8072/audit-service       # use the gateway
+    # provider-uri: http://audit:8300                     # do not use gateway
+    subscription:
+      host: audit                                         # note: we do not use gateway
+      port: 8301
+
+# Camunda BPM
+camunda:
+  tasklist:
+    url: http://host.docker.internal:8082
+    username: "{cipher}AQCfybuCs2Fl9fq35ohiKL11DSuuOnWWyBqV1MR6mcg0lfKuMreRiLz1znGSc5ImYCa3eM5ymOc7bhzSVifKB6I7ZWwOsh/WxvxtSacN4+zgMR9r6gZp1w2itnxMgqjNxYidL46gDQ3eCDdHyI8awf13Hs/fZdm81CDtWMElXn7QoiqMBnqp8MFsKelBdN6tnu+/TfIaDjvcxlQn++ey8y14Zd1dhmAa4nwUdoVmz44kX28FMGJWSXlsR1YHRvNxP4GaAgJ/qNJ01PUsN/Vjn2CE0ZTEP3h4NynocY3JUTsRDg4/eUTNojZCQKX1IEU/NurKq9S9xu5lEN7YizOeOQt03oXfNbQE/RTtd9b7vF8MSo8Jiqq7ROMIwQWvjN3U0kY="
+    # ^ This is temporary. Needed to integrate with AUTH Spring security
+    password: "{cipher}AQCfybuCs2Fl9fq35ohiKL11DSuuOnWWyBqV1MR6mcg0lfKuMreRiLz1znGSc5ImYCa3eM5ymOc7bhzSVifKB6I7ZWwOsh/WxvxtSacN4+zgMR9r6gZp1w2itnxMgqjNxYidL46gDQ3eCDdHyI8awf13Hs/fZdm81CDtWMElXn7QoiqMBnqp8MFsKelBdN6tnu+/TfIaDjvcxlQn++ey8y14Zd1dhmAa4nwUdoVmz44kX28FMGJWSXlsR1YHRvNxP4GaAgJ/qNJ01PUsN/Vjn2CE0ZTEP3h4NynocY3JUTsRDg4/eUTNojZCQKX1IEU/NurKq9S9xu5lEN7YizOeOQt03oXfNbQE/RTtd9b7vF8MSo8Jiqq7ROMIwQWvjN3U0kY="
+    # ^ This is temporary. Needed to integrate with AUTH Spring security
+#zeebe Camunda
+zeebe:
+  client:
+    broker:
+      gateway-address: zeede:26500
+    security:
+      plaintext: true
+      
+# Alfresco content management server
+alfresco:
+  url: http://host.docker.internal:8080/alfresco/api/-default-/cmis/versions/1.1/atom
+  username:
+        "{cipher}AQBZ55KUu9hEA044dO3lp1vrkMiF3fQq/PxT0E5G8ouNIMr6gisUMnsB09YKSlZ7SjU44tQcauYCHn6cnG2fqN6+FZaJtFPmamDhKDkCatoEjeLQpGttqYI/vWuWfahEnuNIf36FTGE9knjSHIiSZJBBuwxJZ9hac9h9NxnJK4vytgxXrjT+9Qtsbx/rk0V4LPO8o5yz4ITUvcqejhrEAZJ8CcJdsB1Pi0bm1nXKntZOHeGGkwod9O6Fg0/hJMD+5MuO6OX2Mb7M69Hi7lixntgEhiOd0P4B0l9OcYeIDCb2wyYzn5O2SeCtNRy5K13CwqJH89JsYKhv2ogJJWO7byTgpf7OQHG8Rrd1AMYaZvois62yn6O4vKSLmZnhT6w1wg4="
+  password:         "{cipher}AQBZ55KUu9hEA044dO3lp1vrkMiF3fQq/PxT0E5G8ouNIMr6gisUMnsB09YKSlZ7SjU44tQcauYCHn6cnG2fqN6+FZaJtFPmamDhKDkCatoEjeLQpGttqYI/vWuWfahEnuNIf36FTGE9knjSHIiSZJBBuwxJZ9hac9h9NxnJK4vytgxXrjT+9Qtsbx/rk0V4LPO8o5yz4ITUvcqejhrEAZJ8CcJdsB1Pi0bm1nXKntZOHeGGkwod9O6Fg0/hJMD+5MuO6OX2Mb7M69Hi7lixntgEhiOd0P4B0l9OcYeIDCb2wyYzn5O2SeCtNRy5K13CwqJH89JsYKhv2ogJJWO7byTgpf7OQHG8Rrd1AMYaZvois62yn6O4vKSLmZnhT6w1wg4="
+  company: ACME     # This is the parent folder for all files

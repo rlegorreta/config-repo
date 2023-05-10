@@ -1,0 +1,37 @@
+# Last update February 2023 (rlh)
+eureka:
+  instance:
+    preferIpAddress: true
+    instanceId: ${spring.application.name}:${random.int}
+    hostname: udfui
+  client:
+    registerWithEureka: true
+    fetchRegistry: true       # this must be true because is UI
+
+spring:
+  ## UDFDB SQL Server database
+  datasource:
+    url: jdbc:sqlserver://udfDB:1433;databaseName=master
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    hikari:
+      maxLifeTime: 600000
+  # Spring data
+  jpa:
+    database: default
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.SQLServer2012Dialect
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    generate-ddl: true
+    show-sql: false
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

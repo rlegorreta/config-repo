@@ -1,0 +1,11 @@
+# Last update February 2023 (rlh)
+server:
+  port: 8072
+
+eureka:
+  client:
+    healthcheck:
+      enabled: false   # this must be false otherwise sends a 500 service unavailable
+    serviceUrl:
+      defaultZone: http://eureka:8070/eureka/
+

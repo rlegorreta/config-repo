@@ -1,0 +1,29 @@
+# Last update May 2023
+
+# Service discovery NOT used. Just for Docker desktop with balanced load
+spring:
+  application:
+    name: eureka
+  boot:
+    admin:
+      context-path:/admin
+server:
+  port: 8070
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 3
+    hostname: eureka
+  client:
+    registerWithEureka: false   # no need to register the server with the server
+    fetchRegistry: false        # don't need a local copy of the registry
+    serviceUrl:
+      defaulZone:
+        http://${eureka.instance.hostname}:${server.port}/eureka/
+  datacenter: mktpl-ailegorreta           # value used for AWS, here can be anything
+  server:
+    waitTimeInMsWhenSyncEmpty: 5
+    renewalPercentThreshold: 0.49
+    enableSelfPreservation: false
+    maxThreadsForPeerReplication: 0
+
+

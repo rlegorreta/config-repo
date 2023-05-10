@@ -1,0 +1,63 @@
+# Docker desktop localNoDocker configuration
+# Last update February 2023 (rlh)
+server:
+  port: 8352
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true     # this must be true because it is a service
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: http://localhost:9092
+  security:
+    oauth2:
+      client:
+        provider:
+          spring:
+            issuer-uri: http://localhost:9000
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9000
+          
+management:
+  tracing:
+    sampling:
+      probability: 1.0 # only for testing purpose, switch back to 0.1 for production code
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+    
+  mail:
+    host: mail.legosoft.com.mx
+    port: 587
+    username: rlegorreta@legosoft.com.mx
+    password:
+      "{cipher}AQBb4sZal0CkTozxpnKvgdY/Sx8Goi3p+JglIL15oRxXSR9juzOc+HjDoLAtseSwha/nDihAv5/X4tJ0K5Bwg5X3uPweKTswzFXlHwETeOAc/dDAnuJYYC0Psb6pZWGUeeYxjzF38eqanjW/ZUPTSv85FB9sybeEiWCJ3BpZAWE51WI0CnlvNaQzyrPtTSHpkSVYrATDhIW5EwFQsoUGLUndID2OBZ8aVWgqNhPMophGsziBeMJsWENyW7oBzdD6jTnR2xjS8oEKmh+Suk1RdJiR7ptHGl6M41l18BYLS+1Xws6GAgItzyrVXD4jJo5/KC9L+oOQEYSWfbGwee8DCfsjyoj2b+RQVosoYbQQT4DJko3HhcX8Jd1p5VEuMcsOmUI="
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            
+#Back-end microservices
+microservice:
+  param:
+    provider-uri: http://localhost:8072/param       # use the gateway
+    # provider-uri: http://localhost:8350             # no use gateway, because is backoffice microservice communication
+    # we prefer to skip the gateway. Depends on system security
+
+# Alfresco content management server
+alfresco:
+  url: http://localhost:8080/alfresco/api/-default-/cmis/versions/1.1/atom
+  username:
+        "{cipher}AQBZ55KUu9hEA044dO3lp1vrkMiF3fQq/PxT0E5G8ouNIMr6gisUMnsB09YKSlZ7SjU44tQcauYCHn6cnG2fqN6+FZaJtFPmamDhKDkCatoEjeLQpGttqYI/vWuWfahEnuNIf36FTGE9knjSHIiSZJBBuwxJZ9hac9h9NxnJK4vytgxXrjT+9Qtsbx/rk0V4LPO8o5yz4ITUvcqejhrEAZJ8CcJdsB1Pi0bm1nXKntZOHeGGkwod9O6Fg0/hJMD+5MuO6OX2Mb7M69Hi7lixntgEhiOd0P4B0l9OcYeIDCb2wyYzn5O2SeCtNRy5K13CwqJH89JsYKhv2ogJJWO7byTgpf7OQHG8Rrd1AMYaZvois62yn6O4vKSLmZnhT6w1wg4="
+  password:         "{cipher}AQBZ55KUu9hEA044dO3lp1vrkMiF3fQq/PxT0E5G8ouNIMr6gisUMnsB09YKSlZ7SjU44tQcauYCHn6cnG2fqN6+FZaJtFPmamDhKDkCatoEjeLQpGttqYI/vWuWfahEnuNIf36FTGE9knjSHIiSZJBBuwxJZ9hac9h9NxnJK4vytgxXrjT+9Qtsbx/rk0V4LPO8o5yz4ITUvcqejhrEAZJ8CcJdsB1Pi0bm1nXKntZOHeGGkwod9O6Fg0/hJMD+5MuO6OX2Mb7M69Hi7lixntgEhiOd0P4B0l9OcYeIDCb2wyYzn5O2SeCtNRy5K13CwqJH89JsYKhv2ogJJWO7byTgpf7OQHG8Rrd1AMYaZvois62yn6O4vKSLmZnhT6w1wg4="
+  company: ACME     # This is the parent folder for all files

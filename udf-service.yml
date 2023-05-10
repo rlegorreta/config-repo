@@ -1,0 +1,37 @@
+# Last update May 2023 (rlh)
+
+eureka:
+  instance:
+    preferIpAddress: true
+    instanceId: ${spring.application.name}:${random.int}
+    hostname: udf-service
+  client:
+    enabled: false              # Not used, just for Docker desktop with service discovery and load balanced
+    registerWithEureka: true
+    fetchRegistry: false        # this must be false because it is a service
+
+spring:
+  ## UDFDB SQL Server database
+  datasource:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    hikari:
+      maxLifeTime: 600000
+      connectionTimeout: 30000
+  # Spring data
+  jpa:
+    database: default
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.SQLServer2012Dialect
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    generate-ddl: true
+    show-sql: true
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+
+# Testing what environment we are using
+udf:
+  greeting: "Welcome to udf microservice from the config server, 'default configuration'."

@@ -1,0 +1,6 @@
+# Docker desktop local configuration
+# Last update February 2023
+
+# value used for AWS, here can be anything
+eureka:
+  environment: ${spring.profiles.active}

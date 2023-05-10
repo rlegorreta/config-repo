@@ -1,0 +1,35 @@
+# Docker desktop local configuration
+# Last update February 2023 (rlh)
+server:
+  port: 8350
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true     # this must be true because it is a service
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+
+spring:
+  flyway:
+    enabled: true
+    locations:
+      classpath:/db/migration
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: http://localhost:9092
+
+  datasource:
+    url: jdbc:postgresql://localhost:5442/paramdb
+    username: "{cipher}AQBLXYRWIKIIytWzw/VIQNfrMHay3gXdliVTNniJTFZ/IGsOVMr4ZLte/c7VM9eabjbdTOcLbKfwKiMQ/h3p2c5OPMEOk556ZRthgnnQSm8znXm+TRiZE6ig9pZnhuzFtSQKKT6Ilemr6FMttDO30zderR7/ST4Mp79+VqyqPtVkoKGPPJaEuc6DhvbzxIBZpNQgaHLvLoN6ubfnzbWTW5lujADegfiN4XHRc1mlOWNi8zv/TzCx1+Vc/KuuDvXnMV/VAQ7rLQRiXaxRmERLlMR16P0SvDhxVr6apYHhu/+LM3Dj7uQtZG91p8Yeb+3h1FRdZtgN/6K8aeBtYkuW/0f3a8DC4Ok6rVI1TV2//3JTElZsxHnqhv6UMQsaOUSwJvY="
+    password: "{cipher}AQBRD5jO2C7EUbzgiBo6rpcIrsC5hyg+oVhNpkn/Aoh/ld6Kk59vJ11fg3XqBOYtvRl4EiK89Kyn/n0559mtag+E/SFv6tcHPBEE47qMT2ewIJ/7qfEttEqm6Bp/cnLRi3ynZDt/xg4LYtaYmquxyL29zuH6yXqAdj1UTX3G3cCvYVXkXMhlQK+N94iH0E5jFSiniwB/PrnE/FF0wiel5iOfw+0SRGowWifHFKtHSHUGevWucTa/XHECN6csUCI9sbFolHfkNfixgnqVmcJralMqEjIBKXYPWCHlsuPr8QrrBMi6TLG+XTneU05bTEB1ceCE1Jk+HWdQxgmZlAbWpT4t6o+cqSAZ9Rpb6fpVjhIX/whD61XdUfxjfyhXMA/GzgM="
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0 # only for testing purpose, switch back to 0.1 for production code
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans

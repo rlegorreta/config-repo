@@ -1,0 +1,49 @@
+# Docker desktop local configuration
+# Last update January 2023 (rlh)
+server:
+  port: 8300
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true             # this must be true because it is a service
+    serviceUrl:
+      defaultZone: http://eureka:8070/eureka/
+
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: http://kafka:9092
+  security:
+    oauth2:
+      client:
+        provider:
+          spring:
+            issuer-uri: http://auth:9000
+      resourceserver:
+        jwt:
+          issuer-uri: http://auth:9000
+          
+  # Mongo DB encrypted data
+  data:
+    mongodb:
+      host: auditDB
+      port: 27017
+      database: events
+      username: "{cipher}AQA+A8PnaTRC5XMed08i9XAROYKHJmjm8eaQs9XQjeTnGo5UVCRzQPclKgoXVdhA/B8lcnLcofc1E42vX3FaQ0QavRxwrG9QI/SeerVzTLmT3r3NmyEOsQ2UHgwlAITRxlMqL+plcKkRJUD1/STO4PUPx4fNFl+SV93gDxaz39yOF/WPtKPr0RdLL4JNy6gws08rQ/Pg0NpUnIu1F/kz4qyq8NpDkgnyzMkXrGmHPghbvPVlASWKzsbodeWnrclI6/BBqZvFLjHwADxrHNG5EIQuCdLZMCnIdAu4XFwLUbcgOvz0ZVZJg3aVvkpLs0Tn7fuKno55MTSKdeNofwe73m7ljSRTgVg4GTnE4GX87VlmALPsxUgMugx3sdzmVnnQnE4="
+      password: "{cipher}AQA1Qz/vJZWfGZ4Eeelivuk0rJHNXiuThLBS44dfKzX6BcluOyT9vF1FBs1Zlu3HhCj6NRxxaWnW5QvIQfWeH8sYP7TutaJ2lfx1BpJ4+1QSD9VP11I78+du3mP6HTpWtaHHX45YbPPiuCVBIPbbq6N3k3mXy9vu99rw/XpsDE6d8f3U8PAxaPz9r7zW3TXqbEeLw/Nq+Vfcc00zzfTz6Ki4HYKTPBWEvq78/mqUCaZ8wFHMPQwqeT3hy9RKHr157f3CSQEpBs4xCGohpjuTwoOOhxXlvymuvupmy986/jKUUhc7nR/INji7GhSy5F2t45GYs4tc+EyDspRLqADQt769AFUG7LADnKV2oaLmDXmRbZI5zCDAd1O+suQ0MU6gGYw="
+      authentication-database: admin
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0 # only for testing purpose, switch back to 0.1 for production code
+  zipkin:
+    tracing:
+      endpoint: http://tempo:9411/api/v2/spans
+
+# Testing what environment we are using
+audit:
+  greeting: "Welcome to audit microservice from the config server, 'local configuration'."

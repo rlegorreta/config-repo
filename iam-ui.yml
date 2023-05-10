@@ -1,0 +1,30 @@
+# Last update February 2023 (rlh)
+eureka:
+  instance:
+    preferIpAddress: true
+    instanceId: ${spring.application.name}:${random.int}
+    hostname: iamui
+  client:
+    registerWithEureka: true
+    fetchRegistry: true       # this must be true because is UI
+
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: true
+  
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+iam:
+  ribbon:
+    ServerListRefreshInterval: 1000 # this override doesn't work for some reason. The default is 30s
+    eureka:
+      enabled: true

@@ -1,0 +1,56 @@
+# Configuration for running the SYSUI MOBILE inside a cloud.
+# Last update March 2023 (rlh)
+server:
+  port: 8361
+  
+eureka:
+  client:
+    healthcheck:
+      enabled: false # this must be false because is a UI
+    serviceUrl:
+      defaultZone: http://eureka:8070/eureka/
+
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: http://kafka:9092
+
+management:
+  tracing:
+    sampling:
+      probability: 0.1 # only for production, switch back to 1.0 for development
+  zipkin:
+    tracing:
+      endpoint: http://tempo:9411/api/v2/spans
+
+security:
+  iam:
+    provider-uri: http://gateway:8072/iam       # use the gateway
+    # provider-uri: http://iam:8180             # do not use gateway
+
+#Back-end microservices
+microservice:
+  param:
+    provider-uri: http://gateway:8072/param    # use the gateway
+    # provider-uri: http://param:8350          # do not use gateway
+  audit:
+    provider-uri: http://gateway:8072/audit    # use the gateway
+    # provider-uri: http://audit:8300          # do not use gateway
+    subscription:
+      host: audit                              # note: we do not use gateway
+      port: 8301
+  cache:
+    provider-uri: http://gateway:8072/cache    # use the gateway
+    # provider-uri: http://cache:8351          # do not use gateway
+  auth:
+    provider-uri: http://auth:9000
+
+# Alfresco content management server
+alfresco:
+  url: http://host.docker.internal:8080/alfresco/api/-default-/cmis/versions/1.1/atom
+  username:
+        "{cipher}AQBZ55KUu9hEA044dO3lp1vrkMiF3fQq/PxT0E5G8ouNIMr6gisUMnsB09YKSlZ7SjU44tQcauYCHn6cnG2fqN6+FZaJtFPmamDhKDkCatoEjeLQpGttqYI/vWuWfahEnuNIf36FTGE9knjSHIiSZJBBuwxJZ9hac9h9NxnJK4vytgxXrjT+9Qtsbx/rk0V4LPO8o5yz4ITUvcqejhrEAZJ8CcJdsB1Pi0bm1nXKntZOHeGGkwod9O6Fg0/hJMD+5MuO6OX2Mb7M69Hi7lixntgEhiOd0P4B0l9OcYeIDCb2wyYzn5O2SeCtNRy5K13CwqJH89JsYKhv2ogJJWO7byTgpf7OQHG8Rrd1AMYaZvois62yn6O4vKSLmZnhT6w1wg4="
+  password:         "{cipher}AQBZ55KUu9hEA044dO3lp1vrkMiF3fQq/PxT0E5G8ouNIMr6gisUMnsB09YKSlZ7SjU44tQcauYCHn6cnG2fqN6+FZaJtFPmamDhKDkCatoEjeLQpGttqYI/vWuWfahEnuNIf36FTGE9knjSHIiSZJBBuwxJZ9hac9h9NxnJK4vytgxXrjT+9Qtsbx/rk0V4LPO8o5yz4ITUvcqejhrEAZJ8CcJdsB1Pi0bm1nXKntZOHeGGkwod9O6Fg0/hJMD+5MuO6OX2Mb7M69Hi7lixntgEhiOd0P4B0l9OcYeIDCb2wyYzn5O2SeCtNRy5K13CwqJH89JsYKhv2ogJJWO7byTgpf7OQHG8Rrd1AMYaZvois62yn6O4vKSLmZnhT6w1wg4="
+  company: ACME     # This is the parent folder for all files
