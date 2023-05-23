@@ -13,9 +13,13 @@ eureka:
 spring:
   # Postgres DB to store all system parameters
   datasource:
-    url: jdbc:postgresql://paramDB:5442/paramdb
+    url: jdbc:postgresql://paramDB:5452/paramdb
     username: "{cipher}AQBLXYRWIKIIytWzw/VIQNfrMHay3gXdliVTNniJTFZ/IGsOVMr4ZLte/c7VM9eabjbdTOcLbKfwKiMQ/h3p2c5OPMEOk556ZRthgnnQSm8znXm+TRiZE6ig9pZnhuzFtSQKKT6Ilemr6FMttDO30zderR7/ST4Mp79+VqyqPtVkoKGPPJaEuc6DhvbzxIBZpNQgaHLvLoN6ubfnzbWTW5lujADegfiN4XHRc1mlOWNi8zv/TzCx1+Vc/KuuDvXnMV/VAQ7rLQRiXaxRmERLlMR16P0SvDhxVr6apYHhu/+LM3Dj7uQtZG91p8Yeb+3h1FRdZtgN/6K8aeBtYkuW/0f3a8DC4Ok6rVI1TV2//3JTElZsxHnqhv6UMQsaOUSwJvY="
     password: "{cipher}AQBRD5jO2C7EUbzgiBo6rpcIrsC5hyg+oVhNpkn/Aoh/ld6Kk59vJ11fg3XqBOYtvRl4EiK89Kyn/n0559mtag+E/SFv6tcHPBEE47qMT2ewIJ/7qfEttEqm6Bp/cnLRi3ynZDt/xg4LYtaYmquxyL29zuH6yXqAdj1UTX3G3cCvYVXkXMhlQK+N94iH0E5jFSiniwB/PrnE/FF0wiel5iOfw+0SRGowWifHFKtHSHUGevWucTa/XHECN6csUCI9sbFolHfkNfixgnqVmcJralMqEjIBKXYPWCHlsuPr8QrrBMi6TLG+XTneU05bTEB1ceCE1Jk+HWdQxgmZlAbWpT4t6o+cqSAZ9Rpb6fpVjhIX/whD61XdUfxjfyhXMA/GzgM="
+    hikari:
+      connection-timeout: 2000  # The maximum time (ms) to spend waiting to get a connection from the pool
+      maximum-pool-size: 5      # The maximum number of connections HikariCP will keep in the poo
+
   # Zipking variables
   sleuth:
     sampler:

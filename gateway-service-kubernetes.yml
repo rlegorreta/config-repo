@@ -1,0 +1,16 @@
+# Last update May 2023 (rlh)
+server:
+  port: 8072
+
+spring:
+  data:
+    redis: # Redis is used by storing in memory all thre reauests per user and therefore
+          # limit to a maximum request per user per second(e.g., 10 reauest per second)
+      connect-timeout: 2s
+      host: redis
+      port: 6379
+      timeout: 1s
+
+# Testing what environment we are using
+gateway:
+  greeting: "Welcome to gateway microservice from the config server, 'kubernetes configuration'."

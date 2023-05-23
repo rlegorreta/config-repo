@@ -18,14 +18,12 @@ spring:
           brokers: http://kafka:9092
   # SQL Server encrypted data. Data base udfDB
   datasource:
-    url: jdbc:sqlserver://localhost:1475;databaseName=master
-    # see: jdbc:sqlserver://host:port;databaseName=dbName;encrypt=true;trustServerCertificate=true
-    # https://stackoverflow.com/questions/72698722/spring-boot-starter-parent-2-7-0-version-destroys-connection-to-sql-server-datab
-    # if we want the latest mssqlserver-driver
-    username:
-      "{cipher}AQCYBXesnmzvHDB80bIsWE0tJKftRRf8sNiIuYucr39nIgxVzHlYfDnNKodQ3sgocN5qZBYxPht+26zWptm9YP1dI7p32p+SW42Z745/tPE0pjvsxcRjWTO7yJ3Lrwglc/M1ogjfu6OdB9Dn2WMM3nqWRYcx/n/B1P1G+ju38+Od8mk7j6AZUpjX9bWORqm6az3zlIL0vQGEVIA+3q1I2pw+RSNcO/g6NCJQkbo5PXHN86vF4NEIwXyCtN7fxlNylT14RvAeUZmvKPk0E37RUj3mKSyFfYfGmxieX9Q+mmt3RJYbnpAgqoIsVbezKqKbGsezG7FQAM5cEOdduRUpxe62iu+kq+HAZ+uoZ/sJiBK7e1FCtn34tAN3nHmFrqJanv8="
-    password:
-      "{cipher}AQAMvlTfnESmEyPGTVZxJJoDOTjsTiXKJT/U0RNUxPBWwgSLmCJNTpCB/KgJL4H2zNtfDLmIpwWiRmIF9oDMG/Yp7PRTIMGqEgUBFqAxqYtiQjFAgpJs6azB2AfhrYyvBLjF2iAo2sUDbOe7RELJLJfd7AXBzqDb7VFHz8QUY4xGi9bxkc408GFkMiG4Brkak2VQbya4jmoIWaBd3qqsMcU1YVvaJqURt4+u7WPQCuaV7yAJkVEljserkmMf64nMw4lzjYvRGfKgc3bfqd4ycwnlb6XWVMkMJ4hQ1NDJmagyagUR1wh+ir7J5vLB/KXfNltKp5qY5bxXU/UdfAfVFtpU7PwcgK4jPbOMvAnjoKp0RfpERuRnVYu0oEXW+tIMhv8="
+    url: jdbc:postgresql://localhost:5452/udfdb
+    username: "{cipher}AQA2GH4NpK1oG5cAR2xOzdpZtJ3jTaYJygcPv+ZOqqJaoi8ymBRHiI+EfEWcS4LBirBENx/XChKYypZCDnOKt7a9KQ8GGsrFiN7rTP6ZTZlfKCQFGPA4axavSUcLoZW0RoclrrpEsg0qAVEyCpfUKGKMzov5JGBuJCKy9ahW5kM29Bz40gZHsVbWMVwBUBtCOy8PTIiwVXV8oxm7xkyh0BOiIlNXXtqYyZLrkRaD057Btufpsgxi7Rywyrw4KN9qIaYR004JRYcWrQj9Ef9upP0LgL7vdWZV1S6BNJnVM42gFQf8v3yKa1zPMiJ5yNqADClRHqRwtxx/rUjjStg8jSMILSWklGwwptCdxvpx6tvUneKMfQTnuEZveqBHlC2JhIk="
+    password: "{cipher}AQAVK1RrA8s6iiKBYWaygWGc1GwyI95aRts2aoO6Y1swxEbApjEvG02TNJadbRX3R/mkKzV+zmc19G0wZM70RQMTtvSV9aC6pQtuM6QiI2inBA5VOs5N+Kkr4DYUkhfb8WnZdtsr/SMFY3/S3HiFAnoNROgCdVSjyoGQa+VTY+ffGYNDWpw29xR4munA57hp6LtgTp6rINKXXNXKHWbd8GY3UKdyEKifc9Tm9jnzaCfrzEmhX1fK0/uNkTgssRtUj3lxz8ZSlkjDS+EHcq9qGWIYdzKewRwJT/YLPNytEL/YGeu0tu9DN2gioyBmCEzy+t7D2OK1nfLUGGmeNQic9H5KnmXmyVmNWnVkK44nJPsJG70N295ewg9ZOTsVnsTqQGk="
+    hikari:
+      connection-timeout: 2000  # The maximum time (ms) to spend waiting to get a connection from the pool
+      maximum-pool-size: 5      # The maximum number of connections HikariCP will keep in the poo
 
 management:
   tracing:

@@ -1,26 +1,8 @@
 # Last update May 2023 (rlh)
 
-eureka:
-  instance:
-    preferIpAddress: true
-    instanceId: ${spring.application.name}:${random.int}
-    hostname: gateway-service
-  client:
-    enabled: false              # Not used, just for Docker desktop with service discovery and load balanced
-    registerWithEureka: true
-    fetchRegistry: true         # this must be true otherwise sends a 500 service unavailable
-    
 spring:
   cloud:
-    loadbalancer:
-      ribbon:
-        enabled: false
     gateway:
-      # This is for automatic mapping of routes using eureka
-      discovery:
-        locator:
-          enabled: true
-          lowerCaseServiceId: true
       # This is if we want manually mapping routing using service discovery
       # Erase al postfix for '-service' microservices
       routes:
@@ -90,6 +72,17 @@ spring:
           - Path=/param-service/**
         filters:
           - RewritePath=/param-service/(?<path>.*), /$\{path}
+      - id: test-service                                        # The route ID
+        uri: ${TEST_SERVICE_URL:lb://test}
+        predicates:
+          - Path=/test-service/**                               # The predicate is a path to match
+        filters:
+          - RewritePath=/test-service/(?<path>.*), /$\{path}    # Rewrite the path to take out the 'service'
+          - name:
+              CircuitBreaker:                                   # Filter name for Circuit breaker
+                args:
+                  name: tesCircuitBreaker                       # Name of the circuit breaker
+                  fallbackUri: forward:/test-fallback           # Forwards request to this URI when the circuit is open
 
 # Testing what environment we are using
 gateway:

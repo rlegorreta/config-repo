@@ -1,13 +1,38 @@
-# Last update February 2023 (rlh)
+# Last update May 2023 (rlh)
 server:
   port: 8072
 
 eureka:
+  instance:
+    preferIpAddress: true
+    instanceId: ${spring.application.name}:${random.int}
+    hostname: gateway
   client:
+    registerWithEureka: true
+    fetchRegistry: true  # this must be true otherwise sends a 500 service unavailable
     healthcheck:
       enabled: false   # this must be false otherwise sends a 500 service unavailable
     serviceUrl:
       defaultZone: http://localhost:8070/eureka/
+
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+    gateway:
+      # This is for automatic mapping of routes using eureka
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+  data:
+    redis: # Redis is used by storing in memory all thre reauests per user and therefore
+      # limit to a maximum request per user per second(e.g., 10 reauest per second)
+      connect-timeout: 2s         # Time limit for a connection to establish
+      host: localhost
+      port: 6379
+      timeout: 1s                 # Time limit for a response to be received
 
 # Testing what environment we are using
 gateway:
