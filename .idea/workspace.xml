@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.02">
-      <change afterPath="$PROJECT_DIR$/test-service-kubernetes.yml" afterDir="false" />
+    <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.03">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +47,7 @@
       <workItem from="1684433928424" duration="1434000" />
       <workItem from="1684535396793" duration="603000" />
       <workItem from="1684768641029" duration="8613000" />
-      <workItem from="1684940803771" duration="579000" />
+      <workItem from="1684940803771" duration="2601000" />
     </task>
     <task id="LOCAL-00001" summary="Add all files">
       <created>1683741148812</created>
@@ -77,7 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684884583998</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Version 1.0.03">
+      <created>1684943187368</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684943187368</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,6 +105,7 @@
     <MESSAGE value="Add all files" />
     <MESSAGE value="Version 1.0.01" />
     <MESSAGE value="Version 1.0.02" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 1.0.02" />
+    <MESSAGE value="Version 1.0.03" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 1.0.03" />
   </component>
 </project>

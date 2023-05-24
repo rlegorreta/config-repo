@@ -78,11 +78,10 @@ spring:
           - Path=/test-service/**                               # The predicate is a path to match
         filters:
           - RewritePath=/test-service/(?<path>.*), /$\{path}    # Rewrite the path to take out the 'service'
-          - name:
-              CircuitBreaker:                                   # Filter name for Circuit breaker
-                args:
-                  name: tesCircuitBreaker                       # Name of the circuit breaker
-                  fallbackUri: forward:/test-fallback           # Forwards request to this URI when the circuit is open
+          - name: CircuitBreaker                                # Filter name for Circuit breaker
+            args:
+              name: testCircuitBreaker                          # Name of the circuit breaker
+              fallbackUri: forward:/test-fallback               # Forwards request to this URI when the circuit is open
 
 # Testing what environment we are using
 gateway:
