@@ -87,7 +87,7 @@ spring:
         predicates:
           - Path=/test-service/**                               # The predicate is a path to match
         filters:
-          - RewritePath=/test-servicw/(?<path>.*), /$\{path}    # Rewrite the path to eliminate '/test-service' path
+          - RewritePath=/test-service/(?<path>.*), /$\{path}    # Rewrite the path to eliminate '/test-service' path
           - name: CircuitBreaker                                # Filter name for Circuit breaker
             args:
               name: testLongCircuitBreaker                      # Name of the circuit breaker
