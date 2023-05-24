@@ -1,20 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.01">
-      <change afterPath="$PROJECT_DIR$/gateway-service-kubernetes.yml" afterDir="false" />
+    <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.02">
+      <change afterPath="$PROJECT_DIR$/test-service-kubernetes.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service-local.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service-localNoDocker.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service-local.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service-localNoDocker.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/param-ingestor-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/param-ingestor-service-local.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/param-ingestor-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/param-ingestor-service-localNoDocker.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/param-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/param-service-local.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/param-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/param-service-localNoDocker.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/udf-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/udf-service-local.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/udf-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/udf-service-localNoDocker.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +46,8 @@
       <workItem from="1684365582610" duration="545000" />
       <workItem from="1684433928424" duration="1434000" />
       <workItem from="1684535396793" duration="603000" />
-      <workItem from="1684768641029" duration="8000000" />
+      <workItem from="1684768641029" duration="8613000" />
+      <workItem from="1684940803771" duration="579000" />
     </task>
     <task id="LOCAL-00001" summary="Add all files">
       <created>1683741148812</created>
@@ -80,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683746237590</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Version 1.0.02">
+      <created>1684884583998</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684884583998</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,6 +97,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add all files" />
     <MESSAGE value="Version 1.0.01" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 1.0.01" />
+    <MESSAGE value="Version 1.0.02" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 1.0.02" />
   </component>
 </project>
