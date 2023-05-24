@@ -88,7 +88,7 @@ spring:
           - Path=/chafa/**                               # The predicate is a path to match
         filters:
           - RewritePath=/chafa/(?<path>.*), /$\{path}    # Rewrite the path to eliminate '/test-service' path
-          - RewritePath=/test-service/(?<path>.*), /$\{path}    # Rewrite the path to eliminate '/test-service' path
+          - RewritePath=test-service/(?<path>.*), /$\{path}    # Rewrite the path to eliminate '/test-service' path
           - name: CircuitBreaker                                # Filter name for Circuit breaker
             args:
               name: test2CircuitBreaker                         # Name of the circuit breaker
