@@ -73,7 +73,7 @@ spring:
         filters:
           - RewritePath=/param-service/(?<path>.*), /$\{path}
       - id: test-service                                        # The route ID
-        uri: ${TEST_SERVICE_URL:lb://http://:8000}/hello
+        uri: ${TEST_SERVICE_URL:lb://http://localhost:8000}/hello
         predicates:
           - Path=/test/**                                       # The predicate is a path to match
         filters:
