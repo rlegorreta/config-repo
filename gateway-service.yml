@@ -85,12 +85,12 @@ spring:
       - id: test-service                                        # The route ID
         uri: ${TEST_SERVICE_URL:http://host.docker.internal:8000}/
         predicates:
-          - Path=/chafa/**                               # The predicate is a path to match
+          - Path=/test-service/**                               # The predicate is a path to match
         filters:
-          - RewritePath=/chafa/(?<path>.*), /$\{path}    # Rewrite the path to eliminate '/test-service' path
+          - RewritePath=/test-servicw/(?<path>.*), /$\{path}    # Rewrite the path to eliminate '/test-service' path
           - name: CircuitBreaker                                # Filter name for Circuit breaker
             args:
-              name: test2CircuitBreaker                         # Name of the circuit breaker
+              name: testLongCircuitBreaker                      # Name of the circuit breaker
               fallbackUri: forward:/test-service-fallback       # Forwards request to this URI when the circuit is open
 
 
