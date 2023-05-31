@@ -2,19 +2,6 @@
 server:
   port: 8072
 
-eureka:
-  instance:
-    preferIpAddress: true
-    instanceId: ${spring.application.name}:${random.int}
-    hostname: gateway
-  client:
-    registerWithEureka: true
-    fetchRegistry: true  # this must be true otherwise sends a 500 service unavailable
-    healthcheck:
-      enabled: false   # this must be false otherwise sends a 500 service unavailable
-    serviceUrl:
-      defaultZone: http://eureka:8070/eureka/
-
 spring:
   cloud:
     loadbalancer:

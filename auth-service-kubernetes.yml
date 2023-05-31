@@ -4,4 +4,4 @@ server:
 
 # Testing what environment we are using
 auth:
-  greeting: "Welcome to auth microservice from the config server, 'local configuration'."
+  greeting: "Welcome to auth microservice from the config server, 'kubernetes configuration'."

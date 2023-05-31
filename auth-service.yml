@@ -1,15 +1,7 @@
 # Last update May 2023 (rlh)
+server:
+  port: 9000
 
-eureka:
-  instance:
-    preferIpAddress: true
-    instanceId: ${spring.application.name}:${random.int}
-    hostname: auth-service
-  client:
-    enabled: false              # Not used, just for Docker desktop with service discovery and load balanced
-    registerWithEureka: true
-    fetchRegistry: false        # this must be false because it is a service
-    
 spring:
   cloud:
     loadbalancer:
