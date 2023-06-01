@@ -7,6 +7,35 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false
+  datasource:
+    url: jdbc:postgresql://localhost:5452/authdb
+    username: "{cipher}AQA2GH4NpK1oG5cAR2xOzdpZtJ3jTaYJygcPv+ZOqqJaoi8ymBRHiI+EfEWcS4LBirBENx/XChKYypZCDnOKt7a9KQ8GGsrFiN7rTP6ZTZlfKCQFGPA4axavSUcLoZW0RoclrrpEsg0qAVEyCpfUKGKMzov5JGBuJCKy9ahW5kM29Bz40gZHsVbWMVwBUBtCOy8PTIiwVXV8oxm7xkyh0BOiIlNXXtqYyZLrkRaD057Btufpsgxi7Rywyrw4KN9qIaYR004JRYcWrQj9Ef9upP0LgL7vdWZV1S6BNJnVM42gFQf8v3yKa1zPMiJ5yNqADClRHqRwtxx/rUjjStg8jSMILSWklGwwptCdxvpx6tvUneKMfQTnuEZveqBHlC2JhIk="
+    password: "{cipher}AQAVK1RrA8s6iiKBYWaygWGc1GwyI95aRts2aoO6Y1swxEbApjEvG02TNJadbRX3R/mkKzV+zmc19G0wZM70RQMTtvSV9aC6pQtuM6QiI2inBA5VOs5N+Kkr4DYUkhfb8WnZdtsr/SMFY3/S3HiFAnoNROgCdVSjyoGQa+VTY+ffGYNDWpw29xR4munA57hp6LtgTp6rINKXXNXKHWbd8GY3UKdyEKifc9Tm9jnzaCfrzEmhX1fK0/uNkTgssRtUj3lxz8ZSlkjDS+EHcq9qGWIYdzKewRwJT/YLPNytEL/YGeu0tu9DN2gioyBmCEzy+t7D2OK1nfLUGGmeNQic9H5KnmXmyVmNWnVkK44nJPsJG70N295ewg9ZOTsVnsTqQGk="
+    hikari:
+      connection-timeout: 2000  # The maximum time (ms) to spend waiting to get a connection from the pool
+      maximum-pool-size: 5      # The maximum number of connections HikariCP will keep in the pool
+  r2dbc:
+    username: "{cipher}AQA2GH4NpK1oG5cAR2xOzdpZtJ3jTaYJygcPv+ZOqqJaoi8ymBRHiI+EfEWcS4LBirBENx/XChKYypZCDnOKt7a9KQ8GGsrFiN7rTP6ZTZlfKCQFGPA4axavSUcLoZW0RoclrrpEsg0qAVEyCpfUKGKMzov5JGBuJCKy9ahW5kM29Bz40gZHsVbWMVwBUBtCOy8PTIiwVXV8oxm7xkyh0BOiIlNXXtqYyZLrkRaD057Btufpsgxi7Rywyrw4KN9qIaYR004JRYcWrQj9Ef9upP0LgL7vdWZV1S6BNJnVM42gFQf8v3yKa1zPMiJ5yNqADClRHqRwtxx/rUjjStg8jSMILSWklGwwptCdxvpx6tvUneKMfQTnuEZveqBHlC2JhIk="
+    password: "{cipher}AQAVK1RrA8s6iiKBYWaygWGc1GwyI95aRts2aoO6Y1swxEbApjEvG02TNJadbRX3R/mkKzV+zmc19G0wZM70RQMTtvSV9aC6pQtuM6QiI2inBA5VOs5N+Kkr4DYUkhfb8WnZdtsr/SMFY3/S3HiFAnoNROgCdVSjyoGQa+VTY+ffGYNDWpw29xR4munA57hp6LtgTp6rINKXXNXKHWbd8GY3UKdyEKifc9Tm9jnzaCfrzEmhX1fK0/uNkTgssRtUj3lxz8ZSlkjDS+EHcq9qGWIYdzKewRwJT/YLPNytEL/YGeu0tu9DN2gioyBmCEzy+t7D2OK1nfLUGGmeNQic9H5KnmXmyVmNWnVkK44nJPsJG70N295ewg9ZOTsVnsTqQGk="
+    url: r2dbc:postgresql://localhost:5432/authdb
+    pool:
+      max-create-connection-time: 2s
+      initial-size: 5
+      max-size: 10
+  neo4j:
+    uri: bolt://localhost:7687
+    authentication:
+      username: "{cipher}AQAJb5LYVo60uJkQ8PgyiqeJggrXtB93DGqBE2VvhE3B3/WI30pUn4jzsDjNGSkEE3lPxdXa4d6lJbUJn94ISEwXy+myn+K/ETpT6EIxRZb1i1C8y/Fqqm+jEipxpKfX70Ed1zfUS4cR4z9anZiqvoyLSX0r6n0G1YUeOPfjkXWJ9VJaYq3738dDH4AkodRDp5I8Q41vUCUnqSUa8Ol+nvAHMD5olYgcAT8Bp/qWYLJi2BQEgQ3XRG2d6ZjaF6nVnVhafIFxylBJDmId4cW6mZ2M1MXmFWaSuJua1RI9/kpzCFeZ7lz09pF6zAvHzTPzoD3WJbtCVIM6Uyfe+fPlacVg/5CcmhJYXhwTnCGZT/oYAlq0HCYb6hfs83iz1F7Z07o="
+      password: "{cipher}AQBbi+saQ0gNEDCLWmesHdf51ki4vI2Ee//T6y0d/FdsuPzSaix48d+Xdkjpy5lwbRd2bc7Rnn0Lws64IvMOsL/70IM+bE9LIJJUPMSIc7Qu677qx6CdiP+fwdwTpoOJ9fJDLeOYctgfvHPu9olWGM6xKqKZ41J3U7fi2M0Z40WpoP8uEwSJ00Vi8IFN64iJ2TeEf0Sz8DuFcS0z6WQDNoHNxhfVEsaV1+g4z0v9XsWogXgnP+0/mtsiartaC5NFlDESs7juZ4mZDw3qpUAKxUFVabp2zJBEZe1wyconBGG6sd0AjHy+/L4JLDhqPZmu1CqX8bssy8XGuuSoBrTLYn54Lu62QQbzuPR/YglRQLaJVnlShg8x0WQpR9QfPy2wNfA="
+  profiles:
+    active: kubernetes
+
+# Configuration properties for OpenLDAP: Docker image osixia/openldap
+ailegorreta:
+  ldap:
+    uri: ldap://localhost:389
+    adminuser: "{cipher}AQCIQxGFthVf3X08nPQCJLLKPYdtF/tBfs8nI7z2GgrRGLRg6XASZwZUJ3yIb7LvPbrLK2M7wYL2Uf54qLoIwcxxJi0/Szrzti7L13yUc4Lv0A4HeMLfsimvN+nbylQ9zdlhY4ZVgL4vqEZrI0Cfja8+FFry1CYDf6RFurC3cDKfhcShOIuLo4S+Mvlw6uYcQ8r0/LTZSgkoabiguyqoH3lFnke8hxeMablHkroXiiQkoUcsmk5SaNmwiumRCQlv0ll4AxzWj4QVWkKWN/1e4tA5gO4EBpz67Z4royQ0gX+rdq7XLPs8Cw9oAX/m7AJavhcm77cFFGZ1DGuamU7K1undpfXhhVVTFItVTgyPBb1dM1wQLisdkuVyN3tonzjSjlelrhS8vbrlLmF5FjvnWn/N"
+    credentials: "{cipher}AQB2ds2CjwIpgNv9mCKGet/P3czgiupTCg5r+mNx28u2cGRplXIbMoxFxNx0aUIMOLmbTiGEmUlQzPB+102xA7s6uIoyHpaJjF2MCADR/pkJRHMi28VMtoTZp0ZvUBuMQUfnSyE+4GlJrUoouFUebJUvVVPGNBAkh9Mp/Nh5i7WRQtOMEf3dHxmw/9HA/PLFA6SdekyxmJX6XP376jfdkwDrBNOheGkc6Y9Ec3UjMyzWq9Cz7IvQXXuuoNSgYyi1QIiqX+Ehx4Mo9WtFBEEMLJwCL5NGg0y/KNvaOCF9LzbxE2ZxkEap3hT64uxcAeawMpn2ZNdEYnhwXY7Rs2ZOllu/pAzpsVOaXtjGSxB8JegLCvfcymGedvtyUDa0mtisPuU="
 
 # Testing what environment we are using
 auth:
