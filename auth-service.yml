@@ -22,8 +22,6 @@ spring:
       max-create-connection-time: 2s
       initial-size: 5
       max-size: 10
-  profiles:
-    active: kubernetes
 
 # Configuration properties for OpenLDAP: Docker image osixia/openldap
 ailegorreta:
