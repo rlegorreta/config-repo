@@ -2,13 +2,6 @@
 server:
   port: 9000
 
-spring:
-  neo4j:
-    uri: bolt://ailegorreta-neo4j
-    authentication:
-      username: "{cipher}AQCR/l9rTlQg+kr+6oPX2+ekiRayjct2ajZWKxf4ojkCUY6p8M7CmHylzJtE9Q9bIrnBhbt3PwbmmYLKmgS0aficZM2EpP6oztME8nNMPR3q63X0bJ6DQ8Ry/cu5cpr+Un4YHzYj6ea+tSsexyRS/UnjzoPYdapEPnl8g/1d/vee8FMRbCNWMxK3N6zl6Fj9r0s+xMghk6zRdROhLbaaBSnLEd+ofe/LyaxrSCW1nlkQyhowpmm0RiiSIljbKK7jL6beyCLfE21oOMb3lTk6ooa9FhkTb6AMmUrKOR0p1o2YyqIMVPLQau9WndouWUZocPXtDqkSAFngnZtluZhprmnJ7GAFVKtCIHT+fpbENM4cUhsQooPGpALlbcdi/cV7bH8="
-      password: "{cipher}AQBsQvfeoBCcksFQo+AOCW2ZqHrROmgMOfvfgE8BzQvxhowKWXdxrSwoXHrLXtu839ufcQs0KxzMqa5dCoUbvnMQ/hjmCgBude0Ejo3pP+KMkRHpTBtb3qWR05FEMMNiS7LpOymhqpviuu0qGczjjKa8CeP+1thDmdjSsGKftoCyvmA2P8dEMkHKx4mVLxtWVduw70YX6c83QrjaSdEw+aZsxkS48IA9QtL1L4Q45o4i81qCbO0gmhiA3wIzNIklsA1sfD8kb377W+l9b66rLuIxMeltdJylvlajP33fDXxpLI37R7bMGtcSwy9WyQv8p/dKrjxI/xKD0231RGl81bUyfXp1pO0EuFZpfMoh2BZtGfZSpsg54pjjIkpa0kKwYrM="
-
 # Testing what environment we are using
 auth:
   greeting: "Welcome to auth microservice from the config server, 'kubernetes configuration'."
