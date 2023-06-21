@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.34">
+    <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.42">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audit-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/audit-service-local.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +31,12 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -50,42 +58,20 @@
       <workItem from="1684940803771" duration="12894000" />
       <workItem from="1685376258946" duration="598000" />
       <workItem from="1685387527826" duration="647000" />
-      <workItem from="1685486187973" duration="4691000" />
-    </task>
-    <task id="LOCAL-00001" summary="Add all files">
-      <created>1683741148812</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1683741148812</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Add all files">
-      <created>1683741314348</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1683741314348</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Version 1.0.01">
-      <created>1683746237590</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1683746237590</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Version 1.0.02">
-      <created>1684884583998</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1684884583998</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Version 1.0.03">
-      <created>1684943187368</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1684943187368</updated>
+      <workItem from="1685486187973" duration="8607000" />
+      <workItem from="1685726716543" duration="7297000" />
+      <workItem from="1685986070178" duration="391000" />
+      <workItem from="1686088523811" duration="599000" />
+      <workItem from="1686583166335" duration="1070000" />
+      <workItem from="1686608251205" duration="599000" />
+      <workItem from="1686677647877" duration="599000" />
+      <workItem from="1686772407233" duration="2112000" />
+      <workItem from="1686850435694" duration="2702000" />
+      <workItem from="1686957975240" duration="599000" />
+      <workItem from="1687187602169" duration="598000" />
+      <workItem from="1687201971651" duration="599000" />
+      <workItem from="1687218038736" duration="599000" />
+      <workItem from="1687285385411" duration="6529000" />
     </task>
     <task id="LOCAL-00006" summary="Version 1.0.04">
       <created>1684945504214</created>
@@ -374,7 +360,63 @@
       <option name="project" value="LOCAL" />
       <updated>1685646201157</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Version 1.0.35">
+      <created>1685649038018</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1685649038018</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Version 1.0.36">
+      <created>1685659956628</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1685659956628</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Version 1.0.37">
+      <created>1685660386380</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1685660386380</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Version 1.0.38">
+      <created>1685729145378</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1685729145378</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Version 1.0.39">
+      <created>1685730616123</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1685730616123</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Version 1.0.40">
+      <created>1685734834039</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1685734834039</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Version 1.0.41">
+      <created>1685735278854</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1685735278854</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Version 1.0.42">
+      <created>1685736590494</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1685736590494</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,14 +434,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Version 1.0.09" />
-    <MESSAGE value="Version 1.0.10" />
-    <MESSAGE value="Version 1.0.11" />
-    <MESSAGE value="Version 1.0.12" />
-    <MESSAGE value="Version 1.0.13" />
-    <MESSAGE value="Version 1.0.14" />
-    <MESSAGE value="Version 1.0.15" />
-    <MESSAGE value="Version 1.0.16" />
     <MESSAGE value="Version 1.0.17" />
     <MESSAGE value="Version 1.0.18" />
     <MESSAGE value="Version 1.0.19" />
@@ -417,6 +451,14 @@
     <MESSAGE value="Version 1.0.31" />
     <MESSAGE value="Version 1.0.33" />
     <MESSAGE value="Version 1.0.34" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 1.0.34" />
+    <MESSAGE value="Version 1.0.35" />
+    <MESSAGE value="Version 1.0.36" />
+    <MESSAGE value="Version 1.0.37" />
+    <MESSAGE value="Version 1.0.38" />
+    <MESSAGE value="Version 1.0.39" />
+    <MESSAGE value="Version 1.0.40" />
+    <MESSAGE value="Version 1.0.41" />
+    <MESSAGE value="Version 1.0.42" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 1.0.42" />
   </component>
 </project>

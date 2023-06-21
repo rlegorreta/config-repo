@@ -1,5 +1,5 @@
 # Docker desktop local configuration
-# Last update January 2023 (rlh)
+# Last update June 2023 (rlh)
 server:
   port: 8300
 
@@ -21,10 +21,10 @@ spring:
       client:
         provider:
           spring:
-            issuer-uri: http://auth:9000
+            issuer-uri: http://auth-service:9000
       resourceserver:
         jwt:
-          issuer-uri: http://auth:9000
+          issuer-uri: http://auth-service:9000
           
   # Mongo DB encrypted data
   data:
