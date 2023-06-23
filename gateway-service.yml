@@ -97,13 +97,13 @@ spring:
         predicates:
           - Path=/gateway/**                                    # The predicate is a path to match
         filters:
-          - RewritePath=/(?<path>.*), /$\{path}                 # Rewrite the path to eliminate '/test' path
-      - id: gateway-service                                        # The route ID
+          - RewritePath=/gateway/(?<path>.*), /$\{path}         # Rewrite the path to eliminate '/test' path
+      - id: gateway-service                                     # The route ID
         uri: ${GATEWAY_SERVICE_URL:http://host.docker.internal:8072}/
         predicates:
-          - Path=/gateway-service/**                                    # The predicate is a path to match
+          - Path=/gateway-service/**                            # The predicate is a path to match
         filters:
-          - RewritePath=/(?<path>.*), /$\{path}                 # Rewrite the path to eliminate '/test-service' path
+          - RewritePath=/gateway-service/(?<path>.*), /$\{path} # Rewrite the path to eliminate '/test-service' path
 
 
 # Testing what environment we are using
