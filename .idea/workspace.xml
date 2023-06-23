@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.43">
+    <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.44">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service.yml" afterDir="false" />
     </list>
@@ -72,14 +72,7 @@
       <workItem from="1687201971651" duration="599000" />
       <workItem from="1687218038736" duration="599000" />
       <workItem from="1687285385411" duration="8197000" />
-      <workItem from="1687534028122" duration="1015000" />
-    </task>
-    <task id="LOCAL-00007" summary="Version 1.0.05">
-      <created>1684948722275</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1684948722275</updated>
+      <workItem from="1687534028122" duration="2390000" />
     </task>
     <task id="LOCAL-00008" summary="Version 1.0.06">
       <created>1684949492200</created>
@@ -417,7 +410,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687377332485</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Version 1.0.44">
+      <created>1687535312157</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1687535312157</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -435,7 +435,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Version 1.0.18" />
     <MESSAGE value="Version 1.0.19" />
     <MESSAGE value="Version 1.0.20" />
     <MESSAGE value="Version 1.0.21" />
@@ -460,6 +459,7 @@
     <MESSAGE value="Version 1.0.41" />
     <MESSAGE value="Version 1.0.42" />
     <MESSAGE value="Version 1.0.43" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 1.0.43" />
+    <MESSAGE value="Version 1.0.44" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 1.0.44" />
   </component>
 </project>
