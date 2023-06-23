@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.44">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,14 +71,7 @@
       <workItem from="1687201971651" duration="599000" />
       <workItem from="1687218038736" duration="599000" />
       <workItem from="1687285385411" duration="8197000" />
-      <workItem from="1687534028122" duration="2390000" />
-    </task>
-    <task id="LOCAL-00008" summary="Version 1.0.06">
-      <created>1684949492200</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1684949492200</updated>
+      <workItem from="1687534028122" duration="2735000" />
     </task>
     <task id="LOCAL-00009" summary="Version 1.0.07">
       <created>1684949627980</created>
@@ -417,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687535312157</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Version 1.0.44">
+      <created>1687542088504</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1687542088504</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
