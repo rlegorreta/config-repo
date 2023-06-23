@@ -92,6 +92,18 @@ spring:
             args:
               name: testLongCircuitBreaker                      # Name of the circuit breaker
               fallbackUri: forward:/test-service-fallback       # Forwards request to this URI when the circuit is open
+      - id: gateway                                                # The route ID
+        uri: ${GATEWAY_SERVICE_URL:http://host.docker.internal:8072}/
+        predicates:
+          - Path=/gateway/**                                    # The predicate is a path to match
+        filters:
+          - RewritePath=/(?<path>.*), /$\{path}                 # Rewrite the path to eliminate '/test' path
+      - id: gateway-service                                        # The route ID
+        uri: ${GATEWAY_SERVICE_URL:http://host.docker.internal:8072}/
+        predicates:
+          - Path=/gateway/**                                    # The predicate is a path to match
+        filters:
+          - RewritePath=/(?<path>.*), /$\{path}                 # Rewrite the path to eliminate '/test-service' path
 
 
 # Testing what environment we are using
