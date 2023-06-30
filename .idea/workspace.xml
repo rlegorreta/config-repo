@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.46">
+    <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.47">
+      <change afterPath="$PROJECT_DIR$/iam-service-kubernetes.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iam-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/iam-service-local.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iam-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/iam-service-localNoDocker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iam-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/iam-service.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,14 +77,11 @@
       <workItem from="1687218038736" duration="599000" />
       <workItem from="1687285385411" duration="8197000" />
       <workItem from="1687534028122" duration="4369000" />
-      <workItem from="1687545839572" duration="206000" />
-    </task>
-    <task id="LOCAL-00011" summary="Version 1.0.10">
-      <created>1684949885569</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1684949885569</updated>
+      <workItem from="1687545839572" duration="1184000" />
+      <workItem from="1687804194231" duration="2322000" />
+      <workItem from="1687992943370" duration="1198000" />
+      <workItem from="1688080522863" duration="599000" />
+      <workItem from="1688083494482" duration="2763000" />
     </task>
     <task id="LOCAL-00012" summary="Version 1.0.11">
       <created>1684949983145</created>
@@ -418,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687544702377</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Version 1.0.47">
+      <created>1687546057635</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1687546057635</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -436,7 +444,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Version 1.0.21" />
     <MESSAGE value="Version 1.0.22" />
     <MESSAGE value="Version 1.0.23" />
     <MESSAGE value="Version 1.0.24" />
@@ -461,6 +468,7 @@
     <MESSAGE value="Version 1.0.44" />
     <MESSAGE value="Version 1.0.45" />
     <MESSAGE value="Version 1.0.46" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 1.0.46" />
+    <MESSAGE value="Version 1.0.47" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 1.0.47" />
   </component>
 </project>

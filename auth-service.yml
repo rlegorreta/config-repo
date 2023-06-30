@@ -36,7 +36,7 @@ ailegorreta:
     credentials: "{cipher}AQAgG0wual5s3pgp+SOBRjJkDda8G9PKdg+9+u2ujr+F/JpE9EBahJ4/dpkO1uhMj3OpVJLgsc16T1DnipEo3E6B6AKLSt76YnwXnWwPT4a4GmiAaCf6coa5xQQJI4wnZPlrYDQ9h8BdRuKQgjAD4gtmFkwfYKBzB6j4k1vdGer/gO5VPFgCZycL+Qi0VD6l7mZnrr7LoTrPDoxWIjqKp6bwhBblr/cvADZdW8PBX5VF2oBT6/iX++jgnqqftPCaRKpqiNnVZl6NyMQHMpahKurqrMEH0RsgQmAazOWwCo8TVpNBbBW2dDXPdLbI+aQPdISLsAo8ZwrgU6HH1BOeiWGNGqsiQgmFQZMk7oso+9l+We1q2l1ciL70SVgXQh1l5qk="
   neo4j:
     flyway:
-      locations: /db/neo4j/migration # Script to initialize iamDB
+      locations: /db/neo4j/migration # Script to initialize iamDB (also in iam-service)
 
 
 # Testing what environment we are using
