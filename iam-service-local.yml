@@ -13,7 +13,7 @@ eureka:
     healthcheck:
       enabled: true     # this must be true because it is a service
     serviceUrl:
-      defaultZone: http://eureka:8070/eureka/
+      defaultZone: http://eureka-service:8070/eureka/
     registerWithEureka: true
     fetchRegistry: false      # this must be false because it is a service
 
