@@ -2,6 +2,20 @@
 server:
   port: 8180
 
+# Eureka is just for docker-compose container
+eureka:
+  instance:
+    preferIpAddress: true
+    instanceId: ${spring.application.name}:${random.int}
+    hostname: iam
+  client:
+    healthcheck:
+      enabled: true     # this must be true because it is a service
+    serviceUrl:
+      defaultZone: http://eureka:8070/eureka/
+    registerWithEureka: true
+    fetchRegistry: false      # this must be false because it is a service
+
 # Testing what environment we are using
 iam:
   greeting: "Welcome to iam microservice from the config server, 'local configuration'."
