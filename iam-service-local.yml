@@ -9,6 +9,7 @@ eureka:
     instanceId: ${spring.application.name}:${random.int}
     hostname: iam-service
   client:
+    enabled: false
     healthcheck:
       enabled: true     # this must be true because it is a service
     serviceUrl:
