@@ -4,7 +4,7 @@
 eureka:
   instance:
     lease-renewal-interval-in-seconds: 3
-    hostname: eureka
+    hostname: eureka-service
   client:
     registerWithEureka: false   # no need to register the server with the server
     fetchRegistry: false        # don't need a local copy of the registry

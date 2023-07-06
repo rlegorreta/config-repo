@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.48">
+    <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.49">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-service-local.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eureka-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-service.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,14 +81,7 @@
       <workItem from="1688397892365" duration="1209000" />
       <workItem from="1688572542505" duration="743000" />
       <workItem from="1688586203629" duration="599000" />
-      <workItem from="1688612384698" duration="433000" />
-    </task>
-    <task id="LOCAL-00013" summary="Version 1.0.12">
-      <created>1684950044457</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1684950044457</updated>
+      <workItem from="1688612384698" duration="1458000" />
     </task>
     <task id="LOCAL-00014" summary="Version 1.0.13">
       <created>1684950133123</created>
@@ -427,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688166045301</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Version 1.0.49">
+      <created>1688612838370</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1688612838370</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,7 +444,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Version 1.0.23" />
     <MESSAGE value="Version 1.0.24" />
     <MESSAGE value="Version 1.0.25" />
     <MESSAGE value="Version 1.0.26" />
@@ -470,6 +468,7 @@
     <MESSAGE value="Version 1.0.46" />
     <MESSAGE value="Version 1.0.47" />
     <MESSAGE value="Version 1.0.48" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 1.0.48" />
+    <MESSAGE value="Version 1.0.49" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 1.0.49" />
   </component>
 </project>
