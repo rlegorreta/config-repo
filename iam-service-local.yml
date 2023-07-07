@@ -9,14 +9,12 @@ eureka:
     instanceId: ${spring.application.name}:${random.int}
     hostname: iam-service
   client:
-    enabled: false
     healthcheck:
-      enabled: false     # this must be true because it is a service
+      enabled: true     # this must be true because it is a service
     serviceUrl:
       defaultZone: http://eureka-service:8070/eureka/
     registerWithEureka: true
-    fetchRegistry: true      # this must be false because it is a service
-    registry-fetch-interval-seconds: 5
+    fetchRegistry: false      # this must be false because it is a service
 
 # Testing what environment we are using
 iam:
