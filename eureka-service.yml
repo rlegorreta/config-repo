@@ -12,6 +12,11 @@ eureka:
       defaulZone:
         http://${eureka.instance.hostname}:${server.port}/eureka/
   datacenter: mktpl-ailegorreta           # value used for AWS, here can be anything
+  server:
+    waitTimeInMsWhenSyncEmpty: 5
+    renewalPercentThreshold: 0.49
+    enableSelfPreservation: false
+    maxThreadsForPeerReplication: 0
 
   # Testing what environment we are using
   greeting: "Welcome to eureka microservice from the config server, 'default configuration'."
