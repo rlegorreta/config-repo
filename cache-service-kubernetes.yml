@@ -1,0 +1,7 @@
+# Last update July 2023 (rlh)
+server:
+  port: 8351
+
+# Testing what environment we are using
+cache:
+  greeting: "Welcome to cache microservice from the config server, 'kubernetes configuration'."
