@@ -9,7 +9,12 @@ spring:
       kafka:
         binder:
           brokers: http://kafka:9092
-
+  data:
+    redis:
+      connect-timeout: 2s   # time limit for a connection to be established
+      host: redis           # default redis host
+      port: 6379            # default redis port
+      timeout: 1s           # time limit for a response to be received
 #Redis database
 redis:
   server: redis
