@@ -1,25 +1,5 @@
 # Last update July 2023 (rlh)
 
-spring:
-  cloud:
-    loadbalancer:
-      ribbon:
-        enabled: false
-    stream:
-      kafka:
-        binder:
-          brokers: http://kafka:9092
-  data:
-    redis:
-      connect-timeout: 2s   # time limit for a connection to be established
-      host: redis           # default redis host
-      port: 6379            # default redis port
-      timeout: 1s           # time limit for a response to be received
-#Redis database
-redis:
-  server: redis
-  port: 6379
-
 # Testing what environment we are using
 cache:
   greeting: "Welcome to cache microservice from the config server, 'default configuration'."

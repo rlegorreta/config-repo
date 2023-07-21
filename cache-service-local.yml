@@ -15,6 +15,23 @@ eureka:
     registerWithEureka: true
     fetchRegistry: false      # this must be false because it is a service
 
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+    stream:
+      kafka:
+        binder:
+          brokers: http://ailegorreta-kafka:9092
+  data:
+    redis: # Redis is used by storing in memory all the request per user and therefore
+      # limit to a maximum request per user per second(e.g., 10 request per second)
+      connect-timeout: 2s       # time limit for a connection to be established
+      host: ailegorreta-redis   # local default Redis host
+      port: 6379                # local default Redis port
+      timeout: 1s               # Time limit for a response to be received
+
 # Back-end microservices
 microservice:
   param:
