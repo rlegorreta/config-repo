@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.61">
+      <change afterPath="$PROJECT_DIR$/test-service-reactive-kubernetes.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-service-reactive-local.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-service-reactive-localNoDocker.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-service-reactive.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cache-service-local.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,14 +90,16 @@
       <workItem from="1689610132953" duration="3234000" />
       <workItem from="1689726105420" duration="592000" />
       <workItem from="1689807159078" duration="2865000" />
-      <workItem from="1690212521893" duration="645000" />
-    </task>
-    <task id="LOCAL-00026" summary="Version 1.0.23">
-      <created>1684951467515</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1684951467515</updated>
+      <workItem from="1690212521893" duration="4182000" />
+      <workItem from="1690326111588" duration="598000" />
+      <workItem from="1690817219848" duration="120000" />
+      <workItem from="1690817476152" duration="598000" />
+      <workItem from="1690851155216" duration="599000" />
+      <workItem from="1691448246516" duration="599000" />
+      <workItem from="1691451451257" duration="42000" />
+      <workItem from="1691451835253" duration="624000" />
+      <workItem from="1691769854672" duration="1198000" />
+      <workItem from="1692023729826" duration="928000" />
     </task>
     <task id="LOCAL-00027" summary="Version 1.0.24">
       <created>1684951517433</created>
@@ -432,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689965465790</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Version 1.0.61">
+      <created>1690215733819</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1690215733819</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
