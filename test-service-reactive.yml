@@ -2,3 +2,6 @@
 test-reactive:
   greeting: "Welcome to test reactive microservice from the config server, 'default configuration'."
   catalogServiceUri: localhost:9999/dummy
+  resilience:
+    timeOut: 3  # Three seconds for resilient time out
+    retries: 3  # Three retries for time out exception

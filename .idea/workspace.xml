@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.61">
-      <change afterPath="$PROJECT_DIR$/test-service-reactive-kubernetes.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-service-reactive-local.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-service-reactive-localNoDocker.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-service-reactive.yml" afterDir="false" />
+    <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.62">
+      <change afterPath="$PROJECT_DIR$/param-service-kubernetes.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/param-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/param-service-local.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/param-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/param-service-localNoDocker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/param-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/param-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-service-reactive.yml" beforeDir="false" afterPath="$PROJECT_DIR$/test-service-reactive.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +100,14 @@
       <workItem from="1691451451257" duration="42000" />
       <workItem from="1691451835253" duration="624000" />
       <workItem from="1691769854672" duration="1198000" />
-      <workItem from="1692023729826" duration="928000" />
+      <workItem from="1692023729826" duration="2512000" />
+      <workItem from="1692123065648" duration="598000" />
+      <workItem from="1692142428936" duration="654000" />
+      <workItem from="1692143267646" duration="597000" />
+      <workItem from="1692144425479" duration="96000" />
+      <workItem from="1692144553636" duration="610000" />
+      <workItem from="1692145512496" duration="599000" />
+      <workItem from="1692631142536" duration="4079000" />
     </task>
     <task id="LOCAL-00027" summary="Version 1.0.24">
       <created>1684951517433</created>
@@ -444,7 +452,7 @@
       <option name="project" value="LOCAL" />
       <updated>1690215733819</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,7 +470,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Version 1.0.37" />
     <MESSAGE value="Version 1.0.38" />
     <MESSAGE value="Version 1.0.39" />
     <MESSAGE value="Version 1.0.40" />
@@ -487,6 +494,7 @@
     <MESSAGE value="Version 1.0.59" />
     <MESSAGE value="Version 1.0.60" />
     <MESSAGE value="Version 1.0.61" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 1.0.61" />
+    <MESSAGE value="Version 1.0.62" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 1.0.62" />
   </component>
 </project>
