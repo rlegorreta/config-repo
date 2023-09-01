@@ -1,0 +1,7 @@
+# Last update August 2023 (rlh)
+server:
+  port: 8300
+
+# Testing what environment we are using
+param:
+  greeting: "Welcome to audit microservice from the config server, 'kubernetes configuration'."
