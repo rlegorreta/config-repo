@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.62">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audit-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/audit-service.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +108,11 @@
       <workItem from="1693234041764" duration="598000" />
       <workItem from="1693235619828" duration="1218000" />
       <workItem from="1693505319406" duration="1201000" />
-      <workItem from="1693580602444" duration="3852000" />
+      <workItem from="1693580602444" duration="5092000" />
+      <workItem from="1693596952376" duration="668000" />
+      <workItem from="1693606341510" duration="1202000" />
+      <workItem from="1693841769588" duration="4411000" />
+      <workItem from="1694044377831" duration="2716000" />
     </task>
     <task id="LOCAL-00027" summary="Version 1.0.24">
       <created>1684951517433</created>
@@ -454,7 +457,7 @@
       <option name="project" value="LOCAL" />
       <updated>1690215733819</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
