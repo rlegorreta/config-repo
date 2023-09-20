@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.62">
+      <change afterPath="$PROJECT_DIR$/iam-ui-kubernetes.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iam-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/iam-service-local.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iam-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/iam-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iam-ui-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/iam-ui-local.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iam-ui-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/iam-ui-localNoDocker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iam-ui.yml" beforeDir="false" afterPath="$PROJECT_DIR$/iam-ui.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +121,9 @@
       <workItem from="1694189108051" duration="599000" />
       <workItem from="1694284064432" duration="599000" />
       <workItem from="1694445311330" duration="599000" />
-      <workItem from="1694470557311" duration="4747000" />
+      <workItem from="1694470557311" duration="8024000" />
+      <workItem from="1694816492363" duration="599000" />
+      <workItem from="1695135986818" duration="2415000" />
     </task>
     <task id="LOCAL-00027" summary="Version 1.0.24">
       <created>1684951517433</created>
@@ -464,7 +468,7 @@
       <option name="project" value="LOCAL" />
       <updated>1690215733819</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

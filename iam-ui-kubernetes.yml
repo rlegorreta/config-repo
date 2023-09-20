@@ -1,4 +1,4 @@
-# Last update February 2023 (rlh)
+# Last update September 2023 (rlh)
 
 management:
   endpoint:
@@ -8,4 +8,3 @@ management:
     web:
       exposure:
         include: "*"
-
