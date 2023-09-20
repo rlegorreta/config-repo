@@ -27,19 +27,3 @@ security:
   iam:
     provider-uri: http://localhost:8072/iam       # use the gateway
 
-#Back-end microservices
-microservice:
-  cache:
-    provider-uri: http://localhost:8072/cache         # use the gateway
-    # provider-uri: http://cache:8351                 # do not use gateway
-  audit:
-    provider-uri: http://localhost:8072/audit-service # use the gateway
-    #provider-uri: http://audit:8300                  # do not use gateway
-    subscription:
-      host: localhost                                 # note: we do not use gateway
-      port: 8301
-  iam:
-    provider-uri: http://localhost:8072/iam   # use the gateway
-    # provider-uri: http://iam:8180         # no use gateway, because is backoffice microservice communication
-    # we prefer to skip the gateway. Depends on system security
-
