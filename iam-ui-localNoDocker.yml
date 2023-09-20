@@ -30,13 +30,13 @@ security:
 #Back-end microservices
 microservice:
   cache:
-    provider-uri: http://localhost:8072/cache           # use the gateway
+    provider-uri: http://localhost:8072/cache         # use the gateway
     # provider-uri: http://cache:8351                 # do not use gateway
   audit:
-    provider-uri: http://localhost:8072/audit-service   # use the gateway
+    provider-uri: http://localhost:8072/audit-service # use the gateway
     #provider-uri: http://audit:8300                  # do not use gateway
     subscription:
-      host: audit                                     # note: we do not use gateway
+      host: localhost                                 # note: we do not use gateway
       port: 8301
   iam:
     provider-uri: http://localhost:8072/iam   # use the gateway
