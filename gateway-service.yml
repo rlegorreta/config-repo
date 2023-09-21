@@ -80,20 +80,11 @@ spring:
             args:
               name: auditCircuitBreaker
               fallbackUri: forward:/audit-service-fallback       # Forwards request to this URI when the circuit is open
-      - id: cache-service
-        uri: ${CACHE_SERVICE_URL:http://host.docker.internal:8351}/
-        predicates:
-          - Path=/cache-service/**
-        filters:
-          - RewritePath=/cache/(?<path>.*), /$\{path}
-          - name: CircuitBreaker
-            args:
-              name: cacheCircuitBreaker
-              fallbackUri: forward:/cache-service-fallback       # Forwards request to this URI when the circuit is open
       - id: cache
         uri: ${CACHE_SERVICE_URL:http://host.docker.internal:8351}/
         predicates:
           - Path=/cache/**
+          - Path=/cache-service/**
         filters:
           - RewritePath=/cache/(?<path>.*), /$\{path}
           - name: CircuitBreaker
@@ -148,7 +139,6 @@ spring:
           - Path=/gateway-service/**                            # The predicate is a path to match
         filters:
           - RewritePath=/gateway-service/(?<path>.*), /$\{path} # Rewrite the path to eliminate '/test-service' path
-
 
 # Testing what environment we are using
 gateway:
