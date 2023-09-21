@@ -81,7 +81,7 @@ spring:
               name: auditCircuitBreaker
               fallbackUri: forward:/audit-service-fallback       # Forwards request to this URI when the circuit is open
       - id: cache
-        uri: ${CACHE_SERVICE_URL:http://host.docker.internal:8351}/
+        uri: ${CACHE_SERVICE_URL:http://localhost:8351}/
         predicates:
           - Path=/cache/**
           - Path=/cache-service/**
