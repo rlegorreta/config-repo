@@ -78,14 +78,18 @@ spring:
           - RewritePath=/audit/(?<path>.*), /$\{path}
           - name: CircuitBreaker
             args:
-              name: auditCircuitBraker
+              name: auditCircuitBreaker
               fallbackUri: forward:/audit-service-fallback       # Forwards request to this URI when the circuit is open
       - id: cache-service
-        uri: lb://cache
+        uri: ${CACHE_SERVICE_URL:http://host.docker.internal:8351}/
         predicates:
           - Path=/cache-service/**
         filters:
-          - RewritePath=/cache-service/(?<path>.*), /$\{path}
+          - RewritePath=/cache/(?<path>.*), /$\{path}
+          - name: CircuitBreaker
+            args:
+              name: cacheCircuitBreaker
+              fallbackUri: forward:/cache-service-fallback       # Forwards request to this URI when the circuit is open
       - id: cache
         uri: ${CACHE_SERVICE_URL:http://host.docker.internal:8351}/
         predicates:
@@ -94,7 +98,7 @@ spring:
           - RewritePath=/cache/(?<path>.*), /$\{path}
           - name: CircuitBreaker
             args:
-              name: cacheCircuitBraker
+              name: cacheCircuitBreaker
               fallbackUri: forward:/cache-service-fallback       # Forwards request to this URI when the circuit is open
       - id: param-service
         uri: lb://param
