@@ -91,16 +91,11 @@ spring:
             args:
               name: cacheCircuitBreaker
               fallbackUri: forward:/cache-service-fallback       # Forwards request to this URI when the circuit is open
-      - id: param-service
-        uri: lb://param
-        predicates:
-          - Path=/param-service/**
-        filters:
-          - RewritePath=/param-service/(?<path>.*), /$\{path}
       - id: param
         uri: ${PARAM_SERVICE_URL:http://host.docker.internal:8350}/
         predicates:
           - Path=/param/**
+          - Path=/param-service/**
         filters:
           - RewritePath=/param/(?<path>.*), /$\{path}
           - name: CircuitBreaker
