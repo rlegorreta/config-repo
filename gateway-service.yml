@@ -1,10 +1,10 @@
-# Last update May 2023 (rlh)
+# Last update September 2023 (rlh)
 
 spring:
   cloud:
     gateway:
       # This is if we want manually mapping routing using service discovery
-      # Erase al postfix for '-service' microservices
+      # The postfix for '-service' microservices is optional
       routes:
       - id: udf-service
         uri: lb://udf
@@ -49,33 +49,41 @@ spring:
         filters:
           - RewritePath=/order-service/(?<path>.*), /$\{path}
       - id: iam-service
-        uri: lb://iam
+        uri: ${IAM_SERVICE_URL:http://host.docker.internal:8180}/
         predicates:
-          - Path=/iam-service/**
+          - Path=/ailegorreta/iam-service/**
         filters:
-          - RewritePath=/iam-service/(?<path>.*), /$\{path}
+          - RewritePath=/ailegorreta/iam-service/(?<path>.*), /$\{path}
+          - name: CircuitBreaker
+            args:
+              name: iamCircuitBreaker
+              fallbackUri: forward:/iam-service-fallback       # Forwards request to this URI when the circuit is open
       - id: iam
         uri: ${IAM_SERVICE_URL:http://host.docker.internal:8180}/
         predicates:
-          - Path=/iam/**
+          - Path=/ailegorreta/iam/**
         filters:
-          - RewritePath=/iam/(?<path>.*), /$\{path}
+          - RewritePath=/ailegorreta/iam/(?<path>.*), /$\{path}
           - name: CircuitBreaker
             args:
-              name: iamCircuitBraker
+              name: iamCircuitBreaker
               fallbackUri: forward:/iam-service-fallback       # Forwards request to this URI when the circuit is open
       - id: audit-service
-        uri: lb://audit
+        uri: ${AUDIT_SERVICE_URL:http://localhost:8300}/
         predicates:
-          - Path=/audit-service/**
+          - Path=/ailegorreta/audit-service/**
         filters:
-          - RewritePath=/audit-service/(?<path>.*), /$\{path}
+          - RewritePath=/ailegorreta/audit-service/(?<path>.*), /$\{path}
+          - name: CircuitBreaker
+            args:
+              name: auditCircuitBreaker
+              fallbackUri: forward:/audit-service-fallback       # Forwards request to this URI when the circuit is open
       - id: audit
         uri: ${AUDIT_SERVICE_URL:http://host.docker.internal:8300}/
         predicates:
-          - Path=/audit/**
+          - Path=/ailegorreta/audit/**
         filters:
-          - RewritePath=/audit/(?<path>.*), /$\{path}
+          - RewritePath=/ailegorreta/audit/(?<path>.*), /$\{path}
           - name: CircuitBreaker
             args:
               name: auditCircuitBreaker
@@ -100,16 +108,25 @@ spring:
             args:
               name: cacheCircuitBreaker
               fallbackUri: forward:/cache-service-fallback       # Forwards request to this URI when the circuit is open
+      - id: param-service
+        uri: ${PARAM_SERVICE_URL:http://host.docker.internal:8350}/
+        predicates:
+          - Path=/param-service/**
+        filters:
+          - RewritePath=/ailegorreta/param-service/(?<path>.*), /$\{path}
+          - name: CircuitBreaker
+            args:
+              name: paramCircuitBreaker
+              fallbackUri: forward:/param-service-fallback       # Forwards request to this URI when the circuit is open
       - id: param
         uri: ${PARAM_SERVICE_URL:http://host.docker.internal:8350}/
         predicates:
           - Path=/param/**
-          - Path=/param-service/**
         filters:
-          - RewritePath=/param/(?<path>.*), /$\{path}
+          - RewritePath=/ailegorreta/param/(?<path>.*), /$\{path}
           - name: CircuitBreaker
             args:
-              name: paramCircuitBraker
+              name: paramCircuitBreaker
               fallbackUri: forward:/param-service-fallback       # Forwards request to this URI when the circuit is open
       - id: test                                                # The route ID
         uri: ${TEST_SERVICE_URL:http://host.docker.internal:8000}/
