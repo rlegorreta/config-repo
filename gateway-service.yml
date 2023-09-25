@@ -80,13 +80,22 @@ spring:
             args:
               name: auditCircuitBreaker
               fallbackUri: forward:/audit-service-fallback       # Forwards request to this URI when the circuit is open
-      - id: cache
+      - id: cache-service
         uri: ${CACHE_SERVICE_URL:http://localhost:8351}/
         predicates:
-          #- Path=/ailegorreta/cache/**
           - Path=/ailegorreta/cache-service/**
         filters:
           - RewritePath=/ailegorreta/cache-service/(?<path>.*), /$\{path}
+          - name: CircuitBreaker
+            args:
+              name: cacheCircuitBreaker
+              fallbackUri: forward:/cache-service-fallback       # Forwards request to this URI when the circuit is open
+      - id: cache
+        uri: ${CACHE_SERVICE_URL:http://localhost:8351}/
+        predicates:
+          - Path=/ailegorreta/cache/**
+        filters:
+          - RewritePath=/ailegorreta/cache/(?<path>.*), /$\{path}
           - name: CircuitBreaker
             args:
               name: cacheCircuitBreaker
