@@ -83,8 +83,8 @@ spring:
       - id: cache
         uri: ${CACHE_SERVICE_URL:http://localhost:8351}/
         predicates:
-          - Path=/cache/**
-          - Path=/cache-service/**
+          - Path=/ailegorreta/cache/**
+          - Path=/ailegorreta/cache-service/**
         filters:
           - RewritePath=/cache/(?<path>.*), /$\{path}
           - name: CircuitBreaker
