@@ -86,7 +86,7 @@ spring:
           #- Path=/ailegorreta/cache/**
           - Path=/ailegorreta/cache-service/**
         filters:
-          - RewritePath=/cache-service/(?<path>.*), /$\{path}
+          - RewritePath=/ailegorreta/(?<path>.*), /$\{path}
           - name: CircuitBreaker
             args:
               name: cacheCircuitBreaker
