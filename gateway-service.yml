@@ -60,10 +60,6 @@ spring:
           - Path=/ailegorreta/iam/**
         filters:
           - RewritePath=/ailegorreta/iam/(?<path>.*), /$\{path}
-          - name: CircuitBreaker
-            args:
-              name: iamCircuitBreaker
-              fallbackUri: forward:/iam-service-fallback       # Forwards request to this URI when the circuit is open
       - id: audit-service
         uri: ${AUDIT_SERVICE_URL:http://localhost:8300}/
         predicates:
