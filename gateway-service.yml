@@ -54,10 +54,6 @@ spring:
           - Path=/ailegorreta/iam-service/**
         filters:
           - RewritePath=/ailegorreta/iam-service/(?<path>.*), /$\{path}
-          - name: CircuitBreaker
-            args:
-              name: iamCircuitBreaker
-              fallbackUri: forward:/iam-service-fallback       # Forwards request to this URI when the circuit is open
       - id: iam
         uri: ${IAM_SERVICE_URL:http://host.docker.internal:8180}/
         predicates:
