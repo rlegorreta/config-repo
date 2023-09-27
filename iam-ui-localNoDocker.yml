@@ -25,5 +25,6 @@ spring:
 
 security:
   iam:
-    provider-uri: http://localhost:8072/iam       # use the gateway
+    provider-uri: http://localhost:8072/ailegorreta/iam-service       # use the gateway
+    load-balanced: false
 

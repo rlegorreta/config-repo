@@ -26,6 +26,7 @@ spring:
 security:
   iam:
     provider-uri: http://gateway:8072/iam       # use the gateway
+    load-balanced: true                         # in docker we use load balanced webClient instance
 
 #Back-end microservices
 microservice:
