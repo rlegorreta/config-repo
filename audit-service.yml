@@ -2,14 +2,18 @@
 server:
   port: 8300
 
+mongodb:
+  username: "{cipher}AQCIvI0NyJBui6TF6S/K1B5zgpMBA6uz3qzehu8BSkPKc0YKX5TdRM80CdEO7oVkV3jx6+HLwoDVKgrIPvgCySz9o3Uuh6qWZVq45hPTcVKrFn7FI7ArKiW6OhHd17OszzcfGddwaCpoEiHNVry5I1zqzqsNC0D8sjSabZtC8zdoz93VfHh5uM8Tz8+HqgWdP7KNUevSReDR1WfuMXew5e0bQ0OQ7be/Z3TadR/O+jj2G3eiR+4JniCKf2ePdw8HKYHEx1REcfZonAAzCRPRD6E9bUyP1T+SctNvGK98BoWhMdERQ40MMFU4tahvVyKFuNfuoQAoToxVAJrrI+2mnpsi6cq8bRrfoY8BmD5+IYOCeETNDCMDvjl0BQVGE5gHBcA="
+  password: "{cipher}AQA/uT2/j8G4rcbOvWULaOi1tRNG9Sq2nk0lEw/GOBYLfccibDmzY0iw/4xxt8U4MwW6l97L5EctuV9Lq9tJpbj0I8gA/kVDLDSEiyn4Pi6jzlJuXacBUVm7nrmLUqIKM5nRjnPvdNKqcUHCfWr8h9oBvetGY/hRDnBdW5c1YNHnKd/1uYIe1aFOJRGuvEWpgs2ZdFbkodrOzKl9cv7DZZ3uJZFa1JVba03Id2pwXNanTF0ztu9GUvuBAXDod7OlWFMrgpX0hTIUukX9kgwkEsZ7shgYmn0DwCcvZQmE3ONbQL8OBlCcnERaCVL5CGKxL3fAkN7EsSnhoANSep2a2VpOw1vODYRRnAHGs3fAQqxhVzk7BMReOTf6smxP2Xfb8IM="
+
 spring:
   data:
     mongodb:
-      host: localhost
-      username: "{cipher}AQCIvI0NyJBui6TF6S/K1B5zgpMBA6uz3qzehu8BSkPKc0YKX5TdRM80CdEO7oVkV3jx6+HLwoDVKgrIPvgCySz9o3Uuh6qWZVq45hPTcVKrFn7FI7ArKiW6OhHd17OszzcfGddwaCpoEiHNVry5I1zqzqsNC0D8sjSabZtC8zdoz93VfHh5uM8Tz8+HqgWdP7KNUevSReDR1WfuMXew5e0bQ0OQ7be/Z3TadR/O+jj2G3eiR+4JniCKf2ePdw8HKYHEx1REcfZonAAzCRPRD6E9bUyP1T+SctNvGK98BoWhMdERQ40MMFU4tahvVyKFuNfuoQAoToxVAJrrI+2mnpsi6cq8bRrfoY8BmD5+IYOCeETNDCMDvjl0BQVGE5gHBcA="
-      password: "{cipher}AQA/uT2/j8G4rcbOvWULaOi1tRNG9Sq2nk0lEw/GOBYLfccibDmzY0iw/4xxt8U4MwW6l97L5EctuV9Lq9tJpbj0I8gA/kVDLDSEiyn4Pi6jzlJuXacBUVm7nrmLUqIKM5nRjnPvdNKqcUHCfWr8h9oBvetGY/hRDnBdW5c1YNHnKd/1uYIe1aFOJRGuvEWpgs2ZdFbkodrOzKl9cv7DZZ3uJZFa1JVba03Id2pwXNanTF0ztu9GUvuBAXDod7OlWFMrgpX0hTIUukX9kgwkEsZ7shgYmn0DwCcvZQmE3ONbQL8OBlCcnERaCVL5CGKxL3fAkN7EsSnhoANSep2a2VpOw1vODYRRnAHGs3fAQqxhVzk7BMReOTf6smxP2Xfb8IM="
-      # uri: mongodb://localhost:27017://${spring.data.mongodb.username}:${spring.data.mongodb.password}
-      database: events
+      # note: Spring boot 3.1.0 ignores Mongo properties authentication database.
+      # see:https://github.com/spring-projects/spring-boot/issues/35632
+      # The workaround is to use mongo uri
+      uri: mongodb://${spring.data.mongodb.username}:${spring.data.mongodb.password}@localhost/events
+
 # Testing what environment we are using
 audit:
   greeting: "Welcome to audit microservice from the config server, 'default configuration'."
