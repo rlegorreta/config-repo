@@ -15,6 +15,14 @@ eureka:
     registerWithEureka: true
     fetchRegistry: false      # this must be false because it is a service
 
+spring:
+  data:
+    mongodb:
+      # note: Spring boot 3.1.0 ignores Mongo properties authentication database.
+      # see:https://github.com/spring-projects/spring-boot/issues/35632
+      # The workaround is to use mongo uri
+      uri: mongodb://${mongodb.username}:${mongodb.password}@ailegorreta-mongodb/events?authSource=admin
+
 # Testing what environment we are using
 audit:
   greeting: "Welcome to audit microservice from the config server, 'local configuration'."

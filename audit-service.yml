@@ -12,7 +12,7 @@ spring:
       # note: Spring boot 3.1.0 ignores Mongo properties authentication database.
       # see:https://github.com/spring-projects/spring-boot/issues/35632
       # The workaround is to use mongo uri
-      uri: mongodb://admin:L3g050ft@localhost/events
+      uri: mongodb://${mongodb.username}:${mongodb.password}@localhost/events?authSource=admin
 
 # Testing what environment we are using
 audit:
