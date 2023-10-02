@@ -14,7 +14,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true       # this must be true because is UI
     serviceUrl:
-      defaultZone: http://eureka:8070/eureka/
+      defaultZone: http://eureka-service:8070/eureka/
     registry-fetch-interval-seconds: 5
 
 spring:
