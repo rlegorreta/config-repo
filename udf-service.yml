@@ -1,36 +1,19 @@
-# Last update May 2023 (rlh)
-
-eureka:
-  instance:
-    preferIpAddress: true
-    instanceId: ${spring.application.name}:${random.int}
-    hostname: udf-service
-  client:
-    enabled: false              # Not used, just for Docker desktop with service discovery and load balanced
-    registerWithEureka: true
-    fetchRegistry: false        # this must be false because it is a service
+# Last update October 2023 (rlh)
+server:
+  port: 8200
 
 spring:
-  ## UDFDB SQL Server database
   datasource:
-    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    hikari:
-      maxLifeTime: 600000
-      connectionTimeout: 30000
-  # Spring data
-  jpa:
-    database: default
-    hibernate:
-      ddl-auto: update
-      dialect: org.hibernate.dialect.SQLServer2012Dialect
-      naming:
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-    generate-ddl: true
-    show-sql: true
-  cloud:
-    loadbalancer:
-      ribbon:
-        enabled: false
+    username: "{cipher}AQAAKNm+J7x0WlZT5euRS1rP+kr0MF1AFshJ0cI0jO33bGJMfxLS4K7sInvUMomdmU3IQgagaGsD2JbPxO9qDynPFcTE+3lkcK4KyHGMMgjs7IIJ+KmzzyZqxd7VYAxlaatjCdpjnEmV307ztgsrrc6emR4CMlzK+SFtjdn2X4Fp4Ifsph8CGkQCdapuClDg6fHLhh2sm/DTYQZt9diMrixmOYVC+pU5EPRrBgdXp7n/rrrDfuP8U7mik1X1E1GNs+pOY3t3EVO51kmIcsuF4HZXb/f+UW/U4Bf5AtJ5h32fvsHh2uDxzeSDxgczNVTGDFyOFxdoT5NXQ7APZCW62rPpq/LDOON8zn0dTzLQe0Xi/CGIS9Gj0nVrvXan3oj7aPY="
+    password: "{cipher}AQCFkB1e8+UzUfCyGThbqHO9mWnHMxuFxOex/pAK6rMqALr90TManD55K/eeRMClWFwd01X3agUl3g6WN0Hl4YbnLTkXmRuOr2CtOljXDeEriG9nmKFF7rs1kJiLyKXrZ/A/1/i9BD3IS34M636RW9au5j/ycpjeAG2QpXcC5cXpKaPvqIwjnYDy5dYcPy/tANbDc5YCoxzeGribW1OVDeToUu6Yuf8lmBwf0UeA7xG7GT/U6JPSBSPa9uX6RD0tsfIR+44GBWTBODpj2Y7nGISrnfFG9pZR/7uEihGyJ8eZI5C87Wfdnm13qvZ/O/s2QHov4s03AKdOUA8ZGVeg2I2dw3wKr3X+yd9UKxLfgl0oVZAf8XshDmZNQ8nlIxDmIvY="
+  flyway:
+    user: "{cipher}AQAAKNm+J7x0WlZT5euRS1rP+kr0MF1AFshJ0cI0jO33bGJMfxLS4K7sInvUMomdmU3IQgagaGsD2JbPxO9qDynPFcTE+3lkcK4KyHGMMgjs7IIJ+KmzzyZqxd7VYAxlaatjCdpjnEmV307ztgsrrc6emR4CMlzK+SFtjdn2X4Fp4Ifsph8CGkQCdapuClDg6fHLhh2sm/DTYQZt9diMrixmOYVC+pU5EPRrBgdXp7n/rrrDfuP8U7mik1X1E1GNs+pOY3t3EVO51kmIcsuF4HZXb/f+UW/U4Bf5AtJ5h32fvsHh2uDxzeSDxgczNVTGDFyOFxdoT5NXQ7APZCW62rPpq/LDOON8zn0dTzLQe0Xi/CGIS9Gj0nVrvXan3oj7aPY="
+    password: "{cipher}AQCFkB1e8+UzUfCyGThbqHO9mWnHMxuFxOex/pAK6rMqALr90TManD55K/eeRMClWFwd01X3agUl3g6WN0Hl4YbnLTkXmRuOr2CtOljXDeEriG9nmKFF7rs1kJiLyKXrZ/A/1/i9BD3IS34M636RW9au5j/ycpjeAG2QpXcC5cXpKaPvqIwjnYDy5dYcPy/tANbDc5YCoxzeGribW1OVDeToUu6Yuf8lmBwf0UeA7xG7GT/U6JPSBSPa9uX6RD0tsfIR+44GBWTBODpj2Y7nGISrnfFG9pZR/7uEihGyJ8eZI5C87Wfdnm13qvZ/O/s2QHov4s03AKdOUA8ZGVeg2I2dw3wKr3X+yd9UKxLfgl0oVZAf8XshDmZNQ8nlIxDmIvY="
+
+# Back-end microservices
+microservice:
+  audit:
+    provider-uri: http://gateway-service:8072/audit   # use the gateway
 
 # Testing what environment we are using
 udf:

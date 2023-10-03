@@ -1,0 +1,7 @@
+# Last update October 2023 (rlh)
+server:
+  port: 8200
+
+# Testing what environment we are using
+param:
+  greeting: "Welcome to udf microservice from the config server, 'kubernetes configuration'."
