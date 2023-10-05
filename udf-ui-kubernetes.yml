@@ -1,0 +1,10 @@
+# Last update October 2023 (rlh)
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
