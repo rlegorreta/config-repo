@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.62">
-      <change afterPath="$PROJECT_DIR$/udf-ui-kubernetes.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pref-service-kubernetes.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/udf-ui-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/udf-ui-local.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/udf-ui-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/udf-ui-localNoDocker.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/udf-ui.yml" beforeDir="false" afterPath="$PROJECT_DIR$/udf-ui.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iam-service-kubernetes.yml" beforeDir="false" afterPath="$PROJECT_DIR$/iam-service-kubernetes.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preference-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/pref-service-local.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preference-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/pref-service-localNoDocker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preference-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/pref-service.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +132,20 @@
       <workItem from="1696262242576" duration="2770000" />
       <workItem from="1696349700072" duration="4585000" />
       <workItem from="1696518428116" duration="53000" />
-      <workItem from="1696521459603" duration="2588000" />
+      <workItem from="1696521459603" duration="3316000" />
+      <workItem from="1696544871057" duration="1311000" />
+      <workItem from="1696637164071" duration="1197000" />
+      <workItem from="1696865289092" duration="2262000" />
+      <workItem from="1696888403293" duration="1491000" />
+      <workItem from="1696890017917" duration="1460000" />
+      <workItem from="1696957942465" duration="2953000" />
+      <workItem from="1697473733607" duration="525000" />
+      <workItem from="1697477428287" duration="237000" />
+      <workItem from="1697478363987" duration="329000" />
+      <workItem from="1697481408926" duration="599000" />
+      <workItem from="1697728623643" duration="1171000" />
+      <workItem from="1697757975753" duration="599000" />
+      <workItem from="1697818961062" duration="1055000" />
     </task>
     <task id="LOCAL-00027" summary="Version 1.0.24">
       <created>1684951517433</created>
@@ -476,7 +490,7 @@
       <option name="project" value="LOCAL" />
       <updated>1690215733819</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

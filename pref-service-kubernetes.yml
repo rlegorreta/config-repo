@@ -1,0 +1,7 @@
+# Last update October 2023 (rlh)
+server:
+  port: 8183
+
+# Testing what environment we are using
+iam:
+  greeting: "Welcome to pref-service microservice from the config server, 'kubernetes configuration'."
