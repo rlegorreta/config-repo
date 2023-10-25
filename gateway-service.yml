@@ -12,24 +12,18 @@ spring:
         - Path=/udf-service/**
         filters:
         - RewritePath=/udf-service/(?<path>.*), /$\{path}
-      - id: preference-service
-        uri: lb://preference
-        predicates:
-          - Path=/preference-service/**
-        filters:
-          - RewritePath=/preference-service/(?<path>.*), /$\{path}
       - id: bup-service
         uri: lb://bup
         predicates:
           - Path=/bup-service/**
         filters:
           - RewritePath=/bup-service/(?<path>.*), /$\{path}
-      - id: cartera-service
+      - id: cartera
         uri: lb://cartera
         predicates:
-          - Path=/cartera-service/**
+          - Path=/cartera/**
         filters:
-          - RewritePath=/cartera-service/(?<path>.*), /$\{path}
+          - RewritePath=/cartera/(?<path>.*), /$\{path}
       - id: expediente-service
         uri: lb://expediente
         predicates:
@@ -48,6 +42,26 @@ spring:
           - Path=/order-service/**
         filters:
           - RewritePath=/order-service/(?<path>.*), /$\{path}
+      - id: pref-service
+        uri: ${PREF_SERVICE_URL:http://host.docker.internal:8183}/
+        predicates:
+          - Path=/ailegorreta/pref-service/**
+        filters:
+          - RewritePath=/ailegorreta/pref-service/(?<path>.*), /$\{path}
+          - name: CircuitBreaker
+            args:
+              name: prefCircuitBreaker
+              fallbackUri: forward:/pref-service-fallback       # Forwards request to this URI when the circuit is open
+      - id: pref
+        uri: ${PREF_SERVICE_URL:http://host.docker.internal:8183}/
+        predicates:
+          - Path=/ailegorreta/pref/**
+        filters:
+          - RewritePath=/ailegorreta/pref/(?<path>.*), /$\{path}
+          - name: CircuitBreaker
+            args:
+              name: prefCircuitBreaker
+              fallbackUri: forward:/pref-service-fallback       # Forwards request to this URI when the circuit is open
       - id: iam-service
         uri: ${IAM_SERVICE_URL:http://host.docker.internal:8180}/
         predicates:

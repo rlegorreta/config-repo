@@ -29,7 +29,7 @@ microservice:
     provider-uri: http://gateway:8072/cartera                 # use the gateway with default microservice name
     # provider-uri: http://cartera:8500                       # do not use gateway
   preference:
-    provider-uri: http://gateway:8072/preference-service       # use the gateway
+    provider-uri: http://gateway:8072/pref-service             # use the gateway
     # provider-uri: http://preference:8181                     # do not use gateway
   udf:
     provider-uri: http://gateway:8072/udf-service              # use the gateway
