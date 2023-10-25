@@ -43,5 +43,5 @@ microservice:
     provider-uri: http://gateway:8072/audit-service            # use the gateway
     #provider-uri: http://auditserverrepo:8300                 # do not use gateway
     subscription:
-      host: audit                                              # note: we do not use gateway
+      host: audit-service                                      # note: we do not use gateway
       port: 8301
