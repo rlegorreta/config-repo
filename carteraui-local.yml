@@ -26,22 +26,22 @@ security:
 #Back-end microservices
 microservice:
   cartera:
-    provider-uri: http://gateway-service:8072/cartera         # use the gateway with default microservice name
-    # provider-uri: http://cartera:8500                       # do not use gateway
+    provider-uri: http://gateway-service:8072/ailegorreta/cartera         # use the gateway with default microservice name
+    # provider-uri: http://cartera:8500                                   # do not use gateway
   preference:
-    provider-uri: http://gateway-service:8072/pref-service    # use the gateway
-    # provider-uri: http://preference:8181                    # do not use gateway
+    provider-uri: http://gateway-service:8072/ailegorreta/pref-service    # use the gateway
+    # provider-uri: http://preference:8183                                # do not use gateway
   udf:
-    provider-uri: http://gateway-service:8072/udf-service      # use the gateway
-    # provider-uri: http://udf:8200                            # do not use gateway
+    provider-uri: http://gateway-service:8072/ailegorreta/udf-service      # use the gateway
+    # provider-uri: http://udf:8200                                       # do not use gateway
     run:
       uri: http://host.docker.internal:7076/api/v1
   cache:
-    provider-uri: http://gateway-service:8072/cache-service    # use the gateway
-    # provider-uri: http://cache:8351                          # do not use gateway
+    provider-uri: http://gateway-service:8072/ailegorreta/cache-service    # use the gateway
+    # provider-uri: http://cache:8351                                     # do not use gateway
   audit:
-    provider-uri: http://gateway-service:8072/audit-service    # use the gateway
-    #provider-uri: http://auditserverrepo:8300                 # do not use gateway
+    provider-uri: http://gateway-service:8072/ailegorreta/audit-service    # use the gateway
+    #provider-uri: http://auditserverrepo:8300                            # do not use gateway
     subscription:
       host: audit-service                                      # note: we do not use gateway
       port: 8301
