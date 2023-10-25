@@ -8,7 +8,7 @@ eureka:
     healthcheck:
       enabled: true         # this must be true because it is a service
     serviceUrl:
-      defaultZone: http://eureka:8070/eureka/
+      defaultZone: http://eureka-service:8070/eureka/
 
 spring:
   security:
@@ -16,10 +16,10 @@ spring:
       client:
         provider:
           spring:
-            issuer-uri: http://auth:9000
+            issuer-uri: http://auth-service:9000
       resourceserver:
         jwt:
-          issuer-uri: http://auth:9000
+          issuer-uri: http://auth-service:9000
   # SQL Server encrypted data
   datasource:
     url: jdbc:sqlserver://host.docker.internal:1415;databaseName=master
