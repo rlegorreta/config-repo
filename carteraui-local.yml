@@ -8,7 +8,7 @@ eureka:
     healthcheck:
       enabled: false # this must be false because is a UI
     serviceUrl:
-      defaultZone: http://eureka:8070/eureka/
+      defaultZone: http://eureka-service:8070/eureka/
 
 
 management:
@@ -21,12 +21,12 @@ management:
 
 security:
   iam:
-    provider-uri: http://gateway:8072/iam                     # use the gateway
+    provider-uri: http://gateway-service:8072/iam-service    # use the gateway
 
 #Back-end microservices
 microservice:
   cartera:
-    provider-uri: http://gateway:8072/cartera-service         # use the gateway with default microservice name
+    provider-uri: http://gateway:8072/cartera                 # use the gateway with default microservice name
     # provider-uri: http://cartera:8500                       # do not use gateway
   preference:
     provider-uri: http://gateway:8072/preference-service       # use the gateway
@@ -40,7 +40,7 @@ microservice:
     provider-uri: http://gateway:8072/cache-service            # use the gateway
     # provider-uri: http://cache:8351                          # do not use gateway
   audit:
-    provider-uri: http://gateway:8072/audit -service           # use the gateway
+    provider-uri: http://gateway:8072/audit-service            # use the gateway
     #provider-uri: http://auditserverrepo:8300                 # do not use gateway
     subscription:
       host: audit                                              # note: we do not use gateway

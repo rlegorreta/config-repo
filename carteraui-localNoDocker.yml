@@ -26,7 +26,7 @@ security:
 #Back-end microservices
 microservice:
   cartera:
-    provider-uri: http://localhost:8072/cartera-service               # use the gateway with default microservice name
+    provider-uri: http://localhost:8072/cartera                       # use the gateway with default microservice name
     # provider-uri: http://localhost:8500                             # no gateway
   preference:
     provider-uri: http://localhost:8072/preference-service            # use the gateway
