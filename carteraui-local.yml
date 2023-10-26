@@ -21,7 +21,7 @@ management:
 
 security:
   iam:
-    provider-uri: http://gateway-service:8072/iam-service    # use the gateway
+    provider-uri: http://gateway-service:8072/ailegorreta/iam-service    # use the gateway
 
 #Back-end microservices
 microservice:
