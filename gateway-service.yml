@@ -6,24 +6,12 @@ spring:
       # This is if we want manually mapping routing using service discovery
       # The postfix for '-service' microservices is optional
       routes:
-      - id: udf-service
-        uri: lb://udf
-        predicates:
-        - Path=/udf-service/**
-        filters:
-        - RewritePath=/udf-service/(?<path>.*), /$\{path}
       - id: bup-service
         uri: lb://bup
         predicates:
           - Path=/bup-service/**
         filters:
           - RewritePath=/bup-service/(?<path>.*), /$\{path}
-      - id: cartera
-        uri: lb://cartera
-        predicates:
-          - Path=/cartera/**
-        filters:
-          - RewritePath=/cartera/(?<path>.*), /$\{path}
       - id: expediente-service
         uri: lb://expediente
         predicates:
@@ -42,6 +30,32 @@ spring:
           - Path=/order-service/**
         filters:
           - RewritePath=/order-service/(?<path>.*), /$\{path}
+      - id: cartera-demo
+        uri: ${CARTERA_DEMO_URL:http://host.docker.internal:8500}/
+        predicates:
+          - Path=/ailegorreta/cartera-demo/**
+        filters:
+          - RewritePath=/ailegorreta/cartera-demo/(?<path>.*), /$\{path}
+      - id: udf-service
+        uri: ${UDF_SERVICE_URL:http://host.docker.internal:8200}/
+        predicates:
+          - Path=/ailegorreta/udf-service/**
+        filters:
+          - RewritePath=/ailegorreta/udf-service/(?<path>.*), /$\{path}
+          - name: CircuitBreaker
+            args:
+              name: udfCircuitBreaker
+              fallbackUri: forward:/udf-service-fallback       # Forwards request to this URI when the circuit is open
+      - id: udf
+        uri: ${UDF_SERVICE_URL:http://host.docker.internal:8200}/
+        predicates:
+          - Path=/ailegorreta/udf/**
+        filters:
+          - RewritePath=/ailegorreta/udf/(?<path>.*), /$\{path}
+          - name: CircuitBreaker
+            args:
+              name: udfCircuitBreaker
+              fallbackUri: forward:/udf-service-fallback       # Forwards request to this URI when the circuit is open
       - id: pref-service
         uri: ${PREF_SERVICE_URL:http://host.docker.internal:8183}/
         predicates:
