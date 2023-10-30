@@ -1,5 +1,23 @@
 # Last update October 2023(rlh)
 
+management:
+  mail:
+    host: mail.legosoft.com.mx
+    port: 587
+    username: rlegorreta@legosoft.com.mx
+    password:
+      "{cipher}AQBFW0MGYlSQrxM4bQxrvmSjIe4sXBXNPFrJZ/6cQlmXKV+UePAN/gP2UjoQXZF3zEpbMkM2OPMdQvjHjbHhixNXkRXBDB6E7yQ0vtPVsHTaBQIBWTlEdXMFzyqGImX9rAdCd3ARAHK18353EQp4yGrmCVocQVVJPTLy5lPhGwfHwMQ41Qk6bZMnOF4RAbV35NAbUFs0x+jLARwh0u6ywx95vz7g3Y0BDi19vison+gKNvKmZEzZeVNoD2a1Sl5gGOBp/wZ80ge1yb9ahJSf0KTZngEI/8hWS9mkp2vEBvguTMS6sKoPvt/kVl/zoTjJm7nNRh0Mb06/jDhuRjhrMwhFLbfrOlNzCfsMKPEv3CGTW+oSD8ZxJQS2Uq+khBTjD2s="
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+alfresco:
+  username: "{cipher}AQB/6ls0gqUmnv7DwM9nddvI3nurYoXnJ2dNWvStChBPx/CW860x6Bm7/HEzUW7FXXXd2jUS53aKJ80ZalWQEcyLy/T76phRPT1BhaiREh0Suunoew9vcIJI/ZrPMqGFCjb/V6cgMiZGFEGPV3ZBxC2Q130hppOTkOf5twgUjmxkDVHuYJzo+btOe8fFoW6AOHudzBAwMFQbOFuddg7lCJjmUCtem6vaUcE02sZkA5ba2uKRVjgtLjERR20UxSXcEpsj0GeXQqw4JlMlorkkD8Q3jljn8XWOSrgi0i7NZfDab5l0mWiG8vAUl0TTs6GopEfbL+9RMXVWK5RROjmxBKrWktmkv/1cEk0P5uYVHcOQ3MReUTuDkcztZ3sLEs7JMlo="
+  password: "{cipher}AQB/6ls0gqUmnv7DwM9nddvI3nurYoXnJ2dNWvStChBPx/CW860x6Bm7/HEzUW7FXXXd2jUS53aKJ80ZalWQEcyLy/T76phRPT1BhaiREh0Suunoew9vcIJI/ZrPMqGFCjb/V6cgMiZGFEGPV3ZBxC2Q130hppOTkOf5twgUjmxkDVHuYJzo+btOe8fFoW6AOHudzBAwMFQbOFuddg7lCJjmUCtem6vaUcE02sZkA5ba2uKRVjgtLjERR20UxSXcEpsj0GeXQqw4JlMlorkkD8Q3jljn8XWOSrgi0i7NZfDab5l0mWiG8vAUl0TTs6GopEfbL+9RMXVWK5RROjmxBKrWktmkv/1cEk0P5uYVHcOQ3MReUTuDkcztZ3sLEs7JMlo="
+
 # Testing what environment we are using
 mail:
   greeting: "Welcome to mail microservice from the config server, 'default configuration'."
