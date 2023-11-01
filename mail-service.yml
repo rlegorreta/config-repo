@@ -2,7 +2,7 @@
 
 management:
   mail:
-    host: legosoft
+    host: localhost
     port: 1025
     username: admin.test@ailegorreta
     password: test
