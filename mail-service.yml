@@ -2,11 +2,10 @@
 
 management:
   mail:
-    host: mail.legosoft.com.mx
-    port: 587
-    username: rlegorreta@legosoft.com.mx
-    password:
-      "{cipher}AQBFW0MGYlSQrxM4bQxrvmSjIe4sXBXNPFrJZ/6cQlmXKV+UePAN/gP2UjoQXZF3zEpbMkM2OPMdQvjHjbHhixNXkRXBDB6E7yQ0vtPVsHTaBQIBWTlEdXMFzyqGImX9rAdCd3ARAHK18353EQp4yGrmCVocQVVJPTLy5lPhGwfHwMQ41Qk6bZMnOF4RAbV35NAbUFs0x+jLARwh0u6ywx95vz7g3Y0BDi19vison+gKNvKmZEzZeVNoD2a1Sl5gGOBp/wZ80ge1yb9ahJSf0KTZngEI/8hWS9mkp2vEBvguTMS6sKoPvt/kVl/zoTjJm7nNRh0Mb06/jDhuRjhrMwhFLbfrOlNzCfsMKPEv3CGTW+oSD8ZxJQS2Uq+khBTjD2s="
+    host: legosoft
+    port: 1025
+    username: admin.test@ailegorreta
+    password: test
     properties:
       mail:
         smtp:
