@@ -1,5 +1,5 @@
 # Configuration for running the iam-ui inside a Docker desktop local.
-# Last update September 2023 (rlh)
+# Last update November 2023 (rlh)
 server:
   port: 8190
   
