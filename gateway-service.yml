@@ -31,13 +31,13 @@ spring:
         filters:
           - RewritePath=/order-service/(?<path>.*), /$\{path}
       - id: cartera-demo
-        uri: ${CARTERA_DEMO_URL:http://host.docker.internal:8500}/
+        uri: ${CARTERA_DEMO_URL:http://localhost:8500}/
         predicates:
           - Path=/ailegorreta/cartera-demo/**
         filters:
           - RewritePath=/ailegorreta/cartera-demo/(?<path>.*), /$\{path}
       - id: udf-service
-        uri: ${UDF_SERVICE_URL:http://host.docker.internal:8200}/
+        uri: ${UDF_SERVICE_URL:http://localhost:8200}/
         predicates:
           - Path=/ailegorreta/udf-service/**
         filters:
@@ -57,7 +57,7 @@ spring:
               name: udfCircuitBreaker
               fallbackUri: forward:/udf-service-fallback       # Forwards request to this URI when the circuit is open
       - id: pref-service
-        uri: ${PREF_SERVICE_URL:http://host.docker.internal:8183}/
+        uri: ${PREF_SERVICE_URL:http://localhost:8183}/
         predicates:
           - Path=/ailegorreta/pref-service/**
         filters:
@@ -77,7 +77,7 @@ spring:
               name: prefCircuitBreaker
               fallbackUri: forward:/pref-service-fallback       # Forwards request to this URI when the circuit is open
       - id: iam-service
-        uri: ${IAM_SERVICE_URL:http://host.docker.internal:8180}/
+        uri: ${IAM_SERVICE_URL:http://localhost:8180}/
         predicates:
           - Path=/ailegorreta/iam-service/**
         filters:
@@ -127,7 +127,7 @@ spring:
               name: cacheCircuitBreaker
               fallbackUri: forward:/cache-service-fallback       # Forwards request to this URI when the circuit is open
       - id: cache
-        uri: ${CACHE_SERVICE_URL:http://localhost:8351}/
+        uri: ${CACHE_SERVICE_URL:http://host.docker.internal:8351}/
         predicates:
           - Path=/ailegorreta/cache/**
         filters:
@@ -137,7 +137,7 @@ spring:
               name: cacheCircuitBreaker
               fallbackUri: forward:/cache-service-fallback       # Forwards request to this URI when the circuit is open
       - id: param-service
-        uri: ${PARAM_SERVICE_URL:http://host.docker.internal:8350}/
+        uri: ${PARAM_SERVICE_URL:http://localhost:8350}/
         predicates:
           - Path=/param-service/**
         filters:
@@ -167,7 +167,7 @@ spring:
               name: testCircuitBreaker                          # Name of the circuit breaker
               fallbackUri: forward:/test-service-fallback       # Forwards request to this URI when the circuit is open
       - id: test-service                                        # The route ID
-        uri: ${TEST_SERVICE_URL:http://host.docker.internal:8000}/
+        uri: ${TEST_SERVICE_URL:http://localhost:8000}/
         predicates:
           - Path=/test-service/**                               # The predicate is a path to match
         filters:
@@ -183,7 +183,7 @@ spring:
         filters:
           - RewritePath=/gateway/(?<path>.*), /$\{path}         # Rewrite the path to eliminate '/test' path
       - id: gateway-service                                     # The route ID
-        uri: ${GATEWAY_SERVICE_URL:http://host.docker.internal:8072}/
+        uri: ${GATEWAY_SERVICE_URL:http://localhost:8072}/
         predicates:
           - Path=/gateway-service/**                            # The predicate is a path to match
         filters:
