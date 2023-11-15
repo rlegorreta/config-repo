@@ -139,7 +139,7 @@ spring:
       - id: param-service
         uri: ${PARAM_SERVICE_URL:http://localhost:8350}/
         predicates:
-          - Path=/param-service/**
+          - Path=/ailegorreta/param-service/**
         filters:
           - RewritePath=/ailegorreta/param-service/(?<path>.*), /$\{path}
           - name: CircuitBreaker
@@ -149,7 +149,7 @@ spring:
       - id: param
         uri: ${PARAM_SERVICE_URL:http://host.docker.internal:8350}/
         predicates:
-          - Path=/param/**
+          - Path=/ailegorreta/param/**
         filters:
           - RewritePath=/ailegorreta/param/(?<path>.*), /$\{path}
           - name: CircuitBreaker
