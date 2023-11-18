@@ -1,23 +1,12 @@
-# Last update May 2023 (rlh)
-
-eureka:
-  instance:
-    preferIpAddress: true
-    instanceId: ${spring.application.name}:${random.int}
-    hostname: bup-service
-  client:
-    enabled: false              # Not used, just for Docker desktop with service discovery and load balanced
-    registerWithEureka: true
-    fetchRegistry: false        # this must be false because it is a service
+# Last update November 2023 (rlh)
+server:
+  port: 8520
 
 spring:
   neo4j:
-    repositories:
-      type: imperative
-  cloud:
-    loadbalancer:
-      ribbon:
-        enabled: false
+    authentication:
+      username: "{cipher}AQBYbOSFhaIbuqC61IeovSE0G+p4CTpOEQmMtBAU/iTWFTemVPaaD1UV63G3tylq629LRW4EkOr4g8iqfYj8+TNMQeopFLl/QR0m+O16TeTz4u01vh2Lp/oXNcp1Usne20pu5VhjrjWvIc9o3rR5PLBOAnfSY5vPhz6cLBiSLjYPiDDHdreso055xEThRVsCbaOAxg75eRHC9EbBDAaQfAxcB36PCsnFeVdW3LO7s62Uw1LX7QKmTT4jyq61f1ghu/ldMbeJHzPf7SN8KOh6DGXPgLNzvqEboGxYSZ8hQ7sUDhCLeDQksqtAny8MCNUGMqIY2QVU+qsdQaMzfo7aMt4nnMOO/PkA0Mc9r8/G7U5j8SdKsLXvfEs8ywojj6jsUlo="
+      password: "{cipher}AQBEKaVUSx+jvYXrbjH3POQlsSvz95ZeevxlQ6ZUxSsMi66/P5wbYM8Y4qKqNe/EanNN+HGqHqQKXSRQUSJsPe5avFKROGxw09qcyLEw3CMaVW/IgvtJp2NUMcemgmQxc7K5V+rWkYo6qyU/hV3RoFfSbNCl6WgputPUG33tTslcYJlrV+IPHuVC9TG8VtsYFFfldW/W7OqdxQUDKYfd79ASSzMS4HHpLMkFUiRLCULrV7ooDCKvYmcHmYU3qWGXtNjb14lKm9djGr9OPxQG827vnY4BdIUaYfffHFv0EB6e9DhwnyFziFOh6Umii412Ri4krP6atZQASWaWBkzyo33gdi9TUAwc9oFfPsSXNMykBC+JbLbhfkC9rl7tsf3Qvbw="
 
 bup:
   greeting: "Welcome to bup microservice from the config server, 'default configuration'."
