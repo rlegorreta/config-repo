@@ -1,54 +1,11 @@
-# Docker desktop localNoDocker configuration
-# Last update February 2023 (rlh)
+# Last update November 2023 (rlh)
 server:
   port: 8521
 
-eureka:
-  client:
-    healthcheck:
-      enabled: false
-      # ^ this is false for expediente because zeebe is not running yet when Eureka makes the health check TODO this must be true, we need to check zeebe to run first
-    serviceUrl:
-      defaultZone: http://localhost:8070/eureka/
-
-spring:
-  cloud:
-    stream:
-      kafka:
-        binder:
-          brokers: http://localhost:9092
-  security:
-    oauth2:
-      client:
-        provider:
-          spring:
-            issuer-uri: http://localhost:9000
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:9000
-          
-management:
-  tracing:
-    sampling:
-      probability: 1.0 # only for testing purpose, switch back to 0.1 for production code
-  zipkin:
-    tracing:
-      endpoint: http://localhost:9411/api/v2/spans
-
-# BPM Camunda
-zeebe:
-  client:
-    broker:
-      gateway-address: localhost:26500
-    security:
-      plaintext: true
-
-# Alfresco server
+# Alfresco content management server
 alfresco:
-  url: http://localhost:8080/alfresco/api/-default-/cmis/versions/1.1/atom
-  username: admin
-  password: admin
-  company: ACME     # This is the parent folder for all files
+  username: "{cipher}AQBkhkMP17tx3NdMPQJ4ErenK9WyWvIxrPuJegMZPX+Z2MnYeOVAmrsbh8vfSTehjOyhoxqE8yeQafOPJeqhI9aLHTwwo3FTCrZQrGnxHbUTCXWvypp7DwH3DIqhNzMgYoDMjArMibiIqHASMH9de3PW70/u+nHBXFeDZsbRnBoBuTzFtunrI+RlU0bmgzV1/R+cdTG720ttMnFWVGGfKNxuPpLoGTnXtsvoS0lF28183FUv/LS/FSdlz1j5cy6ypLGB/TEMAtScXA+0zqulE0o2uulxGLdoKFZ3ifXnR7ZVn9zCnwtt5CWfc7Yc3iwNJottC7XWvjT6ARhQB8vr9IBTsVXcZrX8PDC3jvcHHzUAQpos72dDBFb8pQ1PmVzo27o="
+  password: "{cipher}AQBkhkMP17tx3NdMPQJ4ErenK9WyWvIxrPuJegMZPX+Z2MnYeOVAmrsbh8vfSTehjOyhoxqE8yeQafOPJeqhI9aLHTwwo3FTCrZQrGnxHbUTCXWvypp7DwH3DIqhNzMgYoDMjArMibiIqHASMH9de3PW70/u+nHBXFeDZsbRnBoBuTzFtunrI+RlU0bmgzV1/R+cdTG720ttMnFWVGGfKNxuPpLoGTnXtsvoS0lF28183FUv/LS/FSdlz1j5cy6ypLGB/TEMAtScXA+0zqulE0o2uulxGLdoKFZ3ifXnR7ZVn9zCnwtt5CWfc7Yc3iwNJottC7XWvjT6ARhQB8vr9IBTsVXcZrX8PDC3jvcHHzUAQpos72dDBFb8pQ1PmVzo27o="
 
 # Testing what environment we are using
 expediente:
