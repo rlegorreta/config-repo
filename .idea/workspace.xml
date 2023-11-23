@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.62">
+      <change afterPath="$PROJECT_DIR$/order-service-kubernetes.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expediente-service-kubernetes.yml" beforeDir="false" afterPath="$PROJECT_DIR$/expediente-service-kubernetes.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expediente-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/expediente-service-local.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expediente-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/expediente-service-localNoDocker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service-local.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service-localNoDocker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +175,7 @@
       <workItem from="1700607314513" duration="599000" />
       <workItem from="1700666181460" duration="598000" />
       <workItem from="1700673692404" duration="2342000" />
-      <workItem from="1700691132622" duration="1726000" />
+      <workItem from="1700691132622" duration="3295000" />
     </task>
     <task id="LOCAL-00027" summary="Version 1.0.24">
       <created>1684951517433</created>
@@ -519,7 +520,7 @@
       <option name="project" value="LOCAL" />
       <updated>1690215733819</updated>
     </task>
-    <option name="localTasksCounter" value="144" />
+    <option name="localTasksCounter" value="145" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
