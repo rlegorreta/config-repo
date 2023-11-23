@@ -1,6 +1,6 @@
 # Last update November 2023 (rlh)
 server:
-  port: 8521
+  port: 8525
 
 # Alfresco content management server
 alfresco:

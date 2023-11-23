@@ -1,6 +1,6 @@
 # Last update Novemver 2023 (rlh)
 server:
-  port: 8521
+  port: 8525
 
 # Testing what environment we are using
 expediente:
