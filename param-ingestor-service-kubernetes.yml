@@ -1,0 +1,7 @@
+# Last update May 2023 (rlh)
+server:
+  port: 8349
+
+# Testing what environment we are using
+paramingestor:
+  greeting: "Welcome to param-ingestor microservice from the config server, 'kubernetes configuration'."

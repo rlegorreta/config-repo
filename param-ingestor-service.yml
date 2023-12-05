@@ -1,20 +1,6 @@
-# Last update May 2023 (rlh)
-
-eureka:
-  instance:
-    preferIpAddress: true
-    instanceId: ${spring.application.name}:${random.int}
-    hostname: param-ingestor-service
-  client:
-    enabled: false              # Not used, just for Docker desktop with service discovery and load balanced
-    registerWithEureka: true
-    fetchRegistry: false        # this must be false because it is a service
-    
-spring:
-  cloud:
-    loadbalancer:
-      ribbon:
-        enabled: false
+# Last update December 2023 (rlh)
+server:
+  port: 8349
 
 # Testing what environment we are using
 paramIngestor:

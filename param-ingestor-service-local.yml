@@ -1,32 +1,25 @@
-# Docker desktop local configuration
-# Last update February 2023 (rlh)
+# Last update December 2023 (rlh)
 server:
   port: 8349
 
 eureka:
+  instance:
+    preferIpAddress: true
+    instanceId: ${spring.application.name}:${random.int}
+    hostname: param-ingestor-service
   client:
     healthcheck:
-      enabled: true     # this must be true because it is a service
+      enabled: true         # this must be true because it is a service
     serviceUrl:
-      defaultZone: http://eureka:8070/eureka/
+      defaultZone: http://eureka-service:8070/eureka/
+    registerWithEureka: true
+    fetchRegistry: false      # this must be false because it is a service
 
 spring:
-  # Postgres DB to store all system parameters
   datasource:
-    url: jdbc:postgresql://paramDB:5452/paramdb
-    username: "{cipher}AQBLXYRWIKIIytWzw/VIQNfrMHay3gXdliVTNniJTFZ/IGsOVMr4ZLte/c7VM9eabjbdTOcLbKfwKiMQ/h3p2c5OPMEOk556ZRthgnnQSm8znXm+TRiZE6ig9pZnhuzFtSQKKT6Ilemr6FMttDO30zderR7/ST4Mp79+VqyqPtVkoKGPPJaEuc6DhvbzxIBZpNQgaHLvLoN6ubfnzbWTW5lujADegfiN4XHRc1mlOWNi8zv/TzCx1+Vc/KuuDvXnMV/VAQ7rLQRiXaxRmERLlMR16P0SvDhxVr6apYHhu/+LM3Dj7uQtZG91p8Yeb+3h1FRdZtgN/6K8aeBtYkuW/0f3a8DC4Ok6rVI1TV2//3JTElZsxHnqhv6UMQsaOUSwJvY="
-    password: "{cipher}AQBRD5jO2C7EUbzgiBo6rpcIrsC5hyg+oVhNpkn/Aoh/ld6Kk59vJ11fg3XqBOYtvRl4EiK89Kyn/n0559mtag+E/SFv6tcHPBEE47qMT2ewIJ/7qfEttEqm6Bp/cnLRi3ynZDt/xg4LYtaYmquxyL29zuH6yXqAdj1UTX3G3cCvYVXkXMhlQK+N94iH0E5jFSiniwB/PrnE/FF0wiel5iOfw+0SRGowWifHFKtHSHUGevWucTa/XHECN6csUCI9sbFolHfkNfixgnqVmcJralMqEjIBKXYPWCHlsuPr8QrrBMi6TLG+XTneU05bTEB1ceCE1Jk+HWdQxgmZlAbWpT4t6o+cqSAZ9Rpb6fpVjhIX/whD61XdUfxjfyhXMA/GzgM="
-    hikari:
-      connection-timeout: 2000  # The maximum time (ms) to spend waiting to get a connection from the pool
-      maximum-pool-size: 5      # The maximum number of connections HikariCP will keep in the poo
-
-  # Zipking variables
-  sleuth:
-    sampler:
-      percentage:  1    # The sampler for Zipkin is all REST service for demo purpose
-      #percentage: 0.3  # More realistic approach
-  zipkin:
-    baseUrl:  http://zipkin:9411/
+    url: jdbc:postgresql://ailegorreta-postgres:5452/paramdb
+    username: "{cipher}AQBzB5guoWrnGQipEG1VTyENpg/jNP0jqw4rzd53WjhvFvABZeT8VsL8644zL/rNqxzbMpJz377N5Fn4sDFl9sifndFYU9kdD0VeJ3b0EmAJ1XeO+erwvYW10XbqgNoxWAf1tV6RaS/kkmtZ/1RBNqCvWqzadKszDwTAkA4LKeagxt0EdvDWEGMDXWMsKKTgepB07RYqB2wzIbFMnO49zpxaQu3z49NiSYBlT8oPp4FkYjdmjgwqzEIcK1QJS76jfS2EMSjcFa7MC5a0h9qvxc/oL3VA0IXD9wO+zJzgmka96iw2b9i7YX/d1Z32JRBhfRhNDw4FbqnCPDXV63H8Sz/QT+08mRuK7jj7B7xhS3Qmm53QplLKZVXvaGNjmPThaWQ="
+    password: "{cipher}AQBiVZ64BDgFtaVHgqMxBfS0li+ibMyBu7I9gg6qhve61My2SRtEIq4NrnxWYARTRp8wrcg8s1tlrHJC0lRHksKftLeDduW2FXvLe26uPhThT+XIYWNUvF1bH7mqzpdBkrLgvfY0oN1Q81ra55ySEVvmPga9WLEYTn9BWUjVGIf+PL5H+qE8NIBBfRaOQT3vgNVI8lJ7j5CRTCkRZa7XO1DYF7s4xc2/gvM7i0khY6/cVQCKQ7Ge15gkMvEQKGHEmvaalP9ZT6isJ0aRE+2+2DPWlKFuY6ovh7Rl/YvEm0bvW6jMLyojE88TNokApZNQSQxR74MBqpiBGyi7as5ADtmfcRS2T287GBmnjM5kHf7cwvY9hcoJPbyUP3TTCZiR23o="
 
 # Testing what environment we are using
 paramIngestor:
