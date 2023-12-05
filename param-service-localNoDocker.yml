@@ -2,6 +2,12 @@
 server:
   port: 8350
 
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5452/paramdb
+    username: "{cipher}AQBzB5guoWrnGQipEG1VTyENpg/jNP0jqw4rzd53WjhvFvABZeT8VsL8644zL/rNqxzbMpJz377N5Fn4sDFl9sifndFYU9kdD0VeJ3b0EmAJ1XeO+erwvYW10XbqgNoxWAf1tV6RaS/kkmtZ/1RBNqCvWqzadKszDwTAkA4LKeagxt0EdvDWEGMDXWMsKKTgepB07RYqB2wzIbFMnO49zpxaQu3z49NiSYBlT8oPp4FkYjdmjgwqzEIcK1QJS76jfS2EMSjcFa7MC5a0h9qvxc/oL3VA0IXD9wO+zJzgmka96iw2b9i7YX/d1Z32JRBhfRhNDw4FbqnCPDXV63H8Sz/QT+08mRuK7jj7B7xhS3Qmm53QplLKZVXvaGNjmPThaWQ="
+    password: "{cipher}AQBiVZ64BDgFtaVHgqMxBfS0li+ibMyBu7I9gg6qhve61My2SRtEIq4NrnxWYARTRp8wrcg8s1tlrHJC0lRHksKftLeDduW2FXvLe26uPhThT+XIYWNUvF1bH7mqzpdBkrLgvfY0oN1Q81ra55ySEVvmPga9WLEYTn9BWUjVGIf+PL5H+qE8NIBBfRaOQT3vgNVI8lJ7j5CRTCkRZa7XO1DYF7s4xc2/gvM7i0khY6/cVQCKQ7Ge15gkMvEQKGHEmvaalP9ZT6isJ0aRE+2+2DPWlKFuY6ovh7Rl/YvEm0bvW6jMLyojE88TNokApZNQSQxR74MBqpiBGyi7as5ADtmfcRS2T287GBmnjM5kHf7cwvY9hcoJPbyUP3TTCZiR23o="
+
 # Testing what environment we are using
 param:
   greeting: "Welcome to param microservice from the config server, 'localNoDocker configuration'."
