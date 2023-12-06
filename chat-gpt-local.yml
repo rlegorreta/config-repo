@@ -1,0 +1,20 @@
+# Last update August 2023 (rlh)
+server:
+  port: 8900
+
+eureka:
+  instance:
+    preferIpAddress: true
+    instanceId: ${spring.application.name}:${random.int}
+    hostname: chat-gpt
+  client:
+    healthcheck:
+      enabled: true         # this must be true because it is a service
+    serviceUrl:
+      defaultZone: http://eureka-service:8070/eureka/
+    registerWithEureka: true
+    fetchRegistry: false      # this must be false because it is a service
+
+# Testing what environment we are using
+param:
+  greeting: "Welcome to 'chat-gpt'' microservice from the config server, 'local configuration'."
