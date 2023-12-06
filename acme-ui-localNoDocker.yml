@@ -7,7 +7,7 @@ eureka:
   instance:
     preferIpAddress: true
     instanceId: ${spring.application.name}:${random.int}
-    hostname: sys-ui
+    hostname: acme-ui
   client:
     healthcheck:
       enabled: false # this must be false because is a UI

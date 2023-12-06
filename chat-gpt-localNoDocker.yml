@@ -2,6 +2,20 @@
 server:
   port: 8900
 
+eureka:
+  instance:
+    preferIpAddress: true
+    instanceId: ${spring.application.name}:${random.int}
+    hostname: chat-gpt
+  client:
+    healthcheck:
+      enabled: false # this must be false because is a UI
+    registerWithEureka: true
+    fetchRegistry: true       # this must be true because is UI
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+    registry-fetch-interval-seconds: 5
+
 # Testing what environment we are using
 param:
   greeting: "Welcome to 'chat-gpt'' microservice from the config server, 'localNoDocker configuration'."
