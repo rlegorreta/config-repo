@@ -15,6 +15,10 @@ eureka:
     registerWithEureka: true
     fetchRegistry: false      # this must be false because it is a service
 
+security:
+  iam:
+    provider-uri: http://gateway-service:8072/iam-service       # use the gateway
+
 # Testing what environment we are using
 param:
   greeting: "Welcome to 'chat-gpt'' microservice from the config server, 'local configuration'."

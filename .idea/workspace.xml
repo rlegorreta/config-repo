@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.62">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acme-ui-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/acme-ui-localNoDocker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-gpt-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/chat-gpt-local.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat-gpt-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/chat-gpt-localNoDocker.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -186,7 +186,8 @@
       <workItem from="1701302388578" duration="1231000" />
       <workItem from="1701357774168" duration="2479000" />
       <workItem from="1701458430521" duration="596000" />
-      <workItem from="1701718804605" duration="9711000" />
+      <workItem from="1701718804605" duration="10320000" />
+      <workItem from="1701912354196" duration="681000" />
     </task>
     <task id="LOCAL-00027" summary="Version 1.0.24">
       <created>1684951517433</created>
@@ -531,7 +532,7 @@
       <option name="project" value="LOCAL" />
       <updated>1690215733819</updated>
     </task>
-    <option name="localTasksCounter" value="153" />
+    <option name="localTasksCounter" value="154" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
