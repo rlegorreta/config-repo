@@ -9,11 +9,12 @@ eureka:
     hostname: chat-gpt
   client:
     healthcheck:
-      enabled: true         # this must be true because it is a service
+      enabled: false # this must be false because is a UI
+    registerWithEureka: true
+    fetchRegistry: true       # this must be true because is UI
     serviceUrl:
       defaultZone: http://eureka-service:8070/eureka/
-    registerWithEureka: true
-    fetchRegistry: false      # this must be false because it is a service
+    registry-fetch-interval-seconds: 5
 
 security:
   iam:
