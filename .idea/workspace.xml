@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.62">
-      <change afterPath="$PROJECT_DIR$/bup-bulk-service-kubernetes.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bup-bulk-service-local.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bup-bulk-service-localNoDocker.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bup-bulk-service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mail-service-local.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bup-bulk-service-kubernetes.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bup-bulk-service-kubernetes.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bup-bulk-service-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bup-bulk-service-local.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bup-bulk-service-localNoDocker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bup-bulk-service-localNoDocker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bup-bulk-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bup-bulk-service.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +19,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -227,7 +229,7 @@
       <workItem from="1705604813370" duration="1592000" />
       <workItem from="1705619292506" duration="599000" />
       <workItem from="1705630979433" duration="24000" />
-      <workItem from="1706802844289" duration="776000" />
+      <workItem from="1706802844289" duration="1424000" />
     </task>
     <task id="LOCAL-00027" summary="Version 1.0.24">
       <created>1684951517433</created>
@@ -572,7 +574,7 @@
       <option name="project" value="LOCAL" />
       <updated>1690215733819</updated>
     </task>
-    <option name="localTasksCounter" value="157" />
+    <option name="localTasksCounter" value="158" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

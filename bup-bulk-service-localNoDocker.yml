@@ -1,6 +1,6 @@
 # Last update February 2024 (rlh)
 server:
-  port: 8540
+  port: 8541
 
 eureka:
   instance:

@@ -1,6 +1,6 @@
 # Last update July 2023 (rlh)
 server:
-  port: 8540
+  port: 8541
 
 # Testing what environment we are using
 cache:

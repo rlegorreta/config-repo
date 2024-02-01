@@ -1,6 +1,6 @@
 # Last update February 2024 (rlh)
 server:
-  port: 85400
+  port: 8541
 
 # Testing what environment we are using
 bup-bulk-service:
