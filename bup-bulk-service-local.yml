@@ -1,0 +1,36 @@
+# Last update February 2024 (rlh)
+server:
+  port: 8540
+
+eureka:
+  instance:
+    preferIpAddress: true
+    instanceId: ${spring.application.name}:${random.int}
+    hostname: bup-bulk-service
+  client:
+    healthcheck:
+      enabled: true         # this must be true because it is a service
+    serviceUrl:
+      defaultZone: http://eureka-service:8070/eureka/
+    registerWithEureka: true
+    fetchRegistry: false      # this must be false because it is a service
+
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+    stream:
+      kafka:
+        binder:
+          brokers: http://kafka:9092
+
+# Back-end microservices
+microservice:
+  bup:
+    provider-uri: http://gateway-service:8072/bup-service        # use the gateway (or 'bup' url is ok)
+    # provider-uri: http://bup-service:8520
+
+# Testing what environment we are using
+bup-bulk-service:
+  greeting: "Welcome to bup-bulk-service microservice from the config server, 'local configuration'."

@@ -1,0 +1,7 @@
+# Last update February 2024 (rlh)
+server:
+  port: 85400
+
+# Testing what environment we are using
+bup-bulk-service:
+  greeting: "Welcome to bup-bulk-service microservice from the config server, 'default configuration'."
