@@ -1,13 +1,5 @@
 # Last update March 2024 (rlh)
 
-springdocs:
-  mdb:
-    url: not-define-mongodb-url
-  ds:
-    username: username
-    password: password
-    url: not-defined
-
 aws:
   region: not-defined
   access:
