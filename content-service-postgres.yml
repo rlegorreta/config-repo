@@ -1,0 +1,13 @@
+# Last update March 2024 (rlh)
+
+springdocs:
+  MDB:
+    URL: not-define-mongodb-url
+  ds:
+    username: "{cipher}AQB/6ls0gqUmnv7DwM9nddvI3nurYoXnJ2dNWvStChBPx/CW860x6Bm7/HEzUW7FXXXd2jUS53aKJ80ZalWQEcyLy/T76phRPT1BhaiREh0Suunoew9vcIJI/ZrPMqGFCjb/V6cgMiZGFEGPV3ZBxC2Q130hppOTkOf5twgUjmxkDVHuYJzo+btOe8fFoW6AOHudzBAwMFQbOFuddg7lCJjmUCtem6vaUcE02sZkA5ba2uKRVjgtLjERR20UxSXcEpsj0GeXQqw4JlMlorkkD8Q3jljn8XWOSrgi0i7NZfDab5l0mWiG8vAUl0TTs6GopEfbL+9RMXVWK5RROjmxBKrWktmkv/1cEk0P5uYVHcOQ3MReUTuDkcztZ3sLEs7JMlo="
+    password: "{cipher}AQB/6ls0gqUmnv7DwM9nddvI3nurYoXnJ2dNWvStChBPx/CW860x6Bm7/HEzUW7FXXXd2jUS53aKJ80ZalWQEcyLy/T76phRPT1BhaiREh0Suunoew9vcIJI/ZrPMqGFCjb/V6cgMiZGFEGPV3ZBxC2Q130hppOTkOf5twgUjmxkDVHuYJzo+btOe8fFoW6AOHudzBAwMFQbOFuddg7lCJjmUCtem6vaUcE02sZkA5ba2uKRVjgtLjERR20UxSXcEpsj0GeXQqw4JlMlorkkD8Q3jljn8XWOSrgi0i7NZfDab5l0mWiG8vAUl0TTs6GopEfbL+9RMXVWK5RROjmxBKrWktmkv/1cEk0P5uYVHcOQ3MReUTuDkcztZ3sLEs7JMlo="
+    url: jdbc:postgresql://ailegorreta-content:5452/contentdb
+
+# This is the permit where all content events are notified
+content:
+  greeting: "Welcome to content microservice from the config server, 'postgress configuration'."
