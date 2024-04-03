@@ -1,1 +1,5 @@
 # This YML properties is for blob Stores
+
+# Testing what environment we are using
+content-service:
+  greeting: "Welcome to param microservice from the config server, 'blob configuration'."
