@@ -212,22 +212,22 @@ spring:
               args:
                 name: paramCircuitBreaker
                 fallbackUri: forward:/param-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: content
-          uri: ${CONTENT_SERVICE_URL:http://host.docker.internal:8370}/
+        - id: content-service
+          uri: ${CONTENT_SERVICE_URL:http://localhost:8370}/
           predicates:
-            - Path=/content/**
+            - Path=/ailegorreta/content-service/**
           filters:
-            - RewritePath=/content/(?<path>.*), /$\{path}
+            - RewritePath=/ailegorreta/content-service/(?<path>.*), /$\{path}
             - name: CircuitBreaker
               args:
                 name: contentCircuitBreaker
                 fallbackUri: forward:/content-service-fallback
-        - id: content-service
-          uri: ${CONTENT_SERVICE_URL:http://localhost:8370}/
+        - id: content
+          uri: ${CONTENT_SERVICE_URL:http://host.docker.internal:8370}/
           predicates:
-            - Path=/content-service/**
+            - Path=/ailegorreta/content/**
           filters:
-            - RewritePath=/content-service/(?<path>.*), /$\{path}
+            - RewritePath=/ailegorreta/content/(?<path>.*), /$\{path}
             - name: CircuitBreaker
               args:
                 name: contentCircuitBreaker
