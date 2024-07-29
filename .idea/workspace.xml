@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.62">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content-service-postgres.yml" beforeDir="false" afterPath="$PROJECT_DIR$/content-service-postgres.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +244,15 @@
       <workItem from="1712103099343" duration="634000" />
       <workItem from="1712107533290" duration="115000" />
       <workItem from="1712107710285" duration="659000" />
-      <workItem from="1712283067498" duration="1663000" />
+      <workItem from="1712283067498" duration="2574000" />
+      <workItem from="1712596513985" duration="430000" />
+      <workItem from="1712614601930" duration="20000" />
+      <workItem from="1713562291902" duration="782000" />
+      <workItem from="1721172726595" duration="3000" />
+      <workItem from="1721780034730" duration="700000" />
+      <workItem from="1722016760136" duration="21000" />
+      <workItem from="1722017426810" duration="734000" />
+      <workItem from="1722276514405" duration="132000" />
     </task>
     <task id="LOCAL-00027" summary="Version 1.0.24">
       <created>1684951517433</created>
@@ -589,7 +597,7 @@
       <option name="project" value="LOCAL" />
       <updated>1690215733819</updated>
     </task>
-    <option name="localTasksCounter" value="170" />
+    <option name="localTasksCounter" value="171" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
