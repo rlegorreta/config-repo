@@ -14,14 +14,6 @@ spring:
     hikari:
       connection-timeout: 2000  # The maximum time (ms) to spend waiting to get a connection from the pool
       maximum-pool-size: 5      # The maximum number of connections HikariCP will keep in the pool
-  r2dbc:
-    username: "{cipher}AQAwlsEKEoft5culvyzjD7uhF9k1xFFKHXAQkT6cVaVhqgo2Ls5/TVNNucJkK9NqPCf6UE6kXJ46o8IwGq/j00w87AJwbQEIN69tD5joIUWOA6mO0WBBYDIisMszlnExtQtFJ2FJUOk6C4tBQkzqnEHlKD4dOnZuHl2GLPF+TWzwz7060GxqYEwZ9keLyE60BEcaFPS9klPMB8KC6POy+8u7+xneJkPRHjeaAugqEIIjqIe0tGU0qjgI649JbuQvAGUVRNrLNTvby4uc3bUCtOn9E0IqWmls9TEFP2yULguF/rzW8bYpjOrknkh5oTLpS9UoEKe87i13PYAg8BphZ/pr0+JHQbVByefksjfq+OGck8xMzQz7d0lV8AHBce31Sv0="
-    password: "{cipher}AQBTT7xm4Vpg6eBrLyAY+mBd1GVa2JrlmqdJJyw08iofFbFJIFC9gK5+j1Azwm+9cvqCEfW6L0KPzHJB9zfrr1w5FBarEGzz5C4EUdcfVGt47Wy73RsM6/u5BAY3/p2dGoxo0hvmwSYmTy9oT8574tU/mRjE0M6jipsQzpdByZOM33Z4C7To/xdXCK/IlUho+DVHFxsjQDHHMJes7CzXqSJAaT4c4Rn8zibVfN1/+337cWpZZzgMwXjueqTAErKj1IbTB/R35lmrdyHTq7SNA9yDd719Uhw3PdQBmr/qWwKYa3zwIsJMGYpLiDFhBYhb+WRiqv2Zwy5fpJlxqI+lpGhCii7lKPc4fVT0v4kuTPDRDqoK+Odxyv7N4X7EDmhwadc="
-    url: r2dbc:postgresql://localhost:5452/authdb
-    pool:
-      max-create-connection-time: 2s
-      initial-size: 5
-      max-size: 10
   neo4j:
     uri: bolt://localhost:7687
     authentication:
@@ -37,7 +29,6 @@ ailegorreta:
   neo4j:
     flyway:
       locations: /db/neo4j/migration # Script to initialize iamDB (also in iam-service)
-
 
 # Testing what environment we are using
 auth:
