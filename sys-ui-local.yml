@@ -20,7 +20,7 @@ eureka:
 security:
   iam:
     provider-uri: http://gateway-service:8072/iam-service       # use the gateway
-    load-balanced: false
+    load-balanced: true
 
 # Alfresco content management server
 alfresco:
