@@ -1,0 +1,25 @@
+# Last update January 2025 (rlh)
+server:
+  port: 8910
+
+eureka:
+  instance:
+    preferIpAddress: true
+    instanceId: ${spring.application.name}:${random.int}
+    hostname: chat-gpt-ui
+  client:
+    healthcheck:
+      enabled: false # this must be false because is a UI
+    registerWithEureka: true
+    fetchRegistry: true       # this must be true because is UI
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+    registry-fetch-interval-seconds: 5
+
+security:
+  iam:
+    provider-uri: http://localhost:8072/ailegorreta/iam-service       # use the gateway
+
+# Testing what environment we are using
+param:
+  greeting: "Welcome to 'spring-ai-ui' microservice from the config server, 'localNoDocker configuration'."
