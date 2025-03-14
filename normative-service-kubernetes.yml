@@ -1,0 +1,7 @@
+# Last update March 2025 (rlh)
+server:
+  port: 8522
+
+# Testing what environment we are using
+normative:
+  greeting: "Welcome to normative microservice from the config server, 'kubernetes configuration'."

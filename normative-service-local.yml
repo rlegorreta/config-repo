@@ -1,0 +1,21 @@
+# Last update March 2025 (rlh)
+server:
+  port: 8522
+
+eureka:
+  instance:
+    preferIpAddress: true
+    instanceId: ${spring.application.name}:${random.int}
+    hostname: normative-service
+  client:
+    healthcheck:
+      enabled: true         # this must be true because it is a service
+    serviceUrl:
+      defaultZone: http://eureka-service:8070/eureka/
+    registerWithEureka: true
+    fetchRegistry: false      # this must be false because it is a service
+
+
+# Testing what environment we are using
+normative:
+  greeting: "Welcome to normative microservice from the config server, 'local configuration'."
