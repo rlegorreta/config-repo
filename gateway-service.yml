@@ -232,6 +232,26 @@ spring:
               args:
                 name: contentCircuitBreaker
                 fallbackUri: forward:/content-service-fallback
+        - id: normative-service
+          uri: ${NORMATIVE_SERVICE_URL:http://localhost:8522}/
+          predicates:
+            - Path=/ailegorreta/normative-service/**
+          filters:
+            - RewritePath=/ailegorreta/normative-service/(?<path>.*), /$\{path}
+            - name: CircuitBreaker
+              args:
+                name: normativeCircuitBreaker
+                fallbackUri: forward:/normative-service-fallback
+        - id: normative
+          uri: ${NORMATIVE_SERVICE_URL:http://host.docker.internal:8522}/
+          predicates:
+            - Path=/ailegorreta/normative/**
+          filters:
+            - RewritePath=/ailegorreta/normative/(?<path>.*), /$\{path}
+            - name: CircuitBreaker
+              args:
+                name: normativeCircuitBreaker
+                fallbackUri: forward:/normative-service-fallback
         - id: test                                                # The route ID
           uri: ${TEST_SERVICE_URL:http://host.docker.internal:8000}/
           predicates:
