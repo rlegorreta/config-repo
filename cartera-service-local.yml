@@ -1,0 +1,26 @@
+# Last update April 2025 (rlh)
+eureka:
+  instance:
+    preferIpAddress: true
+    instanceId: ${spring.application.name}:${random.int}
+    hostname: cartera-service
+  client:
+    healthcheck:
+      enabled: true         # this must be true because it is a service
+    serviceUrl:
+      defaultZone: http://eureka-service:8070/eureka/
+    registerWithEureka: true
+    fetchRegistry: false      # this must be false because it is a service
+
+spring:
+  datasource:
+    url: jdbc:sqlserver://host.docker.internal:1415;databaseName=master
+    # see: jdbc:sqlserver://host:port;databaseName=dbName;encrypt=true;trustServerCertificate=true
+    # https://stackoverflow.com/questions/72698722/spring-boot-starter-parent-2-7-0-version-destroys-connection-to-sql-server-datab
+    # if we want the latest mssqlserver-driver
+  flyway:
+    uri: jdbc:sqlserver://localhost:1415;databaseName=master
+
+# Testing what environment we are using
+param:
+  greeting: "Welcome to cartera-servico microservice from the config server, 'local configuration'."

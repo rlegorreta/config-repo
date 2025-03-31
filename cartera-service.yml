@@ -1,0 +1,19 @@
+server:
+  port: 8500
+
+spring:
+  datasource:
+    username:
+      "{cipher}AQB547hhOFG7XnYlBARXDpF8jvkbCUJemY9P8GeGcj9rPdMR4DtXH2o/1kk6ZevUMbwPUBLQOV394LOmtFaRkJoF44Hdl65c1U5XbvC8J+j/euVAH4ywxw9myipIbB6DGiPOyi47rEUeQ64Vbx+pSfoI7GZVVJowak/WXnXXerwa6vE0aytLq8Z3FX/d/WoZ27pkJeMMxNtGudlogjOlKRq0Q55Uc1HLumhs8PNzdP+/91eEzq8UUjSR6d9spzXbsABMZhZpWdNGN3ZrP8FQ+Q3ua2oKnNIwC6iMc46FG/eG9fhY2jV4kFN4dBNo1O9WO1EVe0Y1wrJz8rfbqm90/DZiNK8iIavMbH+fMrOQ6LHxvv+Q1t8RflyXtsc2tbiG1w4="
+    password:
+      "{cipher}AQAgmKRrxZoVhYZiODuMVyO8JeScY6V+gKZZSIQG/qVwG4ReKz0VCypGjyFu0tI23o0viuhjVqrudCCKPII0cR6Md6hrxMVbFaZbY9JUqt+KC1GW5QPEjAfzevN1wOGdD9POUjWq3vQM6JFXvFbmjGt3V+Ak86bsSQYUQHKreD4muIcrq6DY92u28ecexs7cqjRioAcvltsXYeprFusvHi5JgSBe782wfnoBTdwQQENBsQ8rJFvAuuIP1OYwbHy/JTJVIA5rTC7ab/+Jxffck131qBgsD2IBp6QtHXUqG9kSOnSASBgA2EdruECQ9ZY1UZuVacW79EnRntiSvx9ukHolnQ9iHu/S4iIkK/0KWy91AkYlIYHmcEPBPUanYyT3kZM="
+
+  flyway:
+    user:
+      "{cipher}AQB547hhOFG7XnYlBARXDpF8jvkbCUJemY9P8GeGcj9rPdMR4DtXH2o/1kk6ZevUMbwPUBLQOV394LOmtFaRkJoF44Hdl65c1U5XbvC8J+j/euVAH4ywxw9myipIbB6DGiPOyi47rEUeQ64Vbx+pSfoI7GZVVJowak/WXnXXerwa6vE0aytLq8Z3FX/d/WoZ27pkJeMMxNtGudlogjOlKRq0Q55Uc1HLumhs8PNzdP+/91eEzq8UUjSR6d9spzXbsABMZhZpWdNGN3ZrP8FQ+Q3ua2oKnNIwC6iMc46FG/eG9fhY2jV4kFN4dBNo1O9WO1EVe0Y1wrJz8rfbqm90/DZiNK8iIavMbH+fMrOQ6LHxvv+Q1t8RflyXtsc2tbiG1w4="
+    password:
+      "{cipher}AQAgmKRrxZoVhYZiODuMVyO8JeScY6V+gKZZSIQG/qVwG4ReKz0VCypGjyFu0tI23o0viuhjVqrudCCKPII0cR6Md6hrxMVbFaZbY9JUqt+KC1GW5QPEjAfzevN1wOGdD9POUjWq3vQM6JFXvFbmjGt3V+Ak86bsSQYUQHKreD4muIcrq6DY92u28ecexs7cqjRioAcvltsXYeprFusvHi5JgSBe782wfnoBTdwQQENBsQ8rJFvAuuIP1OYwbHy/JTJVIA5rTC7ab/+Jxffck131qBgsD2IBp6QtHXUqG9kSOnSASBgA2EdruECQ9ZY1UZuVacW79EnRntiSvx9ukHolnQ9iHu/S4iIkK/0KWy91AkYlIYHmcEPBPUanYyT3kZM="
+
+# Testing what environment we are using
+cartera-service:
+  greeting: "Welcome to cartera-service microservice from the config server, 'default configuration'."

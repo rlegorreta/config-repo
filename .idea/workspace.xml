@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.62">
+      <change afterPath="$PROJECT_DIR$/cartera-service-local.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cartera-service-localNoDocker.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cartera-service.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,7 +290,8 @@
       <workItem from="1737587704856" duration="344000" />
       <workItem from="1738110864649" duration="27000" />
       <workItem from="1741975624372" duration="1040000" />
-      <workItem from="1741977363284" duration="226000" />
+      <workItem from="1741977363284" duration="247000" />
+      <workItem from="1743463497596" duration="716000" />
     </task>
     <task id="LOCAL-00027" summary="Version 1.0.24">
       <created>1684951517433</created>
@@ -633,7 +636,7 @@
       <option name="project" value="LOCAL" />
       <updated>1690215733819</updated>
     </task>
-    <option name="localTasksCounter" value="177" />
+    <option name="localTasksCounter" value="178" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
