@@ -86,12 +86,22 @@ spring:
               args:
                 name: bupCircuitBreaker
                 fallbackUri: forward:/bup-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: cartera-demo
-          uri: ${CARTERA_DEMO_URL:http://localhost:8500}/
+        - id: cartera-service
+          uri: ${CARTERA_SERVICE_URL:http://localhost:8500}/
           predicates:
-            - Path=/ailegorreta/cartera-demo/**
+            - Path=/ailegorreta/cartera-service/**
           filters:
-            - RewritePath=/ailegorreta/cartera-demo/(?<path>.*), /$\{path}
+            - RewritePath=/ailegorreta/cartera-service/(?<path>.*), /$\{path}
+        - id: cartera
+          uri: ${CARTERA_SERVICE_URL:http://host.docker.internal:8500}/
+          predicates:
+            - Path=/ailegorreta/cartera/**
+          filters:
+            - RewritePath=/ailegorreta/cartera/(?<path>.*), /$\{path}
+            - name: CircuitBreaker
+              args:
+                name: bupCircuitBreaker
+                fallbackUri: forward:/cartera-service-fallback       # Forwards request to this URI when the circuit is open
         - id: udf-service
           uri: ${UDF_SERVICE_URL:http://localhost:8200}/
           predicates:
