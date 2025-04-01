@@ -17,12 +17,12 @@ spring:
     config:
       uri: http://config-server:8071
   datasource:
-    url: jdbc:sqlserver://host.docker.internal:1415;databaseName=master
+    url: jdbc:sqlserver://host.docker.internal:1433;databaseName=master
     # see: jdbc:sqlserver://host:port;databaseName=dbName;encrypt=true;trustServerCertificate=true
     # https://stackoverflow.com/questions/72698722/spring-boot-starter-parent-2-7-0-version-destroys-connection-to-sql-server-datab
     # if we want the latest mssqlserver-driver
   flyway:
-    uri: jdbc:sqlserver://host.docker.internal:1415;databaseName=master
+    uri: jdbc:sqlserver://host.docker.internal:1433;databaseName=master
 
 # Testing what environment we are using
 param:
