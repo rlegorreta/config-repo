@@ -19,7 +19,7 @@ spring:
     # https://stackoverflow.com/questions/72698722/spring-boot-starter-parent-2-7-0-version-destroys-connection-to-sql-server-datab
     # if we want the latest mssqlserver-driver
   flyway:
-    uri: jdbc:sqlserver://localhost:1415;databaseName=master
+    uri: jdbc:sqlserver://host.docker.internal:1415;databaseName=master
 
 # Testing what environment we are using
 param:
