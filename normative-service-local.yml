@@ -15,6 +15,10 @@ eureka:
     registerWithEureka: true
     fetchRegistry: false      # this must be false because it is a service
 
+spring:
+  cloud:
+    config:
+      uri: http://config-server:8071
 
 # Testing what environment we are using
 normative:

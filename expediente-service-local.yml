@@ -15,6 +15,11 @@ eureka:
     registerWithEureka: true
     fetchRegistry: false      # this must be false because it is a service
 
+spring:
+  cloud:
+    config:
+      uri: http://config-server:8071
+
 # Alfresco content management server
 alfresco:
   username: "{cipher}AQBkhkMP17tx3NdMPQJ4ErenK9WyWvIxrPuJegMZPX+Z2MnYeOVAmrsbh8vfSTehjOyhoxqE8yeQafOPJeqhI9aLHTwwo3FTCrZQrGnxHbUTCXWvypp7DwH3DIqhNzMgYoDMjArMibiIqHASMH9de3PW70/u+nHBXFeDZsbRnBoBuTzFtunrI+RlU0bmgzV1/R+cdTG720ttMnFWVGGfKNxuPpLoGTnXtsvoS0lF28183FUv/LS/FSdlz1j5cy6ypLGB/TEMAtScXA+0zqulE0o2uulxGLdoKFZ3ifXnR7ZVn9zCnwtt5CWfc7Yc3iwNJottC7XWvjT6ARhQB8vr9IBTsVXcZrX8PDC3jvcHHzUAQpos72dDBFb8pQ1PmVzo27o="

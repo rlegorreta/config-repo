@@ -16,6 +16,9 @@ eureka:
     fetchRegistry: false      # this must be false because it is a service
 
 spring:
+  cloud:
+    config:
+      uri: http://config-server:8071
   data:
     mongodb:
       # note: Spring boot 3.1.0 ignores Mongo properties authentication database.

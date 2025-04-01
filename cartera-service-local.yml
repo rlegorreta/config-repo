@@ -13,6 +13,9 @@ eureka:
     fetchRegistry: false      # this must be false because it is a service
 
 spring:
+  cloud:
+    config:
+      uri: http://config-server:8071
   datasource:
     url: jdbc:sqlserver://host.docker.internal:1415;databaseName=master
     # see: jdbc:sqlserver://host:port;databaseName=dbName;encrypt=true;trustServerCertificate=true

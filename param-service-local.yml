@@ -16,6 +16,9 @@ eureka:
     fetchRegistry: false      # this must be false because it is a service
 
 spring:
+  cloud:
+    config:
+      uri: http://config-server:8071
   datasource:
     url: jdbc:postgresql://ailegorreta-postgres:5452/paramdb
     username: "{cipher}AQBzB5guoWrnGQipEG1VTyENpg/jNP0jqw4rzd53WjhvFvABZeT8VsL8644zL/rNqxzbMpJz377N5Fn4sDFl9sifndFYU9kdD0VeJ3b0EmAJ1XeO+erwvYW10XbqgNoxWAf1tV6RaS/kkmtZ/1RBNqCvWqzadKszDwTAkA4LKeagxt0EdvDWEGMDXWMsKKTgepB07RYqB2wzIbFMnO49zpxaQu3z49NiSYBlT8oPp4FkYjdmjgwqzEIcK1QJS76jfS2EMSjcFa7MC5a0h9qvxc/oL3VA0IXD9wO+zJzgmka96iw2b9i7YX/d1Z32JRBhfRhNDw4FbqnCPDXV63H8Sz/QT+08mRuK7jj7B7xhS3Qmm53QplLKZVXvaGNjmPThaWQ="

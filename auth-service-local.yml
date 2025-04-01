@@ -2,6 +2,11 @@
 server:
   port: 9000
 
+spring:
+  cloud:
+    config:
+      uri: http://config-server:8071
+
 # Testing what environment we are using
 auth:
   greeting: "Welcome to auth microservice from the config server, 'local configuration'."

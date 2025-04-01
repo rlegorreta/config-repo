@@ -16,6 +16,9 @@ eureka:
     fetchRegistry: false      # this must be false because it is a service
 
 spring:
+  cloud:
+    config:
+      uri: http://config-server:8071
   mail:
     password: "{cipher}AQAp8cRpPLunAgqM5HOV9HqvFa2CXR+zAVo9BtM+dku1Mr4Bu7n2+6H6fGghs1wbzr9/DAy9gFfMEMqbfw95n2Gpjfhk3CDqkdLjka40VbiIskxIVDwmu2/yOzQaLJpgjPNJXGJETxwKvWezGkLx62wohVPlSOyrGy1OZAhxgwDlAm2x4HzhGeCxERhTCJqytHa39H6EfLIJU+M0m84mZ6I6hKZczjHMgGym79UjQYjhLhKrUlyPd5cDkDrAPIC/RWru8tkfHe/ejO4yPxQ1dCVx7TgSFRE86TawWsP4d6S0cTaGGKIVXTwKXMkqKgrVnu5gQSjz0Ij+ftZTVvikJLxVuf/JPWNWHq3l8+dRV99K+UH84HyNwWU2qwNStjaRbTg="
 
