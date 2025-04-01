@@ -16,7 +16,7 @@ spring:
   datasource:
     url: jdbc:sqlserver://localhost:1415;databaseName=master
   flyway:
-    uri: jdbc:sqlserver://localhost:1415;databaseName=master
+    url: jdbc:sqlserver://localhost:1415;databaseName=master
 
 # Testing what environment we are using
 param:
