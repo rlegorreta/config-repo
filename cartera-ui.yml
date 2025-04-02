@@ -1,0 +1,7 @@
+# Last update April 2025 (rlh)
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

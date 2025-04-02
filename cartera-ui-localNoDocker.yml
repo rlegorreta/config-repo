@@ -1,0 +1,28 @@
+# Last update April 2025 (rlh)
+server:
+  port: 8510
+
+eureka:
+  instance:
+    preferIpAddress: true
+    instanceId: ${spring.application.name}:${random.int}
+    hostname: cartera-ui
+  client:
+    healthcheck:
+      enabled: false # this must be false because is a UI
+    registerWithEureka: true
+    fetchRegistry: true       # this must be true because is UI
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+    registry-fetch-interval-seconds: 5
+
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+
+security:
+  iam:
+    provider-uri: http://localhost:8072/ailegorreta/iam-service       # use the gateway
+    load-balanced: false
