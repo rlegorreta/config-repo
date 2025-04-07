@@ -94,8 +94,8 @@ spring:
             - RewritePath=/ailegorreta/cartera-service/(?<path>.*), /$\{path}
             - name: CircuitBreaker
               args:
-               name: carteraCircuitBreaker
-            - fallbackUri: forward:/cartera-service-fallback       # Forwards request to this URI when the circuit is open
+                name: carteraCircuitBreaker
+                fallbackUri: forward:/cartera-service-fallback       # Forwards request to this URI when the circuit is open
         - id: cartera
           uri: ${CARTERA_SERVICE_URL:http://host.docker.internal:8500}/
           predicates:
