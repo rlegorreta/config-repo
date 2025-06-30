@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d8d6d549-93b4-470c-9960-95f9cd708115" name="Changes" comment="Version 1.0.62">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/param-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/param-service.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -299,7 +299,15 @@
       <workItem from="1743534834811" duration="21000" />
       <workItem from="1743553698307" duration="573000" />
       <workItem from="1744045543163" duration="167000" />
-      <workItem from="1744045931889" duration="668000" />
+      <workItem from="1744045931889" duration="692000" />
+      <workItem from="1744063978334" duration="647000" />
+      <workItem from="1744073120231" duration="221000" />
+      <workItem from="1744127590634" duration="542000" />
+      <workItem from="1744245365638" duration="472000" />
+      <workItem from="1744394862845" duration="695000" />
+      <workItem from="1750278911253" duration="1024000" />
+      <workItem from="1750285109650" duration="559000" />
+      <workItem from="1751308415446" duration="37000" />
     </task>
     <task id="LOCAL-00027" summary="Version 1.0.24">
       <created>1684951517433</created>
@@ -644,7 +652,7 @@
       <option name="project" value="LOCAL" />
       <updated>1690215733819</updated>
     </task>
-    <option name="localTasksCounter" value="187" />
+    <option name="localTasksCounter" value="188" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
