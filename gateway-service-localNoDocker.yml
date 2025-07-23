@@ -21,11 +21,13 @@ spring:
       ribbon:
         enabled: false
     gateway:
-      # This is for automatic mapping of routes using eureka
-      discovery:
-        locator:
-          enabled: true
-          lowerCaseServiceId: true
+      server:
+        webflux:
+          # This is for automatic mapping of routes using eureka
+          discovery:
+            locator:
+              enabled: true
+              lowerCaseServiceId: true
   data:
     redis: # Redis is used by storing in memory all thre reauests per user and therefore
       # limit to a maximum request per user per second(e.g., 10 reauest per second)
