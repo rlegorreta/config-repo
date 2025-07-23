@@ -3,301 +3,303 @@
 spring:
   cloud:
     gateway:
-      # This is if we want manually mapping routing using service discovery
-      # The postfix for '-service' microservices is optional
-      routes:
-        - id: mail-service
-          uri: ${MAIL_SERVICE_URL:http://localhost:8352}/
-          predicates:
-            - Path=/ailegorreta/mail-service/**
-          filters:
-            - RewritePath=/ailegorreta/mail-service/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: mailCircuitBreaker
-                fallbackUri: forward:/mail-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: mail
-          uri: ${MAIL_SERVICE_URL:http://host.docker.internal:8352}/
-          predicates:
-            - Path=/ailegorreta/mail/**
-          filters:
-            - RewritePath=/ailegorreta/mail/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: mailCircuitBreaker
-                fallbackUri: forward:/mail-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: order-service
-          uri: ${ORDER_SERVICE_URL:http://localhost:8530}/
-          predicates:
-            - Path=/ailegorreta/order-service/**
-          filters:
-            - RewritePath=/ailegorreta/order-service/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: orderCircuitBreaker
-                fallbackUri: forward:/order-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: order
-          uri: ${ORDER_SERVICE_URL:http://host.docker.internal:8530}/
-          predicates:
-            - Path=/ailegorreta/order/**
-          filters:
-            - RewritePath=/ailegorreta/order/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: orderCircuitBreaker
-                fallbackUri: forward:/order-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: expediente-service
-          uri: ${EXPEDIENTE_SERVICE_URL:http://localhost:8525}/
-          predicates:
-            - Path=/ailegorreta/expediente-service/**
-          filters:
-            - RewritePath=/ailegorreta/expediente-service/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: expedienteCircuitBreaker
-                fallbackUri: forward:/expediente-service-fallback    # Forwards request to this URI when the circuit is open
-        - id: expediente
-          uri: ${EXPEDIENTE_SERVICE_URL:http://host.docker.internal:8525}/
-          predicates:
-            - Path=/ailegorreta/expediente/**
-          filters:
-            - RewritePath=/ailegorreta/expediente/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: expedienteCircuitBreaker
-                fallbackUri: forward:/expediente-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: bup-service
-          uri: ${BUP_SERVICE_URL:http://localhost:8520}/
-          predicates:
-            - Path=/ailegorreta/bup-service/**
-          filters:
-            - RewritePath=/ailegorreta/bup-service/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: bupCircuitBreaker
-                fallbackUri: forward:/bup-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: bup
-          uri: ${BUP_SERVICE_URL:http://host.docker.internal:8520}/
-          predicates:
-            - Path=/ailegorreta/bup/**
-          filters:
-            - RewritePath=/ailegorreta/bup/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: bupCircuitBreaker
-                fallbackUri: forward:/bup-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: cartera-service
-          uri: ${CARTERA_SERVICE_URL:http://localhost:8500}/
-          predicates:
-            - Path=/ailegorreta/cartera-service/**
-          filters:
-            - RewritePath=/ailegorreta/cartera-service/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: carteraCircuitBreaker
-                fallbackUri: forward:/cartera-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: cartera
-          uri: ${CARTERA_SERVICE_URL:http://host.docker.internal:8500}/
-          predicates:
-            - Path=/ailegorreta/cartera/**
-          filters:
-            - RewritePath=/ailegorreta/cartera/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: carteraCircuitBreaker
-                fallbackUri: forward:/cartera-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: udf-service
-          uri: ${UDF_SERVICE_URL:http://localhost:8200}/
-          predicates:
-            - Path=/ailegorreta/udf-service/**
-          filters:
-            - RewritePath=/ailegorreta/udf-service/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: udfCircuitBreaker
-                fallbackUri: forward:/udf-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: udf
-          uri: ${UDF_SERVICE_URL:http://host.docker.internal:8200}/
-          predicates:
-            - Path=/ailegorreta/udf/**
-          filters:
-            - RewritePath=/ailegorreta/udf/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: udfCircuitBreaker
-                fallbackUri: forward:/udf-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: pref-service
-          uri: ${PREF_SERVICE_URL:http://localhost:8183}/
-          predicates:
-            - Path=/ailegorreta/pref-service/**
-          filters:
-            - RewritePath=/ailegorreta/pref-service/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: prefCircuitBreaker
-                fallbackUri: forward:/pref-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: pref
-          uri: ${PREF_SERVICE_URL:http://host.docker.internal:8183}/
-          predicates:
-            - Path=/ailegorreta/pref/**
-          filters:
-            - RewritePath=/ailegorreta/pref/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: prefCircuitBreaker
-                fallbackUri: forward:/pref-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: iam-service
-          uri: ${IAM_SERVICE_URL:http://localhost:8180}/
-          predicates:
-            - Path=/ailegorreta/iam-service/**
-          filters:
-            - RewritePath=/ailegorreta/iam-service/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: iamCircuitBreaker
-                fallbackUri: forward:/iam-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: iam
-          uri: ${IAM_SERVICE_URL:http://host.docker.internal:8180}/
-          predicates:
-            - Path=/ailegorreta/iam/**
-          filters:
-            - RewritePath=/ailegorreta/iam/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: iamCircuitBreaker
-                fallbackUri: forward:/iam-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: audit-service
-          uri: ${AUDIT_SERVICE_URL:http://localhost:8300}/
-          predicates:
-            - Path=/ailegorreta/audit-service/**
-          filters:
-            - RewritePath=/ailegorreta/audit-service/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: auditCircuitBreaker
-                fallbackUri: forward:/audit-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: audit
-          uri: ${AUDIT_SERVICE_URL:http://host.docker.internal:8300}/
-          predicates:
-            - Path=/ailegorreta/audit/**
-          filters:
-            - RewritePath=/ailegorreta/audit/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: auditCircuitBreaker
-                fallbackUri: forward:/audit-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: cache-service
-          uri: ${CACHE_SERVICE_URL:http://localhost:8351}/
-          predicates:
-            - Path=/ailegorreta/cache-service/**
-          filters:
-            - RewritePath=/ailegorreta/cache-service/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: cacheCircuitBreaker
-                fallbackUri: forward:/cache-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: cache
-          uri: ${CACHE_SERVICE_URL:http://host.docker.internal:8351}/
-          predicates:
-            - Path=/ailegorreta/cache/**
-          filters:
-            - RewritePath=/ailegorreta/cache/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: cacheCircuitBreaker
-                fallbackUri: forward:/cache-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: param-service
-          uri: ${PARAM_SERVICE_URL:http://localhost:8350}/
-          predicates:
-            - Path=/ailegorreta/param-service/**
-          filters:
-            - RewritePath=/ailegorreta/param-service/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: paramCircuitBreaker
-                fallbackUri: forward:/param-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: param
-          uri: ${PARAM_SERVICE_URL:http://host.docker.internal:8350}/
-          predicates:
-            - Path=/ailegorreta/param/**
-          filters:
-            - RewritePath=/ailegorreta/param/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: paramCircuitBreaker
-                fallbackUri: forward:/param-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: content-service
-          uri: ${CONTENT_SERVICE_URL:http://localhost:8370}/
-          predicates:
-            - Path=/ailegorreta/content-service/**
-          filters:
-            - RewritePath=/ailegorreta/content-service/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: contentCircuitBreaker
-                fallbackUri: forward:/content-service-fallback
-        - id: content
-          uri: ${CONTENT_SERVICE_URL:http://host.docker.internal:8370}/
-          predicates:
-            - Path=/ailegorreta/content/**
-          filters:
-            - RewritePath=/ailegorreta/content/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: contentCircuitBreaker
-                fallbackUri: forward:/content-service-fallback
-        - id: normative-service
-          uri: ${NORMATIVE_SERVICE_URL:http://localhost:8522}/
-          predicates:
-            - Path=/ailegorreta/normative-service/**
-          filters:
-            - RewritePath=/ailegorreta/normative-service/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: normativeCircuitBreaker
-                fallbackUri: forward:/normative-service-fallback
-        - id: normative
-          uri: ${NORMATIVE_SERVICE_URL:http://host.docker.internal:8522}/
-          predicates:
-            - Path=/ailegorreta/normative/**
-          filters:
-            - RewritePath=/ailegorreta/normative/(?<path>.*), /$\{path}
-            - name: CircuitBreaker
-              args:
-                name: normativeCircuitBreaker
-                fallbackUri: forward:/normative-service-fallback
-        - id: test                                                # The route ID
-          uri: ${TEST_SERVICE_URL:http://host.docker.internal:8000}/
-          predicates:
-            - Path=/test/**                                       # The predicate is a path to match
-          filters:
-            - RewritePath=/test/(?<path>.*), /$\{path}            # Rewrite the path to eliminate '/test' path
-            - name: CircuitBreaker                                # Filter name for Circuit breaker
-              args:
-                name: testCircuitBreaker                          # Name of the circuit breaker
-                fallbackUri: forward:/test-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: test-service                                        # The route ID
-          uri: ${TEST_SERVICE_URL:http://localhost:8000}/
-          predicates:
-            - Path=/test-service/**                               # The predicate is a path to match
-          filters:
-            - RewritePath=/test-service/(?<path>.*), /$\{path}    # Rewrite the path to eliminate '/test-service' path
-            - name: CircuitBreaker                                # Filter name for Circuit breaker
-              args:
-                name: testLongCircuitBreaker                      # Name of the circuit breaker
-                fallbackUri: forward:/test-service-fallback       # Forwards request to this URI when the circuit is open
-        - id: gateway                                                # The route ID
-          uri: ${GATEWAY_SERVICE_URL:http://host.docker.internal:8072}/
-          predicates:
-            - Path=/gateway/**                                    # The predicate is a path to match
-          filters:
-            - RewritePath=/gateway/(?<path>.*), /$\{path}         # Rewrite the path to eliminate '/test' path
-        - id: gateway-service                                     # The route ID
-          uri: ${GATEWAY_SERVICE_URL:http://localhost:8072}/
-          predicates:
-            - Path=/gateway-service/**                            # The predicate is a path to match
-          filters:
-            - RewritePath=/gateway-service/(?<path>.*), /$\{path} # Rewrite the path to eliminate '/test-service' path
+      server:
+        webflux:
+          # This is if we want manually mapping routing using service discovery
+          # The postfix for '-service' microservices is optional
+          routes:
+            - id: mail-service
+              uri: ${MAIL_SERVICE_URL:http://localhost:8352}/
+              predicates:
+                - Path=/ailegorreta/mail-service/**
+              filters:
+                - RewritePath=/ailegorreta/mail-service/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: mailCircuitBreaker
+                    fallbackUri: forward:/mail-service-fallback       # Forwards request to this URI when the circuit is open
+            - id: mail
+              uri: ${MAIL_SERVICE_URL:http://host.docker.internal:8352}/
+              predicates:
+                - Path=/ailegorreta/mail/**
+              filters:
+                - RewritePath=/ailegorreta/mail/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: mailCircuitBreaker
+                    fallbackUri: forward:/mail-service-fallback       # Forwards request to this URI when the circuit is open
+            - id: order-service
+              uri: ${ORDER_SERVICE_URL:http://localhost:8530}/
+              predicates:
+                - Path=/ailegorreta/order-service/**
+              filters:
+                - RewritePath=/ailegorreta/order-service/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: orderCircuitBreaker
+                    fallbackUri: forward:/order-service-fallback       # Forwards request to this URI when the circuit is open
+            - id: order
+              uri: ${ORDER_SERVICE_URL:http://host.docker.internal:8530}/
+              predicates:
+                - Path=/ailegorreta/order/**
+              filters:
+                - RewritePath=/ailegorreta/order/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: orderCircuitBreaker
+                    fallbackUri: forward:/order-service-fallback       # Forwards request to this URI when the circuit is open
+            - id: expediente-service
+              uri: ${EXPEDIENTE_SERVICE_URL:http://localhost:8525}/
+              predicates:
+                - Path=/ailegorreta/expediente-service/**
+              filters:
+                - RewritePath=/ailegorreta/expediente-service/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: expedienteCircuitBreaker
+                    fallbackUri: forward:/expediente-service-fallback    # Forwards request to this URI when the circuit is open
+            - id: expediente
+              uri: ${EXPEDIENTE_SERVICE_URL:http://host.docker.internal:8525}/
+              predicates:
+                - Path=/ailegorreta/expediente/**
+              filters:
+                - RewritePath=/ailegorreta/expediente/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: expedienteCircuitBreaker
+                    fallbackUri: forward:/expediente-service-fallback       # Forwards request to this URI when the circuit is open
+            - id: bup-service
+              uri: ${BUP_SERVICE_URL:http://localhost:8520}/
+              predicates:
+                - Path=/ailegorreta/bup-service/**
+              filters:
+                - RewritePath=/ailegorreta/bup-service/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: bupCircuitBreaker
+                    fallbackUri: forward:/bup-service-fallback       # Forwards request to this URI when the circuit is open
+            - id: bup
+              uri: ${BUP_SERVICE_URL:http://host.docker.internal:8520}/
+              predicates:
+                - Path=/ailegorreta/bup/**
+              filters:
+                - RewritePath=/ailegorreta/bup/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: bupCircuitBreaker
+                    fallbackUri: forward:/bup-service-fallback       # Forwards request to this URI when the circuit is open
+            - id: cartera-service
+              uri: ${CARTERA_SERVICE_URL:http://localhost:8500}/
+              predicates:
+                - Path=/ailegorreta/cartera-service/**
+              filters:
+                - RewritePath=/ailegorreta/cartera-service/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: carteraCircuitBreaker
+                    fallbackUri: forward:/cartera-service-fallback       # Forwards request to this URI when the circuit is open
+            - id: cartera
+              uri: ${CARTERA_SERVICE_URL:http://host.docker.internal:8500}/
+              predicates:
+                - Path=/ailegorreta/cartera/**
+              filters:
+                - RewritePath=/ailegorreta/cartera/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: carteraCircuitBreaker
+                    fallbackUri: forward:/cartera-service-fallback       # Forwards request to this URI when the circuit is open
+            - id: udf-service
+              uri: ${UDF_SERVICE_URL:http://localhost:8200}/
+              predicates:
+                - Path=/ailegorreta/udf-service/**
+              filters:
+                - RewritePath=/ailegorreta/udf-service/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: udfCircuitBreaker
+                    fallbackUri: forward:/udf-service-fallback       # Forwards request to this URI when the circuit is open
+            - id: udf
+              uri: ${UDF_SERVICE_URL:http://host.docker.internal:8200}/
+              predicates:
+                - Path=/ailegorreta/udf/**
+              filters:
+                - RewritePath=/ailegorreta/udf/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: udfCircuitBreaker
+                    fallbackUri: forward:/udf-service-fallback       # Forwards request to this URI when the circuit is open
+            - id: pref-service
+              uri: ${PREF_SERVICE_URL:http://localhost:8183}/
+              predicates:
+                - Path=/ailegorreta/pref-service/**
+              filters:
+                - RewritePath=/ailegorreta/pref-service/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: prefCircuitBreaker
+                    fallbackUri: forward:/pref-service-fallback       # Forwards request to this URI when the circuit is open
+            - id: pref
+              uri: ${PREF_SERVICE_URL:http://host.docker.internal:8183}/
+              predicates:
+                - Path=/ailegorreta/pref/**
+              filters:
+                - RewritePath=/ailegorreta/pref/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: prefCircuitBreaker
+                    fallbackUri: forward:/pref-service-fallback       # Forwards request to this URI when the circuit is open
+            - id: iam-service
+              uri: ${IAM_SERVICE_URL:http://localhost:8180}/
+              predicates:
+                - Path=/ailegorreta/iam-service/**
+              filters:
+                - RewritePath=/ailegorreta/iam-service/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: iamCircuitBreaker
+                    fallbackUri: forward:/iam-service-fallback       # Forwards request to this URI when the circuit is open
+            - id: iam
+              uri: ${IAM_SERVICE_URL:http://host.docker.internal:8180}/
+              predicates:
+                - Path=/ailegorreta/iam/**
+              filters:
+                - RewritePath=/ailegorreta/iam/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: iamCircuitBreaker
+                    fallbackUri: forward:/iam-service-fallback       # Forwards request to this URI when the circuit is open
+            - id: audit-service
+              uri: ${AUDIT_SERVICE_URL:http://localhost:8300}/
+              predicates:
+                - Path=/ailegorreta/audit-service/**
+              filters:
+                - RewritePath=/ailegorreta/audit-service/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: auditCircuitBreaker
+                    fallbackUri: forward:/audit-service-fallback       # Forwards request to this URI when the circuit is open
+            - id: audit
+              uri: ${AUDIT_SERVICE_URL:http://host.docker.internal:8300}/
+              predicates:
+                - Path=/ailegorreta/audit/**
+              filters:
+                - RewritePath=/ailegorreta/audit/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: auditCircuitBreaker
+                    fallbackUri: forward:/audit-service-fallback       # Forwards request to this URI when the circuit is open
+            - id: cache-service
+              uri: ${CACHE_SERVICE_URL:http://localhost:8351}/
+              predicates:
+                - Path=/ailegorreta/cache-service/**
+              filters:
+                - RewritePath=/ailegorreta/cache-service/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: cacheCircuitBreaker
+                    fallbackUri: forward:/cache-service-fallback       # Forwards request to this URI when the circuit is open
+            - id: cache
+              uri: ${CACHE_SERVICE_URL:http://host.docker.internal:8351}/
+              predicates:
+                - Path=/ailegorreta/cache/**
+              filters:
+                - RewritePath=/ailegorreta/cache/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: cacheCircuitBreaker
+                    fallbackUri: forward:/cache-service-fallback       # Forwards request to this URI when the circuit is open
+            - id: param-service
+              uri: ${PARAM_SERVICE_URL:http://localhost:8350}/
+              predicates:
+                - Path=/ailegorreta/param-service/**
+              filters:
+                - RewritePath=/ailegorreta/param-service/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: paramCircuitBreaker
+                    fallbackUri: forward:/param-service-fallback       # Forwards request to this URI when the circuit is open
+            - id: param
+              uri: ${PARAM_SERVICE_URL:http://host.docker.internal:8350}/
+              predicates:
+                - Path=/ailegorreta/param/**
+              filters:
+                - RewritePath=/ailegorreta/param/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: paramCircuitBreaker
+                    fallbackUri: forward:/param-service-fallback       # Forwards request to this URI when the circuit is open
+            - id: content-service
+              uri: ${CONTENT_SERVICE_URL:http://localhost:8370}/
+              predicates:
+                - Path=/ailegorreta/content-service/**
+              filters:
+                - RewritePath=/ailegorreta/content-service/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: contentCircuitBreaker
+                    fallbackUri: forward:/content-service-fallback
+            - id: content
+              uri: ${CONTENT_SERVICE_URL:http://host.docker.internal:8370}/
+              predicates:
+                - Path=/ailegorreta/content/**
+              filters:
+                - RewritePath=/ailegorreta/content/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: contentCircuitBreaker
+                    fallbackUri: forward:/content-service-fallback
+            - id: normative-service
+              uri: ${NORMATIVE_SERVICE_URL:http://localhost:8522}/
+              predicates:
+                - Path=/ailegorreta/normative-service/**
+              filters:
+                - RewritePath=/ailegorreta/normative-service/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: normativeCircuitBreaker
+                    fallbackUri: forward:/normative-service-fallback
+            - id: normative
+              uri: ${NORMATIVE_SERVICE_URL:http://host.docker.internal:8522}/
+              predicates:
+                - Path=/ailegorreta/normative/**
+              filters:
+                - RewritePath=/ailegorreta/normative/(?<path>.*), /$\{path}
+                - name: CircuitBreaker
+                  args:
+                    name: normativeCircuitBreaker
+                    fallbackUri: forward:/normative-service-fallback
+            - id: test                                                # The route ID
+              uri: ${TEST_SERVICE_URL:http://host.docker.internal:8000}/
+              predicates:
+                - Path=/test/**                                       # The predicate is a path to match
+              filters:
+                - RewritePath=/test/(?<path>.*), /$\{path}            # Rewrite the path to eliminate '/test' path
+                - name: CircuitBreaker                                # Filter name for Circuit breaker
+                  args:
+                    name: testCircuitBreaker                          # Name of the circuit breaker
+                    fallbackUri: forward:/test-service-fallback       # Forwards request to this URI when the circuit is open
+            - id: test-service                                        # The route ID
+              uri: ${TEST_SERVICE_URL:http://localhost:8000}/
+              predicates:
+                - Path=/test-service/**                               # The predicate is a path to match
+              filters:
+                - RewritePath=/test-service/(?<path>.*), /$\{path}    # Rewrite the path to eliminate '/test-service' path
+                - name: CircuitBreaker                                # Filter name for Circuit breaker
+                  args:
+                    name: testLongCircuitBreaker                      # Name of the circuit breaker
+                    fallbackUri: forward:/test-service-fallback       # Forwards request to this URI when the circuit is open
+            - id: gateway                                                # The route ID
+              uri: ${GATEWAY_SERVICE_URL:http://host.docker.internal:8072}/
+              predicates:
+                - Path=/gateway/**                                    # The predicate is a path to match
+              filters:
+                - RewritePath=/gateway/(?<path>.*), /$\{path}         # Rewrite the path to eliminate '/test' path
+            - id: gateway-service                                     # The route ID
+              uri: ${GATEWAY_SERVICE_URL:http://localhost:8072}/
+              predicates:
+                - Path=/gateway-service/**                            # The predicate is a path to match
+              filters:
+                - RewritePath=/gateway-service/(?<path>.*), /$\{path} # Rewrite the path to eliminate '/test-service' path
 
 # Testing what environment we are using
 gateway:
